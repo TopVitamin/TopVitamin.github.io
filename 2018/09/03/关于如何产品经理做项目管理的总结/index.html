@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="项目管理," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言 本文是关于一篇名为「作为产品经理，如何做好项目管理？」的文章的记录总结，之前对项目管理一直没什么很在意，现在公司重点指出这部分的重要性，所以就根据自己的想法写了一些总结和对公司日常工作的一些建议。">
+<meta name="keywords" content="项目管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于写PRD的一些思路与感悟">
+<meta property="og:url" content="http://yoursite.com/2018/09/03/关于如何产品经理做项目管理的总结/index.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="前言 本文是关于一篇名为「作为产品经理，如何做好项目管理？」的文章的记录总结，之前对项目管理一直没什么很在意，现在公司重点指出这部分的重要性，所以就根据自己的想法写了一些总结和对公司日常工作的一些建议。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="c:/Users/PM001/Desktop/产品学习/assets/1535699481274.png">
+<meta property="og:image" content="c:/Users/PM001/Desktop/产品学习/assets/1535699719909.png">
+<meta property="og:image" content="c:/Users/PM001/Desktop/产品学习/assets/1535700251163.png">
+<meta property="og:image" content="c:/Users/PM001/Desktop/产品学习/assets/1535700521406.png">
+<meta property="og:image" content="c:/Users/PM001/Desktop/产品学习/assets/1535701088573.png">
+<meta property="og:image" content="c:/Users/PM001/Desktop/产品学习/assets/1535704073272.png">
+<meta property="og:updated_time" content="2018-09-03T02:16:21.984Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于写PRD的一些思路与感悟">
+<meta name="twitter:description" content="前言 本文是关于一篇名为「作为产品经理，如何做好项目管理？」的文章的记录总结，之前对项目管理一直没什么很在意，现在公司重点指出这部分的重要性，所以就根据自己的想法写了一些总结和对公司日常工作的一些建议。">
+<meta name="twitter:image" content="c:/Users/PM001/Desktop/产品学习/assets/1535699481274.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/03/关于如何产品经理做项目管理的总结/"/>
+
+
+
+
+
+  <title>关于写PRD的一些思路与感悟 | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    
+<a href="https://github.com/TopVitamin"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">someword is enough</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/关于如何产品经理做项目管理的总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关于写PRD的一些思路与感悟</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T10:08:52+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>本文是关于一篇名为「作为产品经理，如何做好项目管理？」的文章的记录总结，之前对项目管理一直没什么很在意，现在公司重点指出这部分的重要性，所以就根据自己的想法写了一些总结和对公司日常工作的一些建议。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="一、敬畏之心"><a href="#一、敬畏之心" class="headerlink" title="一、敬畏之心"></a>一、敬畏之心</h3><p><img src="C:\Users\PM001\Desktop\产品学习\assets\1535699481274.png" alt="1535699481274"></p>
+<p>在平常的工作中，经常会遇到对某个需求和功能的完成进行估时间的情况，而这个时间大多数都是开发的时间加上测试的时间，然后加上一些缓冲的时间；有些时候我们对项目的进度过于乐观，觉得肯定可以按时完成任务，而很多时候又对项目的进度不太乐观，觉得肯定是完成不了；针对这一问题，我比较赞同文中的一句话「产品经理应该用一种“悲观”的视角看待项目，用乐观的途径去解决问题」。悲观的视角看待项目的进度，完成情况，但是要以乐观的心态和途径去解决问题，争取早日完成，不打折扣的完成。</p>
+<p>开发预估的时间一般来说都会留有余地，但是给产品的时间就只能是在余地中收尾，争取开发做完事情的时候，产品可以把一些收尾的工作也提前搞定。对于项目管理来说，产品的任务也算是项目管理中的任务，和开发任务属于同一级别，所以请不要忘记自己的产品任务也需要估算时间哦！</p>
+<h3 id="二、产品-amp-项目的异同"><a href="#二、产品-amp-项目的异同" class="headerlink" title="二、产品&amp;项目的异同"></a>二、产品&amp;项目的异同</h3><p><img src="C:\Users\PM001\Desktop\产品学习\assets\1535699719909.png" alt="1535699719909"></p>
+<p>产品的工作和项目经理的工作不一样，要去了解这部分的差异是什么，当项目没有项目经理的时候，产品经理必须切换角色去承担这一角色的时候，那么了解项目经理和产品经理的差异对以后的工作展开是具有很重要的意义的。</p>
+<p>产品经理更加关注用户体验，是从用户的角度去看待项目，以结果为主；项目经理注重过程，关心能不能在有限的时间内，有限的资源内，如期的完成项目；那么当产品经理去切换角色变成项目经理的时候，除了基本的需求整理，分析，然后原型设计分配任务之外，还需要对项目的过程进行关注，例如晨会的时候询问进度怎么样，平时的时候多关注项目的进展，为团队争取更多的资源，同时发挥每一个资源的所能，不让部分人无事可做，部分人忙的要死。<strong>虽然平时这些时候作为产品经理其实已经做了一些项目经理的工作，但是涉及到关于过程和资源的情况，还是有所欠缺。</strong>所以关注进度不要简简单单地问进度怎么样了？是否能完成？而是需要深入团队，与团队共同面对问题同时也需要为他们解决问题，例如找资源，确定不确定额因素等。</p>
+<h3 id="三、项目环境决定成败"><a href="#三、项目环境决定成败" class="headerlink" title="三、项目环境决定成败"></a>三、项目环境决定成败</h3><p><img src="C:\Users\PM001\Desktop\产品学习\assets\1535700251163.png" alt="1535700251163"></p>
+<p>项目环境涉及到生命周期，治理环境还有过程资产3个大类，在平时的产品工作中，我们对项目的生命周期没有严格的定义，都是以迭代来走，当然最近采用2周一个小迭代的工作方式后，对项目管理这一块确实有了很大的提升；项目的治理环境涉及到分工和人员分配的问题，核心点是产品经理要照顾全局，从项目角度去看，什么东西让什么人做，什么模块用什么方式做才最有效率。界定清晰每个人职责和权限，让大家各司其职，同时对相关人员的头衔，奖励和一些心理类激励的东西也需要考虑到。项目管理的核心是管理项目，但是管理项目的潜台词就是怎么管理人，怎么去调动资源，做成你想要做的事情；过程资产主要是提示项目经理需要对过程中产生的文档，数据等进行关注，保存然后统一大家的认识，让所有人都知道最新的数据，最新的情况是怎么样的，<strong>注重文档的重要性，不仅仅是说说而已，更需要切实地去贯彻行动。</strong></p>
+<h3 id="四、合适的人与靠谱的计划"><a href="#四、合适的人与靠谱的计划" class="headerlink" title="四、合适的人与靠谱的计划"></a>四、合适的人与靠谱的计划</h3><p><img src="C:\Users\PM001\Desktop\产品学习\assets\1535700521406.png" alt="1535700521406"></p>
+<p>启动项目之前一定需要开启动会议，最好找到相关的利益相关人员在场，同时也可以考虑向上级借力。要做好心理准备就是，项目中总会有人很消极，也会有人很积极，怎么去引导那些消极的人，怎么去规避积极的人受到消极影响这也是项目经理的重要工作之一，平时作为产品的时候可能没有考虑太多，但是如果要涉及项目管理，那么就要考虑这方面的东西。</p>
+<p>找到合适的人组建了团队之后就要学会基于“用户故事”来分解项目任务，例如善用TAPD的功能，将项目的任务以”用户故事“的模式拆解进去，让开发人员或者是测试人员知道一共有多少个故事，一共有多少的任务，然后才能更加准确的估算出项目的时间，双方达成共识之后朝着一个目标前进。</p>
+<p>除以上之外，还有一个很关键的东西需要在会议上讲清楚的就是项目的边界，可以理解为项目的目标范围。我们开会的时候需要有会议目的，有一个共同的方向，除了方向之外我们还要界定项目的范围，这个在产品工作中也会遇到，但是对产品来说，可能就是多耽误一点时间或者是拖到下一个迭代做完而已；<em>对项目管理来说，没有严格的项目边界其实是很危险的，很有可能一个项目越做越大，越来越不可控，然后导致团队人员逐渐失去斗志，导致项目的失败。</em></p>
+<h3 id="五、项目节奏和潜在的风险"><a href="#五、项目节奏和潜在的风险" class="headerlink" title="五、项目节奏和潜在的风险"></a>五、项目节奏和潜在的风险</h3><p><img src="C:\Users\PM001\Desktop\产品学习\assets\1535701088573.png" alt="1535701088573"></p>
+<p>作为产品经理来说我们更多的是考虑到产品能不能完成，能不能满足用户的需求，能不能向业务部门交差，所以我们对项目的潜在风险更多的是做好计划，怎么样用另外一种办法去达到目的，解决问题。而对于项目经理来说，他们考虑的是做这个项目的风险是什么，人员够不够？资源够不够？时间足不足？范围定了没有？所以这个时候我们需要去切换角色，看到不一样的点。</p>
+<p>例如，制定合理的计划，恰当的控制节奏，仔细推敲清楚项目中潜在的风险和一些不确定的点，同时要保证物尽其用，工作安排要饱和。在关键节点上要有真正的输出，需要一步一步去把控进度，这样才会有更多的主动权去规划下一个迭代和接下来做的事情。</p>
+<p>我们还需要有一个掌控全局的意识，在项目启动时候或者过程中，要经常与团队人员进行沟通，传达一些项目的危机，风险和成果等。让所有的成员有一种参与感，同时也要尽量满足大家的成就感。这个东西可以在项目开始的会议中进行：</p>
+<blockquote>
+<p>讲清楚项目的价值、背景，需要的资源和进度，影响的范围以及可能的风险。把所有好的结果画一个大饼给所有人，把所有坏的局面讲清楚给所有人。</p>
+</blockquote>
+<h3 id="六、期望与权力"><a href="#六、期望与权力" class="headerlink" title="六、期望与权力"></a>六、期望与权力</h3><p><img src="C:\Users\PM001\Desktop\产品学习\assets\1535704073272.png" alt="1535704073272"></p>
+<blockquote>
+<p>项目的第一件就是设立一个需求变更机制（如果你还记得之前谈到的项目启动会，项目经理一定要借助这个会议让项目的所有相关方知悉这个流程）</p>
+</blockquote>
+<p>许多人都会怕流程，怕繁琐的步骤，怕按部就班的死板限制了自己的自由和思维，当时更多的时候人会怕没有流程，没有章法，什么都可以乱来，但是最后所有的东西都要返工，都要重来。<strong>所以指定规则和流程是痛苦的但是也是必须要做的。</strong>作为项目经理，制定的规则决定了项目是否能顺畅地进行，同时也决定了当意外出现，当风险出现的时候，项目是否可以不偏不倚地继续前进。</p>
+<p>作为产品经理需要拒绝需求，这是我们经常会做也懂得要做的事情。作为项目经理则需要制定规则，让需求的口子从产品到开发，而不是业务直接就到了开发手中。同时也需要制定需求评审的制度，意外出现的解决制度等等。</p>
+<p>结合日常的工作，我们公司经常会出现 <em>做了这个功能，但是久而久之，却不知道这个东西到底是为什么而做的？业务不知道，产品不知道，开发也不知道</em> 这是对开发资源的浪费，也体现出了项目管理的不到位。所以我们的暂时的处理办法是让业务写需求申请书，但是这个东西的效果是否真的有效或者是作用力是否大呢？从几个月的使用情况来看，结局好像并没有想象中的美好，那么这一个问题就是我们需要去解决的，也需要去探索的地方。就目前来说，我个人比较偏向于使用在线工具或者协同工具来管理这些提出的需求，但是我也不能保证这就是最好的办法，但是起码我们得要敢于尝试，不是吗？</p>
+<blockquote>
+<p>任何需求，都必须记录在案，甭管是否执行，需求的第一个动作就是备忘，第二步才是决定是否执行。一定要专人负责需求的梳理，跟踪和进度的反馈。</p>
+</blockquote>
+<p>关于需求的记录，在平时的产品工作中基本上可以做的挺好的，这也是产品经理现在潜移默化的一种技能了。但是对于文档的管理和记录，目前来说公司的项目团队对这一块似乎并没有做的很好。这种情况出现的很大情况是：</p>
+<ol>
+<li>相关负责人文档意识不够强烈，没有这方面的很深刻的认识</li>
+<li>文档的撰写不够优雅，不够舒服，大家都文档的认知是惧怕的，是冗长繁琐的，自然就不愿意写</li>
+<li>没有人看，没有人赏识，没有人认同的文档，那么写出来就没有价值，久而久之并没有激情去写了</li>
+<li>文档的更新和认知不统一，文档也算是项目的成果之一，但是大家大家似乎并不认可文档的重要性和项目的结果是同等的</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上是针对项目管理那篇文章进行的一些观点梳理和自我总结，其中还有部分内容落实到了现实的工作中，所以行文有点自由，并没有按照特别的章法来进行阐述。结合现实的工作和自我对项目管理的认知，我认为有以下几点是公司团队需要重视和注意的地方：</p>
+<ol>
+<li><p>文档意识的提升，大家都知道文档重要，那么它有多重要，每个人放在心里的权重似乎不太统一；</p>
+</li>
+<li><p>项目干系人意识，项目的完成是需要大家的努力的，那么成就属于所有人，风险也属于所有人，并不是一切责任都是项目经理或者是产品经理承担，而是所有干系人一起都要去面对的，这是我们目前所欠缺的；</p>
+</li>
+<li><p>效率意识的提升，项目的效率来源于团队，但是主要牵引力来自于项目经理和产品经理，如果牵头人都没有积极性去提升效率，那么团队的效率就会受到影响；</p>
+</li>
+<li><p>团队奖惩模式，团队之间可以有竞争，团队内部也可以有竞争，对表现出色的人进行奖励，对表现不佳的人就进行勉励。让项目成员拧在一起，提升大家的参与感，有助于项目的进展；</p>
+</li>
+<li><p>风险意识，项目的实施不一定百分百成功，但是也不那么容易失败，很多时候我们更多的是看到项目的成果而忽视了其实过程也许也是失败的，我们本可以做的更快，更好，人员分配更加好。对用户角度或者是产品角度，这是成功的；对于项目管理的角度，也许这是还有很大提升空间的；</p>
+</li>
+</ol>
+<p><strong>项目经理和产品经理也许是有所矛盾的关系，但是作为新时代的产品经理，学习新的理念和新的知识去应对新的变化应该是必须要做的，所以当我们总是强调自己要切换视角去从用户角度看待产品问题的时候，是不是可以考虑一下，切换视角从项目经理的角度去看待项目的管理的问题呢？</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/项目管理/" rel="tag"><i class="fa fa-tag"></i> 项目管理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/09/关于对易仓科技OMS的体验分析报告/" rel="next" title="关于对易仓科技OMS的体验分析报告">
+                <i class="fa fa-chevron-left"></i> 关于对易仓科技OMS的体验分析报告
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/03/当产品上线后，应该做什么？/" rel="prev" title="当产品上线后，应该做什么？">
+                当产品上线后，应该做什么？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="叫我vitamin" />
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description">走走停停，不忘学习</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、敬畏之心"><span class="nav-number">1.1.</span> <span class="nav-text">一、敬畏之心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、产品-amp-项目的异同"><span class="nav-number">1.2.</span> <span class="nav-text">二、产品&amp;项目的异同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、项目环境决定成败"><span class="nav-number">1.3.</span> <span class="nav-text">三、项目环境决定成败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、合适的人与靠谱的计划"><span class="nav-number">1.4.</span> <span class="nav-text">四、合适的人与靠谱的计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、项目节奏和潜在的风险"><span class="nav-number">1.5.</span> <span class="nav-text">五、项目节奏和潜在的风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、期望与权力"><span class="nav-number">1.6.</span> <span class="nav-text">六、期望与权力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.7.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" >Coding Pages</a></span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+ 
+</body>
+</html>
