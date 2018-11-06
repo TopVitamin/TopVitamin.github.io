@@ -502,10 +502,22 @@
 
 
           
-  <div class="comments" id="comments">
+  <div class="comments" id="comments"></div>
     
-  </div>
-
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+            placeholder: '谈谈你的想法？'
+        });
+    </script>
+    
 
         </div>
         
