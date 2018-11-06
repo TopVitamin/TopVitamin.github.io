@@ -3,6 +3,7 @@ title: About me
 date: 2017-07-01 00:00:00
 tags: about me
 categories: about me
+comments: false
 
 ---
 

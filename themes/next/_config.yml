@@ -307,14 +307,24 @@ disqus:
   shortname:
   count: true
 
+# valine
+valine:
+  enable: true
+  appId: 2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz
+  appKey: 9Pftw16BURo9Uh1ycldrNnkc
+  notify: false 
+  verify: false 
+  placeholder: 谈谈你的看法？
+  avatar: wavatar 
+  pageSize: 10 
 # Hypercomments
 #hypercomments_id:
 
 # changyan
 changyan:
   enable: false
-  appid:
-  appkey:
+  appid: 2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz
+  appkey: 9Pftw16BURo9Uh1ycldrNnkc
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
