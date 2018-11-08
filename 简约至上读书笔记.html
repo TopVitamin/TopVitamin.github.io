@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="产品思维," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="本文为《简约至上:交互式设计四策略》的读书笔记，算是一个经典书籍的知识回顾和汲取，助力于产品设计，让简约融入到真正的产品中！作为产品设计人员，需要明确的是简单并不意味着不注重修饰或者完全赤裸裸，而是说装饰应该紧密贴近设计本身，任何无关的要素都应该予以剔除，简单并非指的极简主义。">
+<meta name="keywords" content="产品思维">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《简约至上》读书笔记">
+<meta property="og:url" content="http://someword.me/简约至上读书笔记.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="本文为《简约至上:交互式设计四策略》的读书笔记，算是一个经典书籍的知识回顾和汲取，助力于产品设计，让简约融入到真正的产品中！作为产品设计人员，需要明确的是简单并不意味着不注重修饰或者完全赤裸裸，而是说装饰应该紧密贴近设计本身，任何无关的要素都应该予以剔除，简单并非指的极简主义。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-12T09:32:10.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《简约至上》读书笔记">
+<meta name="twitter:description" content="本文为《简约至上:交互式设计四策略》的读书笔记，算是一个经典书籍的知识回顾和汲取，助力于产品设计，让简约融入到真正的产品中！作为产品设计人员，需要明确的是简单并不意味着不注重修饰或者完全赤裸裸，而是说装饰应该紧密贴近设计本身，任何无关的要素都应该予以剔除，简单并非指的极简主义。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://someword.me/简约至上读书笔记.html"/>
+
+
+
+
+
+  <title>《简约至上》读书笔记 | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+  
+   <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">someword is enough</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://someword.me/简约至上读书笔记.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《简约至上》读书笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-12T10:27:24+08:00">
+                2018-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品思维/" itemprop="url" rel="index">
+                    <span itemprop="name">产品思维</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文为《简约至上:交互式设计四策略》的读书笔记，算是一个经典书籍的知识回顾和汲取，助力于产品设计，让简约融入到真正的产品中！作为产品设计人员，需要明确的是简单并不意味着不注重修饰或者完全赤裸裸，而是说装饰应该紧密贴近设计本身，任何无关的要素都应该予以剔除，简单并非指的极简主义。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="到用户现场去观察用户，为主流用户而设计"><a href="#到用户现场去观察用户，为主流用户而设计" class="headerlink" title="到用户现场去观察用户，为主流用户而设计"></a>到用户现场去观察用户，为主流用户而设计</h2><p>产品是为用户而设计，简单不简单是用户说了算，首先需要做的是观察用户，最好能够去用户的真正使用场景中去观察。在他们真正的生活中收集素材，确定他们面对的问题，同时也要关注他们使用场景中的干扰。将对用户行为影响最大的事情放在设计中需要关注的首要地位。</p>
+<p>用户可以分为三类，专家型用户，愿意探索产品或服务，并且会提出各种改进建议；随意型用户，可能使用过类似产品，有兴趣使用更高级的产品，但不愿接触全新的功能；主流用户，为了完成某项任务而使用产品，而非因为技术。主流用户才是占绝大多数的，产品设计过程中，需要明确产品是为了主流用户而设计。而且主流用户在压力下很容易忘记自己已经掌握的知识，而重新回到初学者层次，所以我们的设计需要瞄准极端的目标，极端目标即使无法完全实现，也将更有助于我门实现简单。</p>
+<p>目标设计过程中所需要时刻谨记的，我们需要做的就是让主流用户能够简单的完成他们的目标，简单设计正是要贴近这些目标，而剔除与用户目标无关的其它因素。</p>
+<p>当然用户使用产品除了完成某项目标之外，还会有感情需求，那就是他们希望感觉到自己在掌控自己使用的技术，希望感觉在掌控自己的生活。因此在产品设计过程中，我们的产品除了要能够帮助他们完成任务，还要更进一步的问“然后呢？”，以至发现其更深层次的感情需求吗，给出更合理的解决方案。</p>
+<h2 id="简化的四大策略"><a href="#简化的四大策略" class="headerlink" title="简化的四大策略"></a>简化的四大策略</h2><h3 id="1-删除-——-去掉不必要的元素，字段等"><a href="#1-删除-——-去掉不必要的元素，字段等" class="headerlink" title="1. 删除 —— 去掉不必要的元素，字段等"></a>1. 删除 —— 去掉不必要的元素，字段等</h3><p>对于简单设计，删除的作用是很明显的，首先它可以让设计师专注于把有限的重要问题解决好，其次可以让用户心无旁骛的完成自己的目标。通过删除来简化设计时，我们可以准备一张白纸，问自己“最重要的问题是什么？”，然后，渐进地添加最重要的功能和内容。而判断最重要时，我们需要时刻记住前面说的主流用户想要达到的目标，考虑哪项功能最接近他们的核心需求，以及用户使用场景中的影响较大干扰源的解决方案。</p>
+<p>删除的核心在于去除那些分散注意力的因素、聚焦于项目 。</p>
+<ul>
+<li>聚焦于对用户有价值的功能。那些关系到用户日常体验、能消除挫折感的功能</li>
+<li>聚焦于可用资源，为用户提供价值。可以通过砍掉残缺功能、不切题的元素、花哨的东西的方式</li>
+<li>聚焦与达成用户的目的。学会对用户要求做逆向工程，搞清楚用户到底遇到什么问题，是否该由我们产品来解决</li>
+<li>删除干扰性的，增加用户负担的“减速带”。包括消除错误、删减文字、精简句子、删除不必要的选项、删除混乱的元素、减少用户界面中的小细节、去掉分散注意力的视觉元素等手段</li>
+</ul>
+<p>另外在删除过程需要注意避免错删，记住我们删除的是不重要的，而非难以实现的，如果因为某项功能较难实现，而将其删除，最后得到的将是一款平庸功能堆砌的没有亮点的产品。同时也不能删除过多，用户需要感觉自己能够控制局面，删除过多，尤其是删除了操控功能后，很容易让用户失去控制感而手足无措。另外要明白方案比流程重要，如果设计只盯住流程简单化，那么很有可能创造更多的功能去处理出现的各种异常情况问题和细节，那么这个时候我们就应该退一步问自己：我设计这个的目的是什么？有没有其他的解决方案。</p>
+<h3 id="2-组织-——-将有规律的按钮或者元素组合在一起"><a href="#2-组织-——-将有规律的按钮或者元素组合在一起" class="headerlink" title="2. 组织 —— 将有规律的按钮或者元素组合在一起"></a>2. 组织 —— 将有规律的按钮或者元素组合在一起</h3><p>在采取了删除策略之后，对于剩下需要提供的功能中，我们在设计时还要对其进行组织，混乱的堆放在一起，哪怕实际并不是很多，也会让用户感觉很复杂。其实这和平面设计基本原则中的“亲密性”完全类似。</p>
+<p>组织的核心是通过某些角度来整理组织松散的信息和元素，并且只强调一两个最重要的主题。</p>
+<p>分类方式有很多，作者在书中也介绍了时间、空间、网格、大小、位置、感知分层、字母、格式、色标等方式的优劣与适用场景。选择分类方式可以按照如下几个原则进行：</p>
+<ul>
+<li>围绕用户行为进行组织，他们想做什么，先做什么后做什么</li>
+<li>具有清晰的界限，是非分明，要做到使重复交叉最少</li>
+<li>能够把项组织到“7加减1”个（可以更少）</li>
+</ul>
+<h3 id="3-隐藏-—-把不重要的东西放在不容易看到的地方，避免用户分散注意力"><a href="#3-隐藏-—-把不重要的东西放在不容易看到的地方，避免用户分散注意力" class="headerlink" title="3. 隐藏 — 把不重要的东西放在不容易看到的地方，避免用户分散注意力"></a>3. 隐藏 — 把不重要的东西放在不容易看到的地方，避免用户分散注意力</h3><p>隐藏可以让用户不会因为不常用的功能分散注意力而实现简单的目的。适合隐藏的功能是指的那些主流用户很少使用，但又必不可少的功能，而不是不必要的功能，对于不必要的功能还是考虑是否可以采取删除的策略。</p>
+<p>成功的隐藏首先是可以彻底隐藏所有需要隐藏的功能。然后在合适的时机、合适的位置上显示出相应的功能。界面中包含的线索应该很细微，但却能恰到好处地提示出隐藏功能的位置和功用。要想实现这一点，提示出现时应该放在用户的关注点上，这样才能做到即使很细微依然被注意，否则在关注点之外，即使提示再明显，也很容易被忽略。隐藏的功能进行展示时，可以考虑采用渐进式展示和阶段式展示的方式。</p>
+<h3 id="4-转移-——-将元素内容转移到其他载体上"><a href="#4-转移-——-将元素内容转移到其他载体上" class="headerlink" title="4. 转移 —— 将元素内容转移到其他载体上"></a>4. 转移 —— 将元素内容转移到其他载体上</h3><p>简单设计的最后一个策略是转移，也就是学会把正确的功能放到正确的平台或者系统。要想做到这一点，是要明确各个平台或系统的优势和劣势。</p>
+<p>常见的转移方式有在设备之间转移，尤其随着智能手机的发展，手机可以完成很多特定的功能，而电脑也有其特殊的优势，两者结合将会是一种很好的设计方式。另外将有些功能转移到用户头脑中也是一个不错的方案，比如作者举例的旅游规划程序，让用户按照自己的标准来进行设定。其它人可能看起来很复杂，但是用户自己用着觉得简单就行。将功能转移给用户的另一种方式是创建开放式体验，比如让一个组件具有多种用途，把相似的功能绑定到一起，至于用这项功能来做什么，就留给用户自己决定。允许用户决定输入什么格式的数据<br>，则是将功能转移给计算机，从用户的角度来说，随便怎么填很简单，让计算机负责结构化任务即可。</p>
+<h3 id="谁来面对复杂"><a href="#谁来面对复杂" class="headerlink" title="谁来面对复杂"></a>谁来面对复杂</h3><p>在介绍完了简单设计的过程与四个策略之后，还有一点我们需要明白的是，任何程序都会有一些无法消除的复杂性，关键问题在于：谁会面对这些复杂性？</p>
+<p>作为产品设计团队，我们需要做的是，时刻让用户感觉简单，而把复杂性留给自己，这也是为什么我们常说“简单其实最复杂的设计”。所以开发团队的复杂是为了用户的简单，这虽然很难，但值得这样做！</p>
+<h2 id="文中金句"><a href="#文中金句" class="headerlink" title="文中金句"></a>文中金句</h2><p>1、沉没成本误区：坏的可以修好，次品永远存在；</p>
+<p>2、不要去猜测用户可能会，或者可能不会怎么样，应该去问，用户遇到过这种问题么；</p>
+<p>3、不要以功能的多寡来认定产品的价值,应该看产品能否满足用户最高优先级目标；</p>
+<p>4、缺少细节的后果可能是灾难性的，即使是看起来微不足道的问题都值得我们花时间去解决</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>随缘打赏，佛系产品</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/产品思维/" rel="tag"><i class="fa fa-tag"></i> 产品思维</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/际客项目切换总结.html" rel="next" title="际客项目切换总结">
+                <i class="fa fa-chevron-left"></i> 际客项目切换总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/腾讯产品法中的产品思维.html" rel="prev" title="《腾讯产品法》中的产品思维">
+                《腾讯产品法》中的产品思维 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+			avatar: 'wavatar',
+			guest_info: ['nick'],
+            placeholder: '谈谈你的看法？'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="叫我vitamin" />
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录关于产品思考的只言片语</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TopVitamin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lai-yun-qiang" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#到用户现场去观察用户，为主流用户而设计"><span class="nav-number">1.</span> <span class="nav-text">到用户现场去观察用户，为主流用户而设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简化的四大策略"><span class="nav-number">2.</span> <span class="nav-text">简化的四大策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-删除-——-去掉不必要的元素，字段等"><span class="nav-number">2.1.</span> <span class="nav-text">1. 删除 —— 去掉不必要的元素，字段等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-组织-——-将有规律的按钮或者元素组合在一起"><span class="nav-number">2.2.</span> <span class="nav-text">2. 组织 —— 将有规律的按钮或者元素组合在一起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-隐藏-—-把不重要的东西放在不容易看到的地方，避免用户分散注意力"><span class="nav-number">2.3.</span> <span class="nav-text">3. 隐藏 — 把不重要的东西放在不容易看到的地方，避免用户分散注意力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-转移-——-将元素内容转移到其他载体上"><span class="nav-number">2.4.</span> <span class="nav-text">4. 转移 —— 将元素内容转移到其他载体上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谁来面对复杂"><span class="nav-number">2.5.</span> <span class="nav-text">谁来面对复杂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文中金句"><span class="nav-number">3.</span> <span class="nav-text">文中金句</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" >Coding Pages</a></span>
+</div>
+
+<div style="margin-right:10px;display:inline-block">
+	<i class="fa fa-user-md"></i>
+	<span id="busuanzi_container_site_pv">本站访问量: <span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":85,"height":170,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+</body>
+</html>

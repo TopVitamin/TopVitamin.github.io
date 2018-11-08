@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="TAPD," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="公司经常用TAPD来进行需求管理与敏捷迭代，那么针对TAPD上的第一步需求记录应该怎么写呢？本人就做了一个小小的总结与归纳，助力产品更加方便准确地完成需求的填写！">
+<meta name="keywords" content="TAPD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从用户故事说起，谈谈我是怎么写TAPD的需求说明">
+<meta property="og:url" content="http://someword.me/从用户故事说起，谈谈我是怎么写TAPD的需求说明.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="公司经常用TAPD来进行需求管理与敏捷迭代，那么针对TAPD上的第一步需求记录应该怎么写呢？本人就做了一个小小的总结与归纳，助力产品更加方便准确地完成需求的填写！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://static.zybuluo.com/vitamin1927/az1m7kbqrtngydlw7e5i7cf6/image_1coidu7jobo61nub1vkm1r3ikbj9.png">
+<meta property="og:updated_time" content="2018-09-30T01:31:33.290Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从用户故事说起，谈谈我是怎么写TAPD的需求说明">
+<meta name="twitter:description" content="公司经常用TAPD来进行需求管理与敏捷迭代，那么针对TAPD上的第一步需求记录应该怎么写呢？本人就做了一个小小的总结与归纳，助力产品更加方便准确地完成需求的填写！">
+<meta name="twitter:image" content="http://static.zybuluo.com/vitamin1927/az1m7kbqrtngydlw7e5i7cf6/image_1coidu7jobo61nub1vkm1r3ikbj9.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://someword.me/从用户故事说起，谈谈我是怎么写TAPD的需求说明.html"/>
+
+
+
+
+
+  <title>从用户故事说起，谈谈我是怎么写TAPD的需求说明 | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+  
+   <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">someword is enough</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://someword.me/从用户故事说起，谈谈我是怎么写TAPD的需求说明.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">从用户故事说起，谈谈我是怎么写TAPD的需求说明</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-29T19:27:24+08:00">
+                2018-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品需求/" itemprop="url" rel="index">
+                    <span itemprop="name">产品需求</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>公司经常用TAPD来进行需求管理与敏捷迭代，那么针对TAPD上的第一步需求记录应该怎么写呢？本人就做了一个小小的总结与归纳，助力产品更加方便准确地完成需求的填写！</p>
+</blockquote>
+<p><img src="http://static.zybuluo.com/vitamin1927/az1m7kbqrtngydlw7e5i7cf6/image_1coidu7jobo61nub1vkm1r3ikbj9.png" alt=""></p>
+<a id="more"></a>
+<h2 id="什么是需求"><a href="#什么是需求" class="headerlink" title="什么是需求"></a>什么是需求</h2><blockquote>
+<p>需求 = User Story，用户故事是从用户角度来描述用户渴望得到的功能。 用户故事包括三个要素：</p>
+<ul>
+<li>角色：谁要使用这个功能；</li>
+<li>活动：需要完成什么样的功能；</li>
+<li>商业价值：为什么需要这个功能，这个功能带来什么样的价值。</li>
+</ul>
+</blockquote>
+<p>这些知识在我们日常的产品工作中都能接触到，大家或多或少都会理解到这个意思，但是实际做起来的时候总是发现这个功能很难做，那个东西没考虑到，然后手忙脚乱的一通补救，最后发现，做了很多没用的东西也浪费了很多时间。</p>
+<p>需求挖掘是常说的一个词汇，很多产品经理也知道要去挖掘这个需求，知道用户真正要的是什么，但是为什么还是很多人挖掘不到真正有效的需求呢？我总结一下，大概有以下2点原因：</p>
+<h2 id="认识不清楚什么是需求"><a href="#认识不清楚什么是需求" class="headerlink" title="认识不清楚什么是需求"></a>认识不清楚什么是需求</h2><p>需求的定义在上方已经说清楚了，但是很多人往往看了一眼然后就记住了一个大概就忘了，感觉需求好像就是用户需要什么，然后要求什么的，这个应该就是需求吧！</p>
+<p><strong>需求 = User Story</strong><br><strong>需求 = User Story</strong><br><strong>需求 = User Story</strong></p>
+<p>说了三遍后，我们知道了需求就是用户故事，好的，现在我们记住了：需求就是用户故事，那么用户故事是什么呢？</p>
+<h2 id="不知道什么是用户故事"><a href="#不知道什么是用户故事" class="headerlink" title="不知道什么是用户故事"></a>不知道什么是用户故事</h2><p>用户故事我们也在上面说了：「用户故事是从用户角度来描述用户渴望得到的功能。 用户故事包括三个要素……」</p>
+<p>用户故事是从用户角度来描述用户希望得到的什么功能，然后像讲故事一样说出用户的需求和期望的功能。那么这样的话，用户故事的重心又来到了——故事，这个词上面。于是我们有了用户故事的三要素，其实就是告诉我们，要怎么去讲好一个用户的故事：</p>
+<blockquote>
+<p>As a… (作为…角色或岗位)<br>I want… (我想…希望做什么)<br>So that… (以便…达到什么目的或商业价值)</p>
+</blockquote>
+<h2 id="知道了用户故事后，我们来谈谈需求沟通"><a href="#知道了用户故事后，我们来谈谈需求沟通" class="headerlink" title="知道了用户故事后，我们来谈谈需求沟通"></a>知道了用户故事后，我们来谈谈需求沟通</h2><p>一般情况下，我们公司有几种需求沟通的情况：</p>
+<ol>
+<li>口头沟通或者描述；</li>
+<li>填写需求申请表，让用户进行描述需求，然后期望怎么样；</li>
+<li>产品自己现场了解，然后记录相关需求；</li>
+<li>其他方式记录需求；</li>
+</ol>
+<p>这里的方法在不同的公司都不一样，但是大体上来说，需求的收集很多时候都是较为快捷或者是短促的，我们并没有更多的时间去针对一个需求与用户或者当事人交谈很久。于是，很多时候，我们记录了需求之后，自己想想差不多是这样的，这样搞应该没问题，然后就开始动手画流程，画原型，出文档，然后就去评审或者先评审了再去画原型和出文档。</p>
+<p>这里我想说的是需求的收集可以有多样性，但是产品一定要学会用User Story的方式来核实需求，当你用这种方法填写到TAPD里面的时候，你就可以知道这个需求大概要怎么做或者是有什么没有考虑清楚的。</p>
+<p>例如：当你要新增一个导出功能的时候，你当时可能只是想到了用户需要这个数据，然后说我要给他做一个导出功能，这样好像没问题。然后问问要导出什么字段，要什么格式等等。但是如果你没有用User Story的方式去梳理的话，有可能就会遗漏一些东西。</p>
+<p>导出功能的用户是谁？是谁提出的这个需求？没提需求的用户也是这个功能的用户么？</p>
+<p>用户想要这个功能干嘛？是想导出数据，然后制作报表，还是只是想用这些数据来看看进展或者是其他。导出功能除了要这些字段之外，是否还需要其他字段，用户使用的时候要怎么点击，然后怎么反馈？</p>
+<p>用了这个功能后用户达到了什么目的？收益是否大于开发的成本支出？这个功能是否满足了用户的需求？是否让用户提升了效率或者带来了舒适的体验感？</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>USer Story虽然简单，但是日常工作中还是很多人会忽略掉它所内含的东西，而导致需求分析不到位，产品做出来遗漏的点也会少了很多。</p>
+<p>其实正常的工作中，更应该让用户按照这种模式去提出需求，让产品经理更好的梳理这些东西！同时在需求池里面按照这样的模式填写之后，还会让开发更准确的知道开发这个的目的，同时还能根据这个思路来反推，看看产品设计的东西是否科学合理，还有没有漏洞！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>随缘打赏，佛系产品</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TAPD/" rel="tag"><i class="fa fa-tag"></i> TAPD</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/用户场景不是说说而已，你要懂得不止这些.html" rel="next" title="用户场景不是说说而已，你要懂得不止这些">
+                <i class="fa fa-chevron-left"></i> 用户场景不是说说而已，你要懂得不止这些
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/际客项目切换总结.html" rel="prev" title="际客项目切换总结">
+                际客项目切换总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+			avatar: 'wavatar',
+			guest_info: ['nick'],
+            placeholder: '谈谈你的看法？'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="叫我vitamin" />
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录关于产品思考的只言片语</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TopVitamin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lai-yun-qiang" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是需求"><span class="nav-number">1.</span> <span class="nav-text">什么是需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#认识不清楚什么是需求"><span class="nav-number">2.</span> <span class="nav-text">认识不清楚什么是需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不知道什么是用户故事"><span class="nav-number">3.</span> <span class="nav-text">不知道什么是用户故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知道了用户故事后，我们来谈谈需求沟通"><span class="nav-number">4.</span> <span class="nav-text">知道了用户故事后，我们来谈谈需求沟通</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" >Coding Pages</a></span>
+</div>
+
+<div style="margin-right:10px;display:inline-block">
+	<i class="fa fa-user-md"></i>
+	<span id="busuanzi_container_site_pv">本站访问量: <span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":85,"height":170,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+</body>
+</html>

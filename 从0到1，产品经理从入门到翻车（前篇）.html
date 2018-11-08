@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="产品入门," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="网上关于产品学习的资料真的是太多了，多到让人不知道到底谁说的是对的，那么我就想来写一个翻车系列，看看我的产品论和产品之道会不会让自己翻车，会不会让新人翻车，哈哈哈哈哈哈嗝！">
+<meta name="keywords" content="产品入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从0到1，产品经理从入门到翻车（上篇）">
+<meta property="og:url" content="http://someword.me/从0到1，产品经理从入门到翻车（前篇）.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="网上关于产品学习的资料真的是太多了，多到让人不知道到底谁说的是对的，那么我就想来写一个翻车系列，看看我的产品论和产品之道会不会让自己翻车，会不会让新人翻车，哈哈哈哈哈哈嗝！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-03T03:45:56.186Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从0到1，产品经理从入门到翻车（上篇）">
+<meta name="twitter:description" content="网上关于产品学习的资料真的是太多了，多到让人不知道到底谁说的是对的，那么我就想来写一个翻车系列，看看我的产品论和产品之道会不会让自己翻车，会不会让新人翻车，哈哈哈哈哈哈嗝！">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://someword.me/从0到1，产品经理从入门到翻车（前篇）.html"/>
+
+
+
+
+
+  <title>从0到1，产品经理从入门到翻车（上篇） | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+  
+   <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">someword is enough</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://someword.me/从0到1，产品经理从入门到翻车（前篇）.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">从0到1，产品经理从入门到翻车（上篇）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T00:17:39+08:00">
+                2017-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品入门/" itemprop="url" rel="index">
+                    <span itemprop="name">产品入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>网上关于产品学习的资料真的是太多了，多到让人不知道到底谁说的是对的，那么我就想来写一个翻车系列，看看我的产品论和产品之道会不会让自己翻车，会不会让新人翻车，哈哈哈哈哈哈嗝！</p>
+</blockquote>
+<a id="more"></a>
+<p>网上对于产品经理要必备的技能需求有很多，我就先选一个大概的比较中肯的要求给大家看看，然后加上一些自己的见解与分析，产品经理必备的技能有：</p>
+<ul>
+<li>战略</li>
+<li>沟通</li>
+<li>自我管理</li>
+<li>技术</li>
+<li>交互</li>
+<li>视觉</li>
+<li>数据</li>
+<li>市场与运营</li>
+</ul>
+<h2 id="战略"><a href="#战略" class="headerlink" title="战略"></a>战略</h2><p>做为一个产品新人，战略的问题可大可小，往大了说就是你要有野心，要有梦想，要想着带着自己的产品让公司盈利，让用户用的很爽；往小了说，战略就是你的眼光要有点长远，不要用户说1你就看到了1，研发说2你就看到了2，你要看到未来稍微远一点的东西；例如小程序火了，当时做微信公众号的时候你知道了有小程序这个东西，但是你在设计产品的时候有没有留口子，留一个渠道可以向小程序打通？你稍微想得远一点，可能就会让你的产品走的更快一点，吸引的客服更加多一点</p>
+<h2 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h2><p>关于沟通问题，其实很多人都不以为然地说自己的沟通能力不差，但是不差的反义词就是优秀吗？恐怕不是吧，沟通能力除了简单地交流沟通外，还有一部分为人处理，接人待物的成分在里面，出色的情商和教养，足够地细心或者关注身边的人或事物，会让你更快提升自己的交际能力；而沟通的问题，大多数是源自于和你沟通的人对整件事情的理解是不是偏差不太大，如果很大，你再厉害的沟通能力也会扑街，所以提升沟通能力的前提是你要对你即将讨论的问题或者事情，有一个提前的了解或者预习，否则你拿着一个你自己也不太懂的东西与别人沟通，会让双方都很累</p>
+<h2 id="自我管理"><a href="#自我管理" class="headerlink" title="自我管理"></a>自我管理</h2><p>自我管理的目的是为了让自己变得更加优秀和完美，这个不是产品经理必备的能力，应该是所有的职场人都应该需要的能力；提升自我管理能力，将帮助你提升办事的效率，强化执行能力，减少出错的概率，加强学习能力，从而让自己变得更加从容淡定，也让自己更有价值，无论在什么公司，你的价值决定了你的薪水，当然也决定了你在哪里</p>
+<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p>很多人强调产品经理其实不需要懂技术，这个技术很多人以为的是开发技术，也就是你不需要懂代码，然后很多人天真地就以为我不懂代码不懂技术我也可以做好产品经理；但是这个技术真的是代码这么简单吗？服务器是什么概念，URL是指什么，页面渲染是什么意思，前端是什么意思，缓存的作用什么，数据库的存数据是什么意思……这些难道不是技术吗？如果你连这个都不知道，人家叫你给个URL进行测试，你都懵逼半天，这样的沟通真的会没有问题吗？技术层面的东西有很多，不要以为不懂代码就可以不需要学习其他的东西，关于技术的东西解决的不仅仅的产品的问题，更多的是效率和共同语言的问题</p>
+<h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><p>很多人会经常吐槽，这个东西把按钮放在这里我都找不到，这个东西设置按钮我一直没找到，而且里面的设置内容也是不要的，给我的选择太多了；这个界面的选择太多，花花绿绿的我没有找到我要的东西，这个产品太复杂，我点这个点那个都没有用，我用这个产品就像是一个傻子一样……这些或多或少都是交互的问题，为什么iPhone的卖的这么好，仔细体验下，iPhone的交互很多地方确实对小白用户很照顾，自然而又简洁的操作，用户一用就会感觉很爽；提升交互水平的办法很简单，就是多看别人优秀的产品，同时去仿一个，仿的时候思考为什么别人要这样做。</p>
+<h2 id="视觉"><a href="#视觉" class="headerlink" title="视觉"></a>视觉</h2><p>关于视觉，其实产品要懂得应该是要比交互浅一点，因为一般的公司都是有视觉或者是UI设计的，而产品要做的就是大概主流的审美和一些不是很辣眼睛的操作，否则就会让你的队友喷你太low了；视觉的能力其实和交互是一起的，没有人天生就对交互或者视觉很懂，很时尚，他们都是从零基础一点点提升自己的，所以多去看优秀的作品。多去思考别人好的地方在哪里，这是提升自己交互和视觉能力的最快办法</p>
+<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p>对于一个产品新人来说，往往很容易忽视的地方就是数据，因为数据这个词包含的内容有很多，新人们往往不太确定自己要的数据是什么，而这些数据真的有什么用途呢？没有经验的新人是不太能把握数据的，所以一些必要的数据一定要去掌握，一般地有这么几个数据很关键：</p>
+<ul>
+<li>用户画像数据 – 了解用户的来源与分类等信息</li>
+<li>产品访问数据 – 知道产品的访问量，浏览量，知道这个产品是否受欢迎</li>
+<li>营销数据 – 了解用户对其他潜在产品的关注程度，方便研发下一个新产品</li>
+<li>其他数据 – 公司业务不一样，这点算是杂七杂八的数据吧</li>
+</ul>
+<h2 id="市场与运营"><a href="#市场与运营" class="headerlink" title="市场与运营"></a>市场与运营</h2><p>任何产品研发出来之后还是要到用户，也就是产品经理不仅要在开始前与用户打交道，产品上线后也要与用户打交道。公司与用户接触面最广的应该是市场或者营销部门，而产品经理需要经常性的走动与这些部门沟通了解，因为与用户接触越多，它们才会更加知道用户的想法与需求；除了这层外，产品如何销售出去，如何推广出去，产品经理有必要知道一些常用的销售手段与策略，同时自己也要兼顾着去了解并且改善相关的一些营销方式。因为产品的「使用者」除了用户，还有我们的同事们</p>
+<p>以上分析了一些网络上对于产品经理技能的要求，这样的文章千篇一律，写起来真的是又干有乏味，没有辣味也没有酸味，实在是不好恰，不好恰。但是往往很干的东西，就是因为它太过度地压缩了精华在里面，希望大家看看这篇‘干’货后，会对产品有一个稍微的了解或者是认识，同时也对未来的工作有一定的方向把握</p>
+<p>接下来，得要慢慢地进入干货阶段或者是翻车现场，请各位新司机老司机做好准备，抓紧扶手，谨防摔伤，我们下篇见！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>随缘打赏，佛系产品</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/产品入门/" rel="tag"><i class="fa fa-tag"></i> 产品入门</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/一图胜千言，来自一个产品大佬的心得体会.html" rel="next" title="一图胜千言，来自一个产品大佬的心得体会">
+                <i class="fa fa-chevron-left"></i> 一图胜千言，来自一个产品大佬的心得体会
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Git命令总结.html" rel="prev" title="Git命令总结">
+                Git命令总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+			avatar: 'wavatar',
+			guest_info: ['nick'],
+            placeholder: '谈谈你的看法？'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="叫我vitamin" />
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录关于产品思考的只言片语</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TopVitamin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lai-yun-qiang" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#战略"><span class="nav-number">1.</span> <span class="nav-text">战略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#沟通"><span class="nav-number">2.</span> <span class="nav-text">沟通</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自我管理"><span class="nav-number">3.</span> <span class="nav-text">自我管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术"><span class="nav-number">4.</span> <span class="nav-text">技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交互"><span class="nav-number">5.</span> <span class="nav-text">交互</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视觉"><span class="nav-number">6.</span> <span class="nav-text">视觉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据"><span class="nav-number">7.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#市场与运营"><span class="nav-number">8.</span> <span class="nav-text">市场与运营</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" >Coding Pages</a></span>
+</div>
+
+<div style="margin-right:10px;display:inline-block">
+	<i class="fa fa-user-md"></i>
+	<span id="busuanzi_container_site_pv">本站访问量: <span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":85,"height":170,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+</body>
+</html>

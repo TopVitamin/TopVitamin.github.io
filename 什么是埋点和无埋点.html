@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="产品," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言 现在的互联网圈子随处可见的各种名词，或新或久，或有理或无理，越来越让人感觉高深和牛逼，所以这也让一些没入门的圈外人望而却步，让深陷其中的内行人乐此不疲地继续创造新名词，筑高行业壁垒，提升自我竞争力。本来摘自网络，篇幅上做了修建和自我认知的批注，只做个人收藏学习之用，想要了解更多可以点击此处查看原文。">
+<meta name="keywords" content="产品">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是埋点和无埋点">
+<meta property="og:url" content="http://someword.me/什么是埋点和无埋点.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="前言 现在的互联网圈子随处可见的各种名词，或新或久，或有理或无理，越来越让人感觉高深和牛逼，所以这也让一些没入门的圈外人望而却步，让深陷其中的内行人乐此不疲地继续创造新名词，筑高行业壁垒，提升自我竞争力。本来摘自网络，篇幅上做了修建和自我认知的批注，只做个人收藏学习之用，想要了解更多可以点击此处查看原文。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-03T02:16:21.981Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="什么是埋点和无埋点">
+<meta name="twitter:description" content="前言 现在的互联网圈子随处可见的各种名词，或新或久，或有理或无理，越来越让人感觉高深和牛逼，所以这也让一些没入门的圈外人望而却步，让深陷其中的内行人乐此不疲地继续创造新名词，筑高行业壁垒，提升自我竞争力。本来摘自网络，篇幅上做了修建和自我认知的批注，只做个人收藏学习之用，想要了解更多可以点击此处查看原文。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://someword.me/什么是埋点和无埋点.html"/>
+
+
+
+
+
+  <title>什么是埋点和无埋点 | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+  
+   <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">someword is enough</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://someword.me/什么是埋点和无埋点.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">什么是埋点和无埋点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T18:00:23+08:00">
+                2017-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>现在的互联网圈子随处可见的各种名词，或新或久，或有理或无理，越来越让人感觉高深和牛逼，所以这也让一些没入门的圈外人望而却步，让深陷其中的内行人乐此不疲地继续创造新名词，筑高行业壁垒，提升自我竞争力。本来摘自网络，篇幅上做了修建和自我认知的批注，只做个人收藏学习之用，想要了解更多可以<a href="http://www.chinawebanalytics.cn/auto-event-tracking-good-bad-ugly/" target="_blank" rel="noopener">点击此处查看原文。</a></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="什么是监测代码、SDK和埋点"><a href="#什么是监测代码、SDK和埋点" class="headerlink" title="什么是监测代码、SDK和埋点"></a>什么是监测代码、SDK和埋点</h2><p>　我们知道，我们能够监测网站上用户的行为，或者app上用户的行为，是需要在网站的每一页或者app中加上一些程序代码的（这里就不考虑日志分析这种方法了）。这样的程序代码，在网站上叫监测代码，在app中叫SDK（Software Development Kit）。无论你是要监测网站，还是要监测app，你都必须加上这类代码，不加代码就收集不到数据。</p>
+<p>　　<strong>所以，埋点不埋点跟你在网站上或者app上加代码是无关的，无论是埋点方法，还是不埋点方法，你想要对一个网站或者app进行用户数据的收集，你都必须要加监测代码，毫无例外。</strong>（也就是说埋点与不埋点其实都需要有基础的的监测代码）</p>
+<p>　　那么，“无埋点”又是什么，其中的“点”又是什么，为什么不需要埋？为了说明无埋点，我们必须先讲讲埋点。</p>
+<p>　　谈到埋点，跟我们在网站上或者app上的监测需求有关。刚才我们讲的那些监测代码，虽然是为了收集数据必须要加的，但是只能叫做基础代码。基础代码不能不加，但是你要想收集到所有用户行为的数据，光有基础代码又是不够的。简单讲，无论是网站上，还是app上（尤其是app上），总有一些特殊的用户操作行为是不能靠基础代码捕获的。</p>
+<p>　　这一类基础代码不能捕获的用户操作行为，最典型的，是被称为event（事件）的一类行为。对于什么是event（事件），在网页上，是那些非http类型的交互：JavaScript的、Flash的、Silverlight的、AJAX的、各种页面插件的交互等等；而在app上，则包含用户点击在内的所有交互。你可以直接理解一个规律，那就是凡是遵守http协议的交互（最典型的就是网页的链接），皆是可以由基础监测代码直接监测到数据的，但非http类型的用户交互，基础监测代码都无能为力。至于app上的所有可点击交互都是event并不难理解，因为app不遵循http协议，所以基础监测代码对它们都无效。</p>
+<p>　　每一个需要我们监测的event互动，都被称为一个“监测点”，你可以想象，web上的监测点不会特别多（因为大部分都是http互动，所以基础代码能搞定），而app上则布满了监测点。为了让这些监测点上的用户互动行为数据被我们收集到，我们必须在这些监测点上部署上专用的事件监测代码（即event tracking code），这些代码需要手工一个一个添加在想要获取数据的监测点上。这个过程被形象化的称为埋点。在我的博客中，埋点相关的内容经常出现，只不过我使用了更为准确的表述——event tracking部署，或事件监测部署。没错，埋点就是我常常讲的事件监测部署，完全不是一个新鲜的事物。</p>
+<p>　　那么，有的读者朋友脑洞大开，说，我只想监测那些event，是不是直接做事件监测（埋点）就可以了，而不需要加基础代码了？所以这里涉及到另外一个规律：事件监测（埋点）只有在基础代码工作的情况下才能发挥作用，并且各家数据监测工具的基础代码只能用它们自家的event监测。这意味着，你想用Google Analytics的事件监测，前提是你必须已经在页面上部署好了Google Analytics基础监测代码（被称为GATC，Google Analytics Tracking Code），不能不部署基础代码，也不能部署别家的基础代码。</p>
+<h2 id="无埋点的问题"><a href="#无埋点的问题" class="headerlink" title="无埋点的问题"></a>无埋点的问题</h2><p>前面下了定论，无埋点不是革命，但确实非常有价值，在使用体验上有显著优于传统事件监测（埋点）部署方法的地方。但，这并不意味着这种方法完美无缺，传统埋点的方法也不能完全被取代。</p>
+<p><strong>无埋点方法有几个值得关注的缺陷</strong></p>
+<p>　　其一：用户的交互行为，如果没有具体的“地点”，无埋点方法不适用。比如，用户上滑屏幕时内容瀑布流的底部载入新的内容（像网易新闻、今日头条之类），这种交互用户可以一直进行下去，但却没有一个明确的监测点位置。在可视化事件监测设置的界面上你找不到这类交互，因为这类交互是不可见的。</p>
+<p>　　其二：可视化的无埋点部署，能够为交互行为设置的属性是非常有限的。所谓交互行为的属性，用人话来说，就是对这个交互行为背后的信息进行记录，或者添加说明。一般的无埋点部署，只能给交互行为起一个名字，然后机械的记录这个交互行为发生的次数。但是一个交互行为可能带有很多属性，比如，点击播放一个视频，交互行为就是一个播放，但播放的背后，我们还想知道这个视频的名字、视频的类别、视频的作者等等信息。可视化的无埋点部署记录不了这么多内容。而埋点方法（传统的事件监测方法），则可以非常好的添加event背后的属性，例如Google Analytics支持为每个event添加6个属性，这样在数据的维度上，能够大大扩展事件追踪报告的效能。</p>
+<p>　　其三：行为数据的分类汇总。埋点方法因为带有多个属性，用户可以轻松的通过这些属性进行分类数据报告的读取。比如，刚才讲的那个例子，视频的类别就是一个分类型的属性。我们读取报告的时候，可以把某个分类的视频的event数据一次性全部展现在报告中，而不需要手动一个一个去汇总。而无埋点方法因为缺少对行为属性的标识，因此做不同event的分类汇总数据，要麻烦得多，并且必须得手动一个一个添加。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>　　1.无埋点不是不加代码。如果你想监测数据，无论什么情况，都必须添加监测工具的基础监测代码。并且每个页面都要加，每个app也都要加。</p>
+<p>　　2.无埋点并非2016年才出现的新事物，早已有之，但最近才被炒起来。它不神秘，很简单，但很有用。</p>
+<p>　　3.埋点这种传统方法仍然具有很多优势，无埋点不能完全取代埋点。至少现在不可以。</p>
+<p>　　4.无埋点方法目前有很多升级解决方案，以弥补目前一般无埋点存在的缺陷。</p>
+<p>　　5.无埋点的真正准确说法，应该是：<strong>可视化事件监测部署。</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>随缘打赏，佛系产品</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/产品/" rel="tag"><i class="fa fa-tag"></i> 产品</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/关于写PRD的一些思路整理.html" rel="next" title="关于写PRD的一些思路与感悟">
+                <i class="fa fa-chevron-left"></i> 关于写PRD的一些思路与感悟
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/中小型团队产品开发自检表.html" rel="prev" title="中小型团队产品开发设计自检表">
+                中小型团队产品开发设计自检表 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+			avatar: 'wavatar',
+			guest_info: ['nick'],
+            placeholder: '谈谈你的看法？'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="叫我vitamin" />
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录关于产品思考的只言片语</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TopVitamin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lai-yun-qiang" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是监测代码、SDK和埋点"><span class="nav-number">2.</span> <span class="nav-text">什么是监测代码、SDK和埋点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无埋点的问题"><span class="nav-number">3.</span> <span class="nav-text">无埋点的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" >Coding Pages</a></span>
+</div>
+
+<div style="margin-right:10px;display:inline-block">
+	<i class="fa fa-user-md"></i>
+	<span id="busuanzi_container_site_pv">本站访问量: <span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":85,"height":170,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+</body>
+</html>

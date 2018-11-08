@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="产品," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言 该产品开发自检表主要是用于设计初衷和后期测试的时候使用。对于小公司，小团队来说，敏捷开发+直接沟通是最高的效率，但是为了避免高效下出现存在逻辑的瑕疵和BUG的情况，制定一份产品设计自检表还是很有必要的啦！">
+<meta name="keywords" content="产品">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中小型团队产品开发设计自检表">
+<meta property="og:url" content="http://someword.me/中小型团队产品开发自检表.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="前言 该产品开发自检表主要是用于设计初衷和后期测试的时候使用。对于小公司，小团队来说，敏捷开发+直接沟通是最高的效率，但是为了避免高效下出现存在逻辑的瑕疵和BUG的情况，制定一份产品设计自检表还是很有必要的啦！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-03T02:16:21.981Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="中小型团队产品开发设计自检表">
+<meta name="twitter:description" content="前言 该产品开发自检表主要是用于设计初衷和后期测试的时候使用。对于小公司，小团队来说，敏捷开发+直接沟通是最高的效率，但是为了避免高效下出现存在逻辑的瑕疵和BUG的情况，制定一份产品设计自检表还是很有必要的啦！">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://someword.me/中小型团队产品开发自检表.html"/>
+
+
+
+
+
+  <title>中小型团队产品开发设计自检表 | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+  
+   <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">someword is enough</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://someword.me/中小型团队产品开发自检表.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">中小型团队产品开发设计自检表</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-16T23:10:23+08:00">
+                2017-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/产品/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>该产品开发自检表主要是用于设计初衷和后期测试的时候使用。对于小公司，小团队来说，敏捷开发+直接沟通是最高的效率，但是为了避免高效下出现存在逻辑的瑕疵和BUG的情况，制定一份产品设计自检表还是很有必要的啦！</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="一、产品设计"><a href="#一、产品设计" class="headerlink" title="一、产品设计"></a>一、产品设计</h2><h3 id="1-设备相关、系统相关、版本相关"><a href="#1-设备相关、系统相关、版本相关" class="headerlink" title="1. 设备相关、系统相关、版本相关"></a>1. 设备相关、系统相关、版本相关</h3><ul>
+<li>浏览器分辨率，手机分辨率，大小屏问题</li>
+<li>系统版本，例如微信的版本，iOS系统的版本，安卓的版本</li>
+<li>设备区分，例如ipad上访问，火狐浏览器与一些非主流浏览器访问</li>
+</ul>
+<h3 id="2-动作与状态"><a href="#2-动作与状态" class="headerlink" title="2. 动作与状态"></a>2. 动作与状态</h3><ul>
+<li>响应方式，页面直接跳转响应或者进行动画响应</li>
+<li>加载时间，时间过长时提示语，状态等信息</li>
+<li>操作方式，单击，右击，双击，滑动，长按等</li>
+</ul>
+<h3 id="3-数据展现"><a href="#3-数据展现" class="headerlink" title="3. 数据展现"></a>3. 数据展现</h3><ul>
+<li>数据为空态时，提示语是否完善或者直接不显示</li>
+<li>大量数据，例如用户名字过长，课程班级或者其他商品标题过长怎么展示</li>
+<li>网络数据过多时，加载过慢，响应时间过久，需要给予反馈</li>
+</ul>
+<h3 id="4-用户个人属性"><a href="#4-用户个人属性" class="headerlink" title="4. 用户个人属性"></a>4. 用户个人属性</h3><ul>
+<li>未登录状态，可以操作哪些，页面展示的信息与已登录有何不同</li>
+<li>登录状态，登录后展示信息，可操作内容有多少</li>
+<li>未登录 =&gt; 登录，在什么地方提示登录，登录界面是弹出层还是跳转新页面，登录方式是账号密码还是可以进行手机或者其他授权登录</li>
+</ul>
+<h3 id="5-网络相关"><a href="#5-网络相关" class="headerlink" title="5. 网络相关"></a>5. 网络相关</h3><ul>
+<li>网络慢时，加载信息时进行提示</li>
+<li>网络中断时，页面进行报错或者提示</li>
+<li>网络超时，信息提示，引导刷新重试</li>
+</ul>
+<h3 id="6-特殊情景"><a href="#6-特殊情景" class="headerlink" title="6. 特殊情景"></a>6. 特殊情景</h3><ul>
+<li>无图模式，是否有加载相关的缓存图片或者预设图片</li>
+<li>夜间模式，考虑夜间模式下的效果以及切换是否快速简便</li>
+<li>编辑模式，编辑状态下是否可以随时保存，保存后页面是否跳转或者不变 </li>
+</ul>
+<h2 id="二、运营"><a href="#二、运营" class="headerlink" title="二、运营"></a>二、运营</h2><h3 id="1-数据埋点"><a href="#1-数据埋点" class="headerlink" title="1. 数据埋点"></a>1. 数据埋点</h3><ul>
+<li>核心页面，是否存在数据统计代码，是否存在分析代码</li>
+<li>业务统计，是否足够方便市场运营足够了解我们的用户，例如给用户贴标签，给用户分类，分析用户的特征</li>
+</ul>
+<h3 id="2-客户反馈"><a href="#2-客户反馈" class="headerlink" title="2. 客户反馈"></a>2. 客户反馈</h3><ul>
+<li>显而易见的客服按钮，用户足够快速方便的了解到我们的产品，客服解答按钮或者操作足够简易</li>
+<li>另外的沟通渠道，客户除了与客服直接沟通交流，有没有其他渠道与我们进行沟通反馈，例如：问答系统</li>
+</ul>
+<h3 id="3-新用户粘性"><a href="#3-新用户粘性" class="headerlink" title="3. 新用户粘性"></a>3. 新用户粘性</h3><ul>
+<li>设置免费或者优惠产品，新用户体现不一样的特征，页面风格或者弹窗提示等</li>
+<li>新用户界面信息反馈有特殊性，个人中心等加入新人专属等信息</li>
+</ul>
+<h3 id="4-再次光顾"><a href="#4-再次光顾" class="headerlink" title="4. 再次光顾"></a>4. 再次光顾</h3><ul>
+<li>学习或者使用后退出的时候，加入提示语句，例如：才学一会会，你真的就要退出吗？ 好货不等人，你确定要退出吗？</li>
+<li>购买完产品后提示，是否还需要其他相关产品，提示完善个人信息等</li>
+</ul>
+<h2 id="三、系统的需求"><a href="#三、系统的需求" class="headerlink" title="三、系统的需求"></a>三、系统的需求</h2><h3 id="1-安全性需求"><a href="#1-安全性需求" class="headerlink" title="1.安全性需求"></a>1.安全性需求</h3><ul>
+<li>保障用户的信息安全，让用户安心的完善他的信息而不担心会出问题，同时也让用户安心地可以使用我们的产品</li>
+<li>账户的安全，例如修改密码的时候需要验证其他信息，支付的时候的安全，还有账号密码登录的时候错误过多可以进行适当性的提示，是否需要帮助</li>
+</ul>
+<h3 id="2-内容的反馈"><a href="#2-内容的反馈" class="headerlink" title="2.内容的反馈"></a>2.内容的反馈</h3><ul>
+<li>用户对产品的内容是持什么观点，教育类来说，教学是否太枯燥，视频过长，内容怎么样？</li>
+<li>对于信息类或者电商等，新功能上线展示的内容是不是不够人性化不够智能，是否对客户造成了骚扰还是提升</li>
+</ul>
+<h2 id="四、其他（优化与迭代）"><a href="#四、其他（优化与迭代）" class="headerlink" title="四、其他（优化与迭代）"></a>四、其他（优化与迭代）</h2><h3 id="1-反复使用"><a href="#1-反复使用" class="headerlink" title="1. 反复使用"></a>1. 反复使用</h3><ul>
+<li><p>一款产品刚刚问世，除了测试功能的东西外，更多的是人性化的考虑和结合公司内部的具体情况进行相关改变，例如：市场反馈觉得，这个按钮太小了，颜色不够吸引人，入口文字提示不够人性化等</p>
+</li>
+<li><p>有些需求与功能是突然的灵光乍现，而需要有灵光，首先需要以一个小白身份或者是第一次新用户的身份去体验我们的产品，才能发现更多的灵感；用户的痛点，痒点，兴奋点</p>
+</li>
+</ul>
+<h3 id="2-自我批判与竞品体验"><a href="#2-自我批判与竞品体验" class="headerlink" title="2. 自我批判与竞品体验"></a>2. 自我批判与竞品体验</h3><ul>
+<li><p>任何的改版除了迎合市场的需求，业务的发展，还有一部分就是来自于自我的批判。对界面千篇一律感觉不满意，改；对逻辑感觉不够流畅不够完善，改；对业务不够清晰，不够直白，改；用一个批判的心理去看待产品，促使自己做的好，做的更好</p>
+</li>
+<li><p>多去体验别人的产品，看看一个相关的功能，别人是怎么做的，自己是怎么做的。用心体验，细致分析</p>
+</li>
+</ul>
+<h2 id="五、结束"><a href="#五、结束" class="headerlink" title="五、结束"></a>五、结束</h2><p>本文仅针对小团队小企业的产品自检，有很多遗漏的地方，需要慢慢优化与调整，相信大多数小公司团队都是以业务优先的，所以产品好不好，业务有发言权；所以，多听听业务人员的反馈吧！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>随缘打赏，佛系产品</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/产品/" rel="tag"><i class="fa fa-tag"></i> 产品</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/什么是埋点和无埋点.html" rel="next" title="什么是埋点和无埋点">
+                <i class="fa fa-chevron-left"></i> 什么是埋点和无埋点
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/授人以鱼不如授人以渔.html" rel="prev" title="授人以鱼不如授人以渔，要鱼还是渔？">
+                授人以鱼不如授人以渔，要鱼还是渔？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+			avatar: 'wavatar',
+			guest_info: ['nick'],
+            placeholder: '谈谈你的看法？'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="叫我vitamin" />
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录关于产品思考的只言片语</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TopVitamin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lai-yun-qiang" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、产品设计"><span class="nav-number">2.</span> <span class="nav-text">一、产品设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-设备相关、系统相关、版本相关"><span class="nav-number">2.1.</span> <span class="nav-text">1. 设备相关、系统相关、版本相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-动作与状态"><span class="nav-number">2.2.</span> <span class="nav-text">2. 动作与状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数据展现"><span class="nav-number">2.3.</span> <span class="nav-text">3. 数据展现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-用户个人属性"><span class="nav-number">2.4.</span> <span class="nav-text">4. 用户个人属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-网络相关"><span class="nav-number">2.5.</span> <span class="nav-text">5. 网络相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-特殊情景"><span class="nav-number">2.6.</span> <span class="nav-text">6. 特殊情景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、运营"><span class="nav-number">3.</span> <span class="nav-text">二、运营</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数据埋点"><span class="nav-number">3.1.</span> <span class="nav-text">1. 数据埋点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-客户反馈"><span class="nav-number">3.2.</span> <span class="nav-text">2. 客户反馈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-新用户粘性"><span class="nav-number">3.3.</span> <span class="nav-text">3. 新用户粘性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-再次光顾"><span class="nav-number">3.4.</span> <span class="nav-text">4. 再次光顾</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、系统的需求"><span class="nav-number">4.</span> <span class="nav-text">三、系统的需求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安全性需求"><span class="nav-number">4.1.</span> <span class="nav-text">1.安全性需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-内容的反馈"><span class="nav-number">4.2.</span> <span class="nav-text">2.内容的反馈</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、其他（优化与迭代）"><span class="nav-number">5.</span> <span class="nav-text">四、其他（优化与迭代）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-反复使用"><span class="nav-number">5.1.</span> <span class="nav-text">1. 反复使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-自我批判与竞品体验"><span class="nav-number">5.2.</span> <span class="nav-text">2. 自我批判与竞品体验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、结束"><span class="nav-number">6.</span> <span class="nav-text">五、结束</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" >Coding Pages</a></span>
+</div>
+
+<div style="margin-right:10px;display:inline-block">
+	<i class="fa fa-user-md"></i>
+	<span id="busuanzi_container_site_pv">本站访问量: <span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":85,"height":170,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+</body>
+</html>
