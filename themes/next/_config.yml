@@ -637,5 +637,11 @@ version: 5.1.1
 # 文章末尾添加“本文结束”标记
 passage_end_tag:
   enabled: true
+# 添加打赏功能
+reward_comment: 随缘打赏，佛系产品
+wechatpay: /images/wechatreward.jpg
+alipay: /images/alipayreward.jpg
 
-
+# ShareSDK 控制是否可以分享
+sharesdk: false
+shareSDKappkey: 28a4b88c43d84

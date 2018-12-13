@@ -5,7 +5,7 @@
 # Site
 title: 只言片语
 subtitle: someword is enough
-description: 走走停停，不忘学习
+description: 记录关于产品思考的只言片语
 author: 叫我vitamin
 language: zh-Hans
 timezone:
@@ -14,7 +14,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://someword.me
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title.html
 permalink_defaults:
 
 # Directory
