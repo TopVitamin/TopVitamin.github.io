@@ -108,15 +108,15 @@
 <meta property="og:site_name" content="只言片语">
 <meta property="og:description" content="记录一下网上收集的SS的一些教程，防止每次都需要去别的地方找来找去啦，同时也可以对自己已有的知识进行一个归类和整理，虽然写技术教程真的很花时间，而且很繁琐。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2018/12/13/5c1228d1cb5b1.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/12/19/5c1a05f0cf21b.jpg">
 <meta property="og:image" content="https://www.wmsoho.com/wp-content/uploads/438f91b7c41f67689ce28eae3a467cd9.png">
 <meta property="og:image" content="https://www.wmsoho.com/wp-content/uploads/48cb97a23c97981d6c51bbb9e97a569b.png">
 <meta property="og:image" content="https://www.wmsoho.com/wp-content/uploads/8a096bb81ccd41d685e1b6df34895c00.png">
-<meta property="og:updated_time" content="2018-12-13T09:43:09.346Z">
+<meta property="og:updated_time" content="2018-12-19T09:00:02.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shadowsocks搭建的一些记录">
 <meta name="twitter:description" content="记录一下网上收集的SS的一些教程，防止每次都需要去别的地方找来找去啦，同时也可以对自己已有的知识进行一个归类和整理，虽然写技术教程真的很花时间，而且很繁琐。">
-<meta name="twitter:image" content="https://i.loli.net/2018/12/13/5c1228d1cb5b1.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2018/12/19/5c1a05f0cf21b.jpg">
 
 
 
@@ -374,10 +374,10 @@
       
 
       
-        <blockquote>
+        <p><img src="https://i.loli.net/2018/12/19/5c1a05f0cf21b.jpg" alt="pawel-czerwinski-710838-unsplash.jpg"></p>
+<blockquote>
 <p>记录一下网上收集的SS的一些教程，防止每次都需要去别的地方找来找去啦，同时也可以对自己已有的知识进行一个归类和整理，虽然写技术教程真的很花时间，而且很繁琐。</p>
 </blockquote>
-<p><img src="https://i.loli.net/2018/12/13/5c1228d1cb5b1.jpg" alt="1544693953(1).jpg"></p>
 <a id="more"></a>
 <h2 id="1、准备工作"><a href="#1、准备工作" class="headerlink" title="1、准备工作"></a>1、准备工作</h2><p>首先准备一台海外的VPS一台，同时用Xshell连接上，系统的话建议用centOS6+就OK。</p>
 <p>至于VPS的话，可以考虑搬瓦工，vultr，GCP，或者其他的VPS服务商，随意即可。</p>
@@ -407,12 +407,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh</span><br><span class="line">chmod +x shadowsocks-all.sh</span><br><span class="line">./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure>
 <p><strong>安装完成后，脚本提示如下：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Congratulations, your_shadowsocks_version install completed!</span><br><span class="line">Your Server IP        :your_server_ip</span><br><span class="line">Your Server Port      :your_server_port</span><br><span class="line">Your Password         :your_password</span><br><span class="line">Your Encryption Method:your_encryption_method</span><br><span class="line"></span><br><span class="line">Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)</span><br><span class="line"> ss://your_encryption_method:your_password@your_server_ip:your_server_port</span><br><span class="line">Your QR Code has been saved as a PNG file path:</span><br><span class="line"> your_path.png</span><br><span class="line"></span><br><span class="line">Welcome to visit:https://teddysun.com/486.html</span><br><span class="line">Enjoy it!</span><br></pre></td></tr></table></figure>
-<p><strong>卸载方法：</strong></p>
-<p>若已安装多个版本，则卸载时也需多次运行（每次卸载一种）</p>
+<p><strong>卸载方法：</strong><br>若已安装多个版本，则卸载时也需多次运行（每次卸载一种）</p>
 <p>使用root用户登录，运行以下命令：</p>
 <p><code>./shadowsocks-all.sh uninstall</code></p>
-<p><strong>启动脚本：</strong></p>
-<p>启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。</p>
+<p><strong>启动脚本：</strong><br>启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。</p>
 <p>Shadowsocks-Python 版：<br>/etc/init.d/shadowsocks-python start | stop | restart | status</p>
 <p>ShadowsocksR 版：<br>/etc/init.d/shadowsocks-r start | stop | restart | status</p>
 <p>Shadowsocks-Go 版：<br>/etc/init.d/shadowsocks-go start | stop | restart | status</p>
@@ -421,6 +419,8 @@
 <p>ShadowsocksR 版：<br>/etc/shadowsocks-r/config.json</p>
 <p>Shadowsocks-Go 版：<br>/etc/shadowsocks-go/config.json</p>
 <p>Shadowsocks-libev 版：<br>/etc/shadowsocks-libev/config.json</p>
+<h2 id="4、客户端的下载"><a href="#4、客户端的下载" class="headerlink" title="4、客户端的下载"></a>4、客户端的下载</h2><p>SSR windows客户端，安卓端；SS windows客户端，安卓端；MAC和iOS省略，具体的可以google查一下！<br>SS客户端：<a href="https://crifan.github.io/scientific_network_summary/website/server_client_mode/ss_client/" target="_blank" rel="noopener">https://crifan.github.io/scientific_network_summary/website/server_client_mode/ss_client/</a></p>
+<p>SSR客户端：<a href="http://www.aloneray.com/354.html" target="_blank" rel="noopener">http://www.aloneray.com/354.html</a></p>
 
       
     </div>
@@ -664,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、准备工作"><span class="nav-number">1.</span> <span class="nav-text">1、准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、运行BBR脚本"><span class="nav-number">2.</span> <span class="nav-text">2、运行BBR脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、-安装SS"><span class="nav-number">3.</span> <span class="nav-text">3、 安装SS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、准备工作"><span class="nav-number">1.</span> <span class="nav-text">1、准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、运行BBR脚本"><span class="nav-number">2.</span> <span class="nav-text">2、运行BBR脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、-安装SS"><span class="nav-number">3.</span> <span class="nav-text">3、 安装SS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、客户端的下载"><span class="nav-number">4.</span> <span class="nav-text">4、客户端的下载</span></a></li></ol></div>
             
 
           </div>
