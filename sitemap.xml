@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://someword.me/about/index.html</loc>
+    
+    <lastmod>2019-01-08T02:43:08.581Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://someword.me/shadowsock%E6%90%AD%E5%BB%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95.html</loc>
     
     <lastmod>2018-12-26T01:57:33.959Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://someword.me/categories/index.html</loc>
     
     <lastmod>2018-11-06T03:45:16.609Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://someword.me/about/index.html</loc>
-    
-    <lastmod>2018-11-06T03:45:03.113Z</lastmod>
     
   </url>
   
