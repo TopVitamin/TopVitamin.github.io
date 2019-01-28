@@ -6,7 +6,7 @@
 favicon: images/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "产品经理,产品思维,只言片语,供应链产品"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -33,11 +33,13 @@ copyright: false
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
-# subtitle: Subtitle
-index_with_subtitle: false
+
+#subtitle: Subtitle
+index_with_subtitle: true
+
 
 
 # ---------------------------------------------------------------
@@ -53,6 +55,7 @@ menu:
   tags: /tags/
   categories: /categories/
   about: /about/
+  nav: /nav/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -72,6 +75,7 @@ menu_icons:
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
+  nav: chrome
 
 
 # ---------------------------------------------------------------

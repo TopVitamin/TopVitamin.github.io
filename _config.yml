@@ -4,8 +4,8 @@
 
 # Site
 title: 只言片语
-subtitle: someword is enough
-description: 记录关于产品思考的只言片语
+subtitle: 记录产品工作及思考的点滴
+description: 只言片语是产品经理@vitamin日常产品工作的总结而搭建的博客，在这里你可以了解到一个产品人的思维方式，工作方式以及产品观念。
 author: 叫我vitamin
 language: zh-Hans
 timezone:
@@ -25,7 +25,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: nav/**
 
 # Writing
 new_post_name: :title.md # File name of new posts

@@ -6,11 +6,9 @@ categories: 技术相关
 
 ---
 
+![pawel-czerwinski-710838-unsplash.jpg](https://i.loli.net/2018/12/19/5c1a05f0cf21b.jpg)
+
 > 记录一下网上收集的SS的一些教程，防止每次都需要去别的地方找来找去啦，同时也可以对自己已有的知识进行一个归类和整理，虽然写技术教程真的很花时间，而且很繁琐。
-
-
-![1544693953(1).jpg](https://i.loli.net/2018/12/13/5c1228d1cb5b1.jpg)
-
 
 <!--more-->
 
@@ -26,7 +24,7 @@ categories: 技术相关
 
 通过脚本一键升级内核并安装BBR加速。
 
-Linux系统中root用户拥有最高权限,，同时考虑到一些兼容性和权限的问题你，建议先切换到root用户,，否则运行某些命令时会提示无权限。
+Linux系统中root用户拥有最高权限，同时考虑到一些兼容性和权限的问题你，建议先切换到root用户，否则运行某些命令时会提示无权限。
 
 先切换到root用户，Xshell连上服务器后, 输入命令：
 
@@ -108,7 +106,6 @@ Enjoy it!
 
 ```
 **卸载方法：**
-
 若已安装多个版本，则卸载时也需多次运行（每次卸载一种）
 
 使用root用户登录，运行以下命令：
@@ -116,7 +113,6 @@ Enjoy it!
 `./shadowsocks-all.sh uninstall`
 
 **启动脚本：**
-
 启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。
 
 Shadowsocks-Python 版：
@@ -144,4 +140,9 @@ Shadowsocks-Go 版：
 Shadowsocks-libev 版：
 /etc/shadowsocks-libev/config.json
 
+## 4、客户端的下载
 
+SSR windows客户端，安卓端；SS windows客户端，安卓端；MAC和iOS省略，具体的可以google查一下！
+SS客户端：https://crifan.github.io/scientific_network_summary/website/server_client_mode/ss_client/
+
+SSR客户端：http://www.aloneray.com/354.html
