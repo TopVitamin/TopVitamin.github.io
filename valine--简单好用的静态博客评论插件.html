@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -26,8 +26,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -45,7 +45,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -79,21 +79,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="博客," />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="博客,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1">
 
 
 
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="http://someword.me/valine--简单好用的静态博客评论插件.html"/>
+  <link rel="canonical" href="http://someword.me/valine--简单好用的静态博客评论插件.html">
 
 
 
@@ -178,7 +178,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">只言片语</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +208,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -218,7 +218,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -228,7 +228,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -238,7 +238,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -248,7 +248,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -258,7 +258,7 @@
         <li class="menu-item menu-item-nav">
           <a href="/nav/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br>
             
             作品
           </a>
@@ -297,7 +297,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叫我vitamin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -333,7 +333,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -383,23 +383,28 @@
 <p>网上看了好几个关于valine的帖子都有点漏洞和BUG，所以自己把踩过的坑都拿出来记录一下！</p>
 </blockquote>
 <a id="more"></a>
+
 <h2 id="Valine简介"><a href="#Valine简介" class="headerlink" title="Valine简介"></a>Valine简介</h2><p><strong>Valine</strong>(<a href="https://valine.js.org/" target="_blank" rel="noopener">官网</a>)是一款基于<a href="http://leancloud.cn/" target="_blank" rel="noopener">Leancloud</a>的快速、简洁且高效的无后端评论系统。</p>
 <blockquote>
 <p>配置和使用在官网都有介绍，需要注意的一点是，除了拿到了App ID和App Key之外，还需要在<code>存储</code>然后创建<code>Class</code>，名字就叫做<code>Comment</code>，然后权限设置为<code>无限制</code>就可以，这样以后的留言就会进入到这个数据池中。</p>
 </blockquote>
 <h2 id="Hexo-NexT中的开启和设置"><a href="#Hexo-NexT中的开启和设置" class="headerlink" title="Hexo-NexT中的开启和设置"></a>Hexo-NexT中的开启和设置</h2><p>Hexo-NexT中高版本的已经默认安装了Valine插件，如果是低版本没有支持的话，可以使用以下命令安装：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install valine --save</span><br></pre></td></tr></table></figure>
+
 <p>完成后，在NexT主题配置文件<code>\themes\next\_config.yml</code>中修改代码以开启：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Valine.</span><br><span class="line"># You can get your appid and appkey from https://leancloud.cn</span><br><span class="line"># more info please open https://valine.js.org</span><br><span class="line">valine:</span><br><span class="line">  enable: true # 是否开启</span><br><span class="line">  appid:                            # 填上之前获取的AppID</span><br><span class="line">  appkey:                           # 填上之前获取的AppKey</span><br><span class="line">  notify: false # 新留言是否需要通知 https://github.com/xCss/Valine/wiki</span><br><span class="line">  verify: false # 是否需要验证，验证比较反人类建议false关闭</span><br><span class="line">  placeholder: 请在此输入您的留言 # 默认留言框内的文字</span><br><span class="line">  avatar: mm # 默认头像</span><br><span class="line">  guest_info: nick,mail # 默认留言框的头部需要访问者输入的信息</span><br><span class="line">  pageSize: 10 # pagination size #默认单页的留言条数</span><br></pre></td></tr></table></figure>
+
 <p>如果使用的主题是自带了Valine插件的话，那么布局的配置中也已经有了相应的配置，至此应该是完成了所有的操作，但是，如果主题没有带Valine的话，那么还需要在进行一步。</p>
 <h2 id="最关键的一步"><a href="#最关键的一步" class="headerlink" title="最关键的一步"></a>最关键的一步</h2><p>为了保险起见，推荐你先备份下 <code>/themes/next/_config.yml</code> 和 <code>/themes/next/layout/_partials/comments.swig</code>，以防出现不备。</p>
 <h3 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改_config.yml"></a>修改_config.yml</h3><p>修改主题目录下的 <code>/themes/next/_config.yml</code> 中添加（如果现在使用着其他评论系统，请先去掉其他评论系统的配置）： </p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  appId: Your_AppId ##你的 Leancloud App ID</span><br><span class="line">  appKey: Your_AppKey ##你的 Leancloud App Key</span><br></pre></td></tr></table></figure>
+
 <h3 id="修改-comments-swig"><a href="#修改-comments-swig" class="headerlink" title="修改 comments.swig"></a>修改 comments.swig</h3><blockquote>
 <p> 注：因为我没有其他的评论系统需求，所以将其他评论系统的内容的删掉了。  </p>
 </blockquote>
 <p>打开 <code>/themes/next/layout/_partials/comments.swig</code>，<strong>整个文件</strong>修改为：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> page.comments %&#125;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"comments"</span> id=<span class="string">"comments"</span>&gt;&lt;/div&gt;</span><br><span class="line">    &#123;% <span class="keyword">if</span> (theme.valine and theme.valine.enable)%&#125;</span><br><span class="line">    &lt;script src=<span class="string">"//cdn1.lncld.net/static/js/3.0.4/av-min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=<span class="string">'//unpkg.com/valine/dist/Valine.min.js'</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">new</span> Valine(&#123;</span><br><span class="line">            av: AV,</span><br><span class="line">            el: <span class="string">'.comments'</span>,</span><br><span class="line">            notify: <span class="literal">false</span>, </span><br><span class="line">            verify: <span class="literal">false</span>,</span><br><span class="line">            app_id: <span class="string">'&#123;&#123; theme.valine.appId &#125;&#125;'</span>,</span><br><span class="line">            app_key: <span class="string">'&#123;&#123; theme.valine.appKey &#125;&#125;'</span>,</span><br><span class="line">            placeholder: <span class="string">'谈谈你的看法？'</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &#123;% endif %&#125;</span></span><br><span class="line"><span class="regexp">&#123;% endif %&#125;</span></span><br><span class="line"><span class="regexp">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>关键在于上面两个js的引入，如果你想用新版本的内容，那么就需要在官网上引入最新的js路径，目前来说此路径是最新的，支持所有最新的内容</p>
 </blockquote>
@@ -442,13 +447,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay"/>
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay"/>
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -522,7 +527,7 @@
   <div class="comments" id="comments"></div>
     
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
     <script>
         new Valine({
             av: AV,
@@ -558,7 +563,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -569,9 +574,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="叫我vitamin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="叫我vitamin">
           <p class="site-author-name" itemprop="name">叫我vitamin</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -680,7 +683,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright" >
+<div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2019</span>
@@ -690,7 +693,7 @@
   <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
     <div class="powered-by">  
   </div>
-  <span>Hosted by <a href="https://pages.coding.me" >Coding Pages</a></span>
+  <span>Hosted by <a href="https://pages.coding.me">Coding Pages</a></span>
 </div>
 
 <div style="margin-right:10px;display:inline-block">
@@ -850,6 +853,6 @@
 
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/src/love.js"></script>
-  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":85,"height":170,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":85,"height":170,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
 </body>
 </html>

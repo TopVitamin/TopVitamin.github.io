@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -26,8 +26,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -45,7 +45,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -79,21 +79,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="git," />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="git,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1">
 
 
 
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="http://someword.me/Git命令总结.html"/>
+  <link rel="canonical" href="http://someword.me/Git命令总结.html">
 
 
 
@@ -178,7 +178,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">只言片语</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +208,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -218,7 +218,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -228,7 +228,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -238,7 +238,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -248,7 +248,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -258,7 +258,7 @@
         <li class="menu-item menu-item-nav">
           <a href="/nav/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br>
             
             作品
           </a>
@@ -297,7 +297,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叫我vitamin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -333,7 +333,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -383,36 +383,28 @@
 <p>从知乎上摘下来的一些常用的命令总结，以备不时之需！</p>
 </blockquote>
 <a id="more"></a>
+
+
 <h2 id="基本命令操作"><a href="#基本命令操作" class="headerlink" title="基本命令操作"></a>基本命令操作</h2><p><strong>配置个人信息</strong></p>
 <pre><code>$ git config --global user.name &quot;Your Name&quot;
-$ git config --global user.email &quot;email@example.com&quot;
-</code></pre><p><strong>切换目录初始化</strong></p>
-<pre><code>$ git init
-</code></pre><p><strong>文件添加到仓库</strong></p>
-<pre><code>$ git add -p &lt;file&gt;
-</code></pre><p> <strong>把文件提交到仓库</strong></p>
-<pre><code>$ git commit -m &quot;add LICENSE&quot;
-</code></pre><p> <strong>查看仓库当前状态</strong></p>
-<pre><code>$ git status
-</code></pre><p> <strong>查看difference</strong></p>
-<pre><code>$ git diff     # git status告诉你有文件改动，git diff则才可以查看改动的内容
-</code></pre><p> <strong>显示从最近到最远的提交日志</strong></p>
-<pre><code>$ git log --pretty=oneline     # 格式化输出信息
-</code></pre><p> <strong>查看命令记录</strong></p>
-<pre><code>$ git reflog
-</code></pre><p> <strong>丢弃工作区的修改，回到最近一次git commit或git add时的状态：</strong></p>
+$ git config --global user.email &quot;email@example.com&quot;</code></pre><p><strong>切换目录初始化</strong></p>
+<pre><code>$ git init</code></pre><p><strong>文件添加到仓库</strong></p>
+<pre><code>$ git add -p &lt;file&gt;</code></pre><p> <strong>把文件提交到仓库</strong></p>
+<pre><code>$ git commit -m &quot;add LICENSE&quot;</code></pre><p> <strong>查看仓库当前状态</strong></p>
+<pre><code>$ git status</code></pre><p> <strong>查看difference</strong></p>
+<pre><code>$ git diff     # git status告诉你有文件改动，git diff则才可以查看改动的内容</code></pre><p> <strong>显示从最近到最远的提交日志</strong></p>
+<pre><code>$ git log --pretty=oneline     # 格式化输出信息</code></pre><p> <strong>查看命令记录</strong></p>
+<pre><code>$ git reflog</code></pre><p> <strong>丢弃工作区的修改，回到最近一次git commit或git add时的状态：</strong></p>
 <pre><code>$ git checkout -- README.md
 
 # 如果README.md修改了没有add那么就是回到add前的状态
   如果README.md修改了且add了，那么就回到add后commit前的状态
   git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
-  一定要加 -- ,不然就变成了切换分支操作
-</code></pre><p> <strong>把暂存区的修改撤销掉（unstage）</strong></p>
+  一定要加 -- ,不然就变成了切换分支操作</code></pre><p> <strong>把暂存区的修改撤销掉（unstage）</strong></p>
 <pre><code>$ git reset HEAD READER.md
 
 # git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本
-然后再一次执行 git checkout README.md 就丢弃了本次add操作并且撤销了工作区的修改
-</code></pre><p><strong>关于git reset的几个点</strong></p>
+然后再一次执行 git checkout README.md 就丢弃了本次add操作并且撤销了工作区的修改</code></pre><p><strong>关于git reset的几个点</strong></p>
 <pre><code>$ git reset --hard
 $ git reset --soft
 $ git reset --mixed
@@ -421,38 +413,24 @@ $ git reset --mixed
 
 **版本退回**
 
- $ git reset --hard HEAD^     # 回到上一次commit的版本
-</code></pre><p><strong>当前版本HEAD，上一个版本HEAD^，上上个版本HEAD^^</strong></p>
-<pre><code>$ git reset --hard 130f10a 或 HEAD~100，herd只是一个模式
-</code></pre><p> <strong>从版本库中删除该文件，会将文件从工作区删除，然后推送到版本库</strong></p>
+ $ git reset --hard HEAD^     # 回到上一次commit的版本</code></pre><p><strong>当前版本HEAD，上一个版本HEAD^，上上个版本HEAD^^</strong></p>
+<pre><code>$ git reset --hard 130f10a 或 HEAD~100，herd只是一个模式</code></pre><p> <strong>从版本库中删除该文件，会将文件从工作区删除，然后推送到版本库</strong></p>
 <pre><code>$ git rm README.md
-$ git commit -m &quot;remove READER.md&quot;
-</code></pre><p> <strong>把误删的文件恢复到最新版本，checkout其实用版本库里的版本替换工作区的版本，此时应该是没有commit</strong></p>
-<pre><code>$ git checkout -- README.md #从版本库中检出这个文件
-</code></pre><h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p><strong>生成密钥文件和私钥文件，windows一般是放在”C:\Users\xxx.ssh”里面</strong></p>
-<pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
-</code></pre><p><strong>把一个已有的本地仓库与之关联</strong></p>
-<pre><code>$ git remote add origin git@github.com:xxx/learngit.git
-</code></pre><p><strong>从远程库克隆</strong></p>
-<pre><code>$ git clone git@github.com:xxx/learngit.git
-</code></pre><p><strong>把本地库的所有内容推送到远程库上（推送master分支的内容）</strong></p>
-<pre><code>$ git push -u origin master   # -u选项会指定一个默认主机，这样后面就可以不加任何参数使用git push
-</code></pre><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p><strong>创建+切换dev分支</strong></p>
+$ git commit -m &quot;remove READER.md&quot;</code></pre><p> <strong>把误删的文件恢复到最新版本，checkout其实用版本库里的版本替换工作区的版本，此时应该是没有commit</strong></p>
+<pre><code>$ git checkout -- README.md #从版本库中检出这个文件</code></pre><h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p><strong>生成密钥文件和私钥文件，windows一般是放在”C:\Users\xxx.ssh”里面</strong></p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></pre><p><strong>把一个已有的本地仓库与之关联</strong></p>
+<pre><code>$ git remote add origin git@github.com:xxx/learngit.git</code></pre><p><strong>从远程库克隆</strong></p>
+<pre><code>$ git clone git@github.com:xxx/learngit.git</code></pre><p><strong>把本地库的所有内容推送到远程库上（推送master分支的内容）</strong></p>
+<pre><code>$ git push -u origin master   # -u选项会指定一个默认主机，这样后面就可以不加任何参数使用git push</code></pre><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p><strong>创建+切换dev分支</strong></p>
 <pre><code>$ git checkout -b dev
 # 相当于
 $ git branch dev # 创建分支
-$ git checkout dev
-</code></pre><p><strong>查看当前分支，当前分支前面标有×号</strong></p>
-<pre><code>$ git branch
-</code></pre><p><strong>切换回master分支</strong></p>
-<pre><code>$ git checkout master
-</code></pre><p><strong>合并指定分支到当前分支</strong></p>
-<pre><code>$ git merge dev  # dev表示分支的名称
-</code></pre><p><strong>删除dev分支</strong></p>
-<pre><code>$ git branch -d dev
-</code></pre><p><strong>删除远程分支</strong></p>
-<pre><code>$ git push origin :branch-name  # 注意origin后面有一个`空格`，表示推送空到分支就是删除
-</code></pre><p><strong>查看分支合并情况</strong></p>
+$ git checkout dev</code></pre><p><strong>查看当前分支，当前分支前面标有×号</strong></p>
+<pre><code>$ git branch</code></pre><p><strong>切换回master分支</strong></p>
+<pre><code>$ git checkout master</code></pre><p><strong>合并指定分支到当前分支</strong></p>
+<pre><code>$ git merge dev  # dev表示分支的名称</code></pre><p><strong>删除dev分支</strong></p>
+<pre><code>$ git branch -d dev</code></pre><p><strong>删除远程分支</strong></p>
+<pre><code>$ git push origin :branch-name  # 注意origin后面有一个`空格`，表示推送空到分支就是删除</code></pre><p><strong>查看分支合并情况</strong></p>
 <pre><code>$ git log --graph --pretty=oneline --abbrev-commit  # 简略模式显示或者直接 git log 就可以显示详细模式
 
 *   59bc1cb conflict fixed
@@ -460,115 +438,75 @@ $ git checkout dev
 | * 75a857c AND simple
 * | 400b400 &amp; simple
 |/
-* fec145a branch test
-</code></pre><p><strong>删除feature1分支</strong></p>
-<pre><code>$ git branch -d feature1
-</code></pre><p><strong>创建并切换dev分支</strong></p>
-<pre><code>$ git checkout -b dev
-</code></pre><p><strong>修改readme.txt文件，并提交一个新的commit</strong></p>
+* fec145a branch test</code></pre><p><strong>删除feature1分支</strong></p>
+<pre><code>$ git branch -d feature1</code></pre><p><strong>创建并切换dev分支</strong></p>
+<pre><code>$ git checkout -b dev</code></pre><p><strong>修改readme.txt文件，并提交一个新的commit</strong></p>
 <pre><code>$ git add readme.txt
-$ git commit -m &quot;add merge&quot;
-</code></pre><p><strong>切换回master</strong></p>
-<pre><code>$ git checkout master
-</code></pre><p><strong>合并dev分支，请注意–no-ff参数，表示禁用Fast forward</strong></p>
-<pre><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; dev
-</code></pre><p><strong>看看分支历史</strong></p>
+$ git commit -m &quot;add merge&quot;</code></pre><p><strong>切换回master</strong></p>
+<pre><code>$ git checkout master</code></pre><p><strong>合并dev分支，请注意–no-ff参数，表示禁用Fast forward</strong></p>
+<pre><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; dev</code></pre><p><strong>看看分支历史</strong></p>
 <pre><code>$ git log --graph --pretty=oneline --abbrev-commit
 
 *   7825a50 merge with no-ff
 |\
 | * 6224937 add merge
 |/
-*   59bc1cb conflict fixed
-</code></pre><p><strong>如果需要临时修复Bug，可以把当前工作现场“储藏”起来，等Bug修复后恢复现场后继续工作</strong></p>
-<pre><code>$ git stash
-</code></pre><p><strong>切换到需要修复Bug的分支，创建临时分支来修复</strong></p>
+*   59bc1cb conflict fixed</code></pre><p><strong>如果需要临时修复Bug，可以把当前工作现场“储藏”起来，等Bug修复后恢复现场后继续工作</strong></p>
+<pre><code>$ git stash</code></pre><p><strong>切换到需要修复Bug的分支，创建临时分支来修复</strong></p>
 <pre><code>$ git checkout master
-$ git checkout -b issue-101
-</code></pre><p><strong>修复完成后切换到master分支，完成合并，删除临时分支</strong></p>
+$ git checkout -b issue-101</code></pre><p><strong>修复完成后切换到master分支，完成合并，删除临时分支</strong></p>
 <pre><code>$ git checkout master
 $ git merge --no-ff -m &quot;merged bug fix 101&quot; issue-101
-$ git branch -d issue-101
-</code></pre><p><strong>Bug修复后，切换回dev分支继续干活</strong></p>
-<pre><code>$ git checkout dev
-</code></pre><p><strong>查看工作现场列表</strong></p>
-<pre><code>$ git stash list
-</code></pre><p><strong>恢复工作现场</strong></p>
-<pre><code>$ git stash pop # 恢复的同时把stash内容也删了
-</code></pre><p>$ git stash apply # 恢复，不删除stash的内容，使用git stash drop进行删除</p>
+$ git branch -d issue-101</code></pre><p><strong>Bug修复后，切换回dev分支继续干活</strong></p>
+<pre><code>$ git checkout dev</code></pre><p><strong>查看工作现场列表</strong></p>
+<pre><code>$ git stash list</code></pre><p><strong>恢复工作现场</strong></p>
+<pre><code>$ git stash pop # 恢复的同时把stash内容也删了</code></pre><p>$ git stash apply # 恢复，不删除stash的内容，使用git stash drop进行删除</p>
 <p><strong>再次查看工作现场列表，是否干净</strong></p>
-<pre><code>$ git stash list
-</code></pre><p><strong>可以多次stash，恢复时指定恢复</strong></p>
-<pre><code>$ git stash apply stash@{0}
-</code></pre><p><strong>强行删除一个没有合并过的分支</strong></p>
-<pre><code>$ git branch -D &lt;name&gt;
-</code></pre><p><strong>要查看远程库的信息</strong></p>
+<pre><code>$ git stash list</code></pre><p><strong>可以多次stash，恢复时指定恢复</strong></p>
+<pre><code>$ git stash apply stash@{0}</code></pre><p><strong>强行删除一个没有合并过的分支</strong></p>
+<pre><code>$ git branch -D &lt;name&gt;</code></pre><p><strong>要查看远程库的信息</strong></p>
 <pre><code>$ git remote
-$ git remote -v
-</code></pre><p><strong>推送其他分支</strong></p>
-<pre><code>$ git push origin dev
-</code></pre><p><strong>从远程库clone，默认情况只能看到master分支，需要在dev分支，必须创建远程origin的dev分支到本地</strong></p>
+$ git remote -v</code></pre><p><strong>推送其他分支</strong></p>
+<pre><code>$ git push origin dev</code></pre><p><strong>从远程库clone，默认情况只能看到master分支，需要在dev分支，必须创建远程origin的dev分支到本地</strong></p>
 <pre><code>$ git checkout -b dev origin/dev
 $ git checkout -b branch-name origin/branch-name  #基于远程分支创建本地分支
-$ git branch --set-upstream branch-name origin/branch-name # 关联
-</code></pre><p><strong>向远程库推送dev有冲突</strong></p>
+$ git branch --set-upstream branch-name origin/branch-name # 关联</code></pre><p><strong>向远程库推送dev有冲突</strong></p>
 <pre><code>$ git pull # 拉取到本地合并解决冲突，再向远程推送
-$ git push origin dev
-</code></pre><h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><p><strong>切换到需要打标签的分支</strong></p>
+$ git push origin dev</code></pre><h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><p><strong>切换到需要打标签的分支</strong></p>
 <pre><code>$ git branch
-$ git checkout master
-</code></pre><p><strong>创建标签</strong></p>
-<pre><code>$ git tag v1.0
-</code></pre><p><strong>查看所有标签</strong></p>
-<pre><code>$ git tag
-</code></pre><p><strong>给历史提高的commit id打标签</strong></p>
+$ git checkout master</code></pre><p><strong>创建标签</strong></p>
+<pre><code>$ git tag v1.0</code></pre><p><strong>查看所有标签</strong></p>
+<pre><code>$ git tag</code></pre><p><strong>给历史提高的commit id打标签</strong></p>
 <pre><code>$ git log --pretty=oneline --abbrev-commit # 查看commit id
-$ git tag v0.9 6224937
-</code></pre><p><strong>查看标签信息</strong></p>
-<pre><code>$ git show v0.9
-</code></pre><p><strong>创建带有说明的标签</strong></p>
-<pre><code>$ git tag -a v0.1 -m &quot;version 0.1 released&quot; 3628164
-</code></pre><p><strong>用PGP签名标签</strong></p>
-<pre><code>$ git tag -s &lt;tagname&gt; -m &quot;blablabla...&quot;
-</code></pre><p><strong>推送某个标签到远程</strong></p>
-<pre><code>$ git push origin v1.0
-</code></pre><p><strong>一次性推送全部尚未推送到远程的本地标签</strong></p>
-<pre><code>$ git push origin --tags
-</code></pre><p><strong>删除远程标签</strong></p>
+$ git tag v0.9 6224937</code></pre><p><strong>查看标签信息</strong></p>
+<pre><code>$ git show v0.9</code></pre><p><strong>创建带有说明的标签</strong></p>
+<pre><code>$ git tag -a v0.1 -m &quot;version 0.1 released&quot; 3628164</code></pre><p><strong>用PGP签名标签</strong></p>
+<pre><code>$ git tag -s &lt;tagname&gt; -m &quot;blablabla...&quot;</code></pre><p><strong>推送某个标签到远程</strong></p>
+<pre><code>$ git push origin v1.0</code></pre><p><strong>一次性推送全部尚未推送到远程的本地标签</strong></p>
+<pre><code>$ git push origin --tags</code></pre><p><strong>删除远程标签</strong></p>
 <pre><code>$ git tag -d v0.9 # 删除本地
-$ git push origin :refs/tags/v0.9 # 删除远程
-</code></pre><h2 id="自定义-Git"><a href="#自定义-Git" class="headerlink" title="自定义 Git"></a>自定义 Git</h2><p><strong>显示颜色，会让命令输出看起来更醒目</strong></p>
-<pre><code>$ git config --global color.ui true
-</code></pre><p><strong>忽略某些文件时，需要编写.gitignore，然后将.gitignore放到版本库中<br>st就表示status</strong></p>
-<pre><code>$ git config --global alias.st status # 重命名
-</code></pre><p><strong>配置一个unstage别名</strong></p>
+$ git push origin :refs/tags/v0.9 # 删除远程</code></pre><h2 id="自定义-Git"><a href="#自定义-Git" class="headerlink" title="自定义 Git"></a>自定义 Git</h2><p><strong>显示颜色，会让命令输出看起来更醒目</strong></p>
+<pre><code>$ git config --global color.ui true</code></pre><p><strong>忽略某些文件时，需要编写.gitignore，然后将.gitignore放到版本库中<br>st就表示status</strong></p>
+<pre><code>$ git config --global alias.st status # 重命名</code></pre><p><strong>配置一个unstage别名</strong></p>
 <pre><code>$ git config --global alias.unstage &apos;reset HEAD&apos;
 $ git unstage test.py # 等价于
-$ git reset HEAD test.py
-</code></pre><p><strong>显示最后一次提交信息</strong></p>
-<pre><code>$ git config --global alias.last &apos;log -1&apos;
-</code></pre><p><strong>log</strong></p>
+$ git reset HEAD test.py</code></pre><p><strong>显示最后一次提交信息</strong></p>
+<pre><code>$ git config --global alias.last &apos;log -1&apos;</code></pre><p><strong>log</strong></p>
 <pre><code>git config --global alias.lg &quot;log --color --graph --pretty=format:&apos;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&apos; --abbrev-commit&quot;
 
 # 每个仓库的配置文件放在.git/config
-# 当前用户的配置文件放在用户主目录下的一个隐藏文件.gitconfig中
-</code></pre><h2 id="搭建-Git-服务器"><a href="#搭建-Git-服务器" class="headerlink" title="搭建 Git 服务器"></a>搭建 Git 服务器</h2><p><strong>1. 安装 git</strong></p>
-<pre><code>$ sudo apt-get install git
-</code></pre><p><strong>2. 创建一个 git 用户，用来运行 git 服务</strong></p>
-<pre><code>$ sudo adduser git
-</code></pre><p><strong>3. 创建证书登录：收集所有需要登录的用户的公钥，就是他们自己的 id_rsa.pub 文件，把所有公钥导入到 /home/git/.ssh/authorized_keys 文件里，一行一个</strong></p>
+# 当前用户的配置文件放在用户主目录下的一个隐藏文件.gitconfig中</code></pre><h2 id="搭建-Git-服务器"><a href="#搭建-Git-服务器" class="headerlink" title="搭建 Git 服务器"></a>搭建 Git 服务器</h2><p><strong>1. 安装 git</strong></p>
+<pre><code>$ sudo apt-get install git</code></pre><p><strong>2. 创建一个 git 用户，用来运行 git 服务</strong></p>
+<pre><code>$ sudo adduser git</code></pre><p><strong>3. 创建证书登录：收集所有需要登录的用户的公钥，就是他们自己的 id_rsa.pub 文件，把所有公钥导入到 /home/git/.ssh/authorized_keys 文件里，一行一个</strong></p>
 <p><strong>4. 初始化 Git 仓库</strong></p>
 <pre><code>选定一个目录作为 Git 仓库，假定是 /srv/sample.git，在 /srv 目录下输入命令
 
     $ sudo git init --bare sample.git
-    $ sudo chown -R git:git sample.git  # 把 owner 改为 git
-</code></pre><p><strong>5. 禁用 shell 登录</strong></p>
+    $ sudo chown -R git:git sample.git  # 把 owner 改为 git</code></pre><p><strong>5. 禁用 shell 登录</strong></p>
 <pre><code>编辑/etc/passwd文件
 git:x:1001:1001:,,,:/home/git:/bin/bash # 修改成下面的内容
-git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
-</code></pre><p><strong>6. 克隆远程仓库，在各自的电脑上运行：</strong></p>
-<pre><code>$ git clone git@server:/srv/sample.git
-</code></pre><p> <strong>参考</strong></p>
+git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell</code></pre><p><strong>6. 克隆远程仓库，在各自的电脑上运行：</strong></p>
+<pre><code>$ git clone git@server:/srv/sample.git</code></pre><p> <strong>参考</strong></p>
 <p>收集自：<a href="https://zhuanlan.zhihu.com/p/25892137" target="_blank" rel="noopener">知乎 - Git 命令总结</a><br>Git教程：<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程 - 廖雪峰的官方网站</a></p>
 
       
@@ -600,13 +538,13 @@ git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay"/>
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay"/>
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -680,7 +618,7 @@ git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
   <div class="comments" id="comments"></div>
     
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
     <script>
         new Valine({
             av: AV,
@@ -716,7 +654,7 @@ git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -727,9 +665,7 @@ git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="叫我vitamin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="叫我vitamin">
           <p class="site-author-name" itemprop="name">叫我vitamin</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -838,7 +774,7 @@ git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright" >
+<div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2019</span>
@@ -848,7 +784,7 @@ git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
   <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
     <div class="powered-by">  
   </div>
-  <span>Hosted by <a href="https://pages.coding.me" >Coding Pages</a></span>
+  <span>Hosted by <a href="https://pages.coding.me">Coding Pages</a></span>
 </div>
 
 <div style="margin-right:10px;display:inline-block">
@@ -1008,6 +944,6 @@ git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell
 
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/src/love.js"></script>
-  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":85,"height":170,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":85,"height":170,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
 </body>
 </html>
