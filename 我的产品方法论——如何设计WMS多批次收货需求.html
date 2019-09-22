@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="产品经理,产品思维,只言片语,叫我vitamin">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="很早之前我就想写两个内容，一个是自己的产品方法论，一个是关于WMS的背后的故事。 产品方法论是因为我每次看别人的文章的时候都觉得头头是道，有条不紊，而自己做需求，做一些产品相关的工作的时候总是今天用“华山派的功夫”，明天用“武当的功夫”，后天“可能就完全不会功夫了”……所以我想自己写点东西给自己一些指导，一些约束。 WMS的背后的故事是因为我目前主要负责的就是这个模块，我也对这个领域是最熟悉的，">
+<meta name="keywords" content="产品经理,产品思维,只言片语,叫我vitamin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的产品方法论——如何设计WMS多批次收货需求">
+<meta property="og:url" content="http://someword.me/我的产品方法论——如何设计WMS多批次收货需求.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="很早之前我就想写两个内容，一个是自己的产品方法论，一个是关于WMS的背后的故事。 产品方法论是因为我每次看别人的文章的时候都觉得头头是道，有条不紊，而自己做需求，做一些产品相关的工作的时候总是今天用“华山派的功夫”，明天用“武当的功夫”，后天“可能就完全不会功夫了”……所以我想自己写点东西给自己一些指导，一些约束。 WMS的背后的故事是因为我目前主要负责的就是这个模块，我也对这个领域是最熟悉的，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/09/22/AtKFcsXvW4HVqDh.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/22/rJdNYvbGgio91xR.png">
+<meta property="og:updated_time" content="2019-09-22T06:45:47.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的产品方法论——如何设计WMS多批次收货需求">
+<meta name="twitter:description" content="很早之前我就想写两个内容，一个是自己的产品方法论，一个是关于WMS的背后的故事。 产品方法论是因为我每次看别人的文章的时候都觉得头头是道，有条不紊，而自己做需求，做一些产品相关的工作的时候总是今天用“华山派的功夫”，明天用“武当的功夫”，后天“可能就完全不会功夫了”……所以我想自己写点东西给自己一些指导，一些约束。 WMS的背后的故事是因为我目前主要负责的就是这个模块，我也对这个领域是最熟悉的，">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/22/AtKFcsXvW4HVqDh.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://someword.me/我的产品方法论——如何设计WMS多批次收货需求.html">
+
+
+
+
+
+  <title>我的产品方法论——如何设计WMS多批次收货需求 | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+  
+   <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">记录产品工作及思考的点滴</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nav">
+          <a href="/nav/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br>
+            
+            作品
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://someword.me/我的产品方法论——如何设计WMS多批次收货需求.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">我的产品方法论——如何设计WMS多批次收货需求</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-22T12:27:24+08:00">
+                2019-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工作规范/" itemprop="url" rel="index">
+                    <span itemprop="name">工作规范</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>很早之前我就想写两个内容，一个是自己的产品方法论，一个是关于WMS的背后的故事。</p>
+<p>产品方法论是因为我每次看别人的文章的时候都觉得头头是道，有条不紊，而自己做需求，做一些产品相关的工作的时候总是今天用“华山派的功夫”，明天用“武当的功夫”，后天“可能就完全不会功夫了”……所以我想自己写点东西给自己一些指导，一些约束。</p>
+<p>WMS的背后的故事是因为我目前主要负责的就是这个模块，我也对这个领域是最熟悉的，当然虽然说最熟悉，但是我依然觉得这一块我做得很一般，还远没有踏入行业的门槛。写这些是为了总结自己的一些产品教训，同样的市面上这方面的资料和信息太匮乏了，如果我的东西能给别人一点帮助，那也是一个莫大的荣幸。</p>
+<p>结合上述的观点，我觉得我应该是是时候主动点去摒弃那种惰性，也摒弃那种不爱动脑的坏习惯了，给自己找点正事磨砺磨砺，毕竟脑子越用越灵光……</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文是一个系列文的上篇，本来是想上下两篇写在一起，但是鉴于实际需求设计的过程输出的东西太多，周末短时间凑起来又很仓促，于是就拆成了两篇来写。本篇是写的关于我自己的产品方法论，也是在做这个需求的时候自己定义并遵守的一个规则和指导思想，内容偏理论，可能太干。但是下一篇《方法论实操——如何设计WMS多批次收货需求》，我会结合具体的实例来输出相关的内容，会更加易于理解。而且此需求也是我本周和下周主要的工作内容之一，所以具有实战性也很新鲜，争取尽快写完，然后分享出来。</p>
+<h2 id="我的产品方法论"><a href="#我的产品方法论" class="headerlink" title="我的产品方法论"></a>我的产品方法论</h2><p>产品方法论是指我在日常完成一个需求设计的一个过程中所使用的一些步骤和方法，其实这个方法论是我现写的，这也是我在前面提到自己没有严格的约束、规范去指导自己做这些东西的原因之一，因为没有方法论，所以今天想起来了就会用“华山派的功夫”，要是没想起来可能就会用“武当的功夫”，甚至为了偷懒直接就没有什么功夫。</p>
+<p>所以会导致每次做不同的需求的时候，会有千奇百怪的差异，有时候会心血来潮写Mindjet分析，有时候会写文档记录，有时候会用Excel表进行跟进和梳理，有时候啥也脑子里过一遍就定了方案……</p>
+<p>为避免上述问题的持续发生，我决定去制定这些方法论，同时也严格去执行、落实，其中对这些方法论进行必要的迭代升级。</p>
+<p><img src="https://i.loli.net/2019/09/22/AtKFcsXvW4HVqDh.png" alt></p>
+<h3 id="模块一：背景"><a href="#模块一：背景" class="headerlink" title="模块一：背景"></a>模块一：背景</h3><p>背景这个东西一般我在写需求文档或者写TAPD的时候都会写上去，因为很多时候我们都会忘记为什么要做这个功能，或者时间一久就会忘记当时做这个的理由和原因是什么了，所以写背景，一方面是为了以后翻起旧账的时候可以做参考；另一方面是在需求评审或者分配开发任务的时候，让开发和测试能够认同这个需求，有共同目标和共同的认知。毕竟如果团队成员都不知道为什么要做这个，做这个的意义是什么，那么久而久之需求就会变成一项苦差事，大家就没有奋斗和拼劲了。</p>
+<p>背景除了上述说到的功效，在此环境要做的其实是对需求的一个初步评估，结合各种方法论和一些指导，比如我们常听到的“用户访谈，调研”，“市场调研”，“需求分析”，“SWOT”，“5W1H”等……</p>
+<p><strong>总之这个环节就是要确定需求是能做的，是有价值的，让大家认同这一点，才能接下来去落实具体的方案。</strong></p>
+<h3 id="模块二：方案制定"><a href="#模块二：方案制定" class="headerlink" title="模块二：方案制定"></a>模块二：方案制定</h3><p>方案制定是一个大环节，也是「需求设计」环节中最重要的一环，我一般根据产品生命周期会将产品工作流程分为这几个大块：</p>
+<ul>
+<li>需求的收集与评估</li>
+<li>需求的设计与评审</li>
+<li>需求的研发与测试</li>
+<li>需求的上线与跟进</li>
+</ul>
+<p>本文所讲的产品方法论其实是针对「需求的设计与评审」这一环节来写的，其他环节也重要，但是方法论方面我在之前的文章里也讲到了，所以我就不多赘述了，这里重点突出「需求的设计与评审」这一块。</p>
+<p>一般来说，做一个需求的时候，需求提出者会给出“问题型需求”和“方案型需求”，那么什么是“问题型需求”，什么是“方案型需求”？</p>
+<p>拿<code>WMS中的一个多SKU流水导出</code>的需求来举例，“问题型需求”应该是这样提出的：</p>
+<blockquote>
+<p>我在导出SKU的流水时候，会发现每次只能导出一个SKU，或者每次只能导出一个货主的全部SKU的流水，我希望有一个功能，能让我自己选择要导出的SKU，这样既不用一次性导出去挑选想要的，也不会用分多批次导出每个SKU的流水然后拼接。</p>
+</blockquote>
+<p>而“方案型需求”一般会这样提出：</p>
+<blockquote>
+<p>我在导出SKU的流水时候，会发现每次只能导出一个SKU，或者每次只能导出一个货主的全部SKU的流水，我希望你们能做一个功能，让我在界面上勾选我想要的SKU信息，然后进行导出，这样的话我想要哪几个SKU就能导出哪几个SKU，就很方便了。</p>
+</blockquote>
+<p>注意看上面的需求描述，其实大体上来说都是在描述一个事，但是“问题型需求”侧重的是表达自己遇到的问题，以及自己想要的结果。而“方案型需求”则会表达出自己期望的操作方式或者解决手段，往往很多时候，需求提出者并不懂技术，也不懂系统的一些架构，限制等，所以他们会提出这种要求，有时候是能满足的，有时候却不能满足。</p>
+<p>如果产品经理没有仔细去分辨其中的原因，就会先入为主的被这种“方案型需求”代入其中，当遇到瓶颈的时候还是会一股脑的想要按照需求描述的去实现。但是其实也许用另外的一种交互或者手段一样能达到这种要求，当需求是一个“问题型需求”的时候，我们会不受约束地去想到多种方案和办法，这样更加有利于迅速和准确地解决问题。</p>
+<p>方案制定包含很多内容，但是核心点就是出一个方案，这里的方案可以是初步的，不成熟的，但是一定是要具有可行性的，能被大家认同的。</p>
+<p>所以我一般会出一些流程图，业务分析介绍图等和开发或者是业务干系人进行初步沟通，看看这种方案从理想化，抽象化的角度是否具有可行性，是否能解决需求方的问题。方案的制定一样的会有很多成熟的方案论，例如“用例图”，“泳道图”，“任务拆解”，“需求剖析”，“对比分析”，“用户调研”，“数据佐证”等等……</p>
+<p><strong>这里一样不展开讲了，此环节的关键目标是：制定出一个初步的需求解决方案，最好是通过了一些业务干系人的认可。</strong></p>
+<h3 id="模块三：产品结构"><a href="#模块三：产品结构" class="headerlink" title="模块三：产品结构"></a>模块三：产品结构</h3><p>产品结构，产品信息结构，产品功能结构，基本上算是逼死产品小白三座大山了。首先是从字面意思就有点绕，都是结构，都长得很像，但是又不像；其次就是网上的解释五花八门，大家各自有各自的认知和理解，谁也不能说服谁；最后是到底用哪个，大家也没有准信，全部都写，都整理出来太麻烦，费时间，不整理出来又怕被人说自己不专业，是个“野鸡产品”……于是乎，产品小白们，卒！</p>
+<p>在这一块我的理解是产品结构包含了产品信息结构和产品功能结构，而产品信息结构就是指为了解决这个需求那我做出来的页面或者功能它有什么信息，例如WMS多批次收货功能中的信息：</p>
+<ul>
+<li>各种字段，字段的限制、规则、解释等；</li>
+<li>展开与缩起的信息展示；</li>
+<li>一共有几个界面，每个界面分别能展示什么信息等；</li>
+<li>功能带来的交互，文案，提示，异常机制等；</li>
+</ul>
+<p>而产品功能结构则是突出此需求需要用到什么功能，功能是放在什么位置，起什么作用之类的，通用的拿WMS多批次收货功能来举例，它的功能结构包含有：</p>
+<ul>
+<li>每个界面的功能，有什么按钮，按钮的作用；</li>
+<li>功能的排列顺序，对应不同的状态不同的功能；</li>
+<li>功能的属性，需要注意的点等；</li>
+</ul>
+<p>总体来说，你会发现产品信息结构和产品功能结构并不能百分百切割独立，其中还是会有一些重叠的部分和互相作用（<em>信息是功能，功能也是信息</em>）的部分，所以我一般会将这两个东西放在一个Mindjet中，取名就是「产品结构图」，甚至会在里面加上一些特殊的业务说明和一些背景介绍等。</p>
+<p>我推荐大家不明白的可以去看「<a href="http://www.woshipm.com/pmd/838667.html" target="_blank" rel="noopener">人人都是产品经理</a>」中的一个回答，他的访问量和阅读量都很高，具有一定的指导意义。</p>
+<p><img src="https://i.loli.net/2019/09/22/rJdNYvbGgio91xR.png" alt></p>
+<p><strong>此模块主要的作用就是：抽象化需求，形成明确的方案，这种方案是跃然于纸的感觉，大家可能看到了你的产品结构图基本上就能脑补出你做的东西大概是怎么样子了。</strong></p>
+<h3 id="模块四：原型或文档"><a href="#模块四：原型或文档" class="headerlink" title="模块四：原型或文档"></a>模块四：原型或文档</h3><p>最后一步是关于原型和文档，这一块也是所有产品最熟悉的环节了，因为基本上的需求都会走到这一步，不管怎么样，原型不画那文档总要写吧。</p>
+<p>这一块我的方法论反而是比较成熟和稳定的了，一般针对原型来说，我都是低保真中突出重点，因为我们团队没有UI，所以基本上我如果要对UI有什么特殊要求，我就要在低保真的原型中重点突出这个需求，同时也要进行私下的沟通或者验收，以防止开发没有看到或者没有重视这个问题。</p>
+<p>而原型设计其实就是对上一步的抽象化的方案进行实例化，理解面向对象的人就很容易get这个意思。需求的设计和梳理其实都是抽象化的，画原型和写文档就把这个需求的方案从抽象化的类变成实例化的对象。<em>类是对象的抽象，而对象是类的具体实例。</em></p>
+<p><strong>所以从这一点我们也就可以理解，为什么很多时候产品面试的时候并不会很看重一个人的产品原型绘制的能力呢？</strong></p>
+<p>因为原型绘制只是一种表达的手段，你的原型画的很好看，很漂亮，这是一个优势，但是如果你不能很好的达成它最原始的目的，那么这个漂亮和好看并没有多少实用性。而它的原始目的就是：<strong>实例化前一步的产品结构，填充它，让开发和测试可以更加清晰明了的知道具体的方案是怎么样的。</strong></p>
+<p>原型只是一个手段，文档也只是一个手段，如果你能空用嘴巴讲清楚这个需求，其实你也一样是一个优秀的产品，但是嘴巴讲出去的东西没有根据，没有日志，以后要追溯的时候就不那么好使了，这个时候咱就得以笔代嘴，多写点文档。<strong>so，对产品的文档能力有一定的要求，其实一点不过分，因为太重要了。</strong></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>方法论这个东西就是“我之蜜糖，彼之砒霜”的玩意儿，有时候你遇到了相似的问题的时候就会发现这个东西贼好用，但是如果你一直遇不到相似的问题那么就会觉得这个东西写的毫无意义，也毫无水平。所以每个人的方法论都有一定的局限性，希望我的这篇陋文能给你一些启发。</p>
+<p>如果你有何高见或者斧正之处，请留言指出，谢谢！</p>
+<p>我们下一篇《方法论实操——如何设计WMS多批次收货需求》，再见！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>随缘打赏，佛系产品</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/工作规范/" rel="tag"><i class="fa fa-tag"></i> 工作规范</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/产品日常工作规范之需求研发（第三篇）.html" rel="next" title="产品日常工作规范之需求研发（第三篇）">
+                <i class="fa fa-chevron-left"></i> 产品日常工作规范之需求研发（第三篇）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+			avatar: 'wavatar',
+			guest_info: ['nick'],
+            placeholder: '谈谈你的看法？'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="叫我vitamin">
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TopVitamin" target="_blank" title="GitHub" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lai-yun-qiang" target="_blank" title="Zhihu" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的产品方法论"><span class="nav-number">2.</span> <span class="nav-text">我的产品方法论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块一：背景"><span class="nav-number">2.1.</span> <span class="nav-text">模块一：背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块二：方案制定"><span class="nav-number">2.2.</span> <span class="nav-text">模块二：方案制定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块三：产品结构"><span class="nav-number">2.3.</span> <span class="nav-text">模块三：产品结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块四：原型或文档"><span class="nav-number">2.4.</span> <span class="nav-text">模块四：原型或文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me">Coding Pages</a></span>
+</div>
+
+<div style="margin-right:10px;display:inline-block">
+	<i class="fa fa-user-md"></i>
+	<span>
+	本站访问量: <span id="busuanzi_value_site_pv"></span>次
+	</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":170,"height":340,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+</body>
+</html>
