@@ -87,7 +87,7 @@ deploy:
 sitemap:
   path: sitemap.xml
   
-# 添加动漫人物
+# 添加动漫人物看板娘
 live2d:
   enable: true
   scriptFrom: local
@@ -100,8 +100,8 @@ live2d:
     use: live2d-widget-model-haruto
   display:
     position: left
-    width: 85
-    height: 170
+    width: 170
+    height: 340
     hOffset: 40
     vOffset: -60
   mobile:
