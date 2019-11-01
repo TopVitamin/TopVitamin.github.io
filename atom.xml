@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>只言片语</title>
+  <icon>http://someword.me/icon.png</icon>
+  <subtitle>记录产品工作及思考的点滴</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://someword.me/"/>
+  <updated>2019-10-19T06:42:14.732Z</updated>
+  <id>http://someword.me/</id>
+  
+  <author>
+    <name>叫我vitamin</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>产品面试题</title>
+    <link href="http://someword.me/%E4%BA%A7%E5%93%81%E9%9D%A2%E8%AF%95%E9%A2%98.html"/>
+    <id>http://someword.me/产品面试题.html</id>
+    <published>2019-10-19T12:27:24.000Z</published>
+    <updated>2019-10-19T06:42:14.732Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这份产品面试题是我根据自己这半年来团队招人面试特意准备的，大概用了半年多了，然后近期对里面的一些内容进行了调整和删减，于是就打算发出来。希望对找工作的小伙伴有所帮助，当然顺带给自己打个广告：团队缺人，找工作的，速来勾搭。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="产品面试" scheme="http://someword.me/categories/%E4%BA%A7%E5%93%81%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="产品面试" scheme="http://someword.me/tags/%E4%BA%A7%E5%93%81%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>项目管理知识点随记</title>
+    <link href="http://someword.me/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E9%9A%8F%E8%AE%B0.html"/>
+    <id>http://someword.me/项目管理知识点随记.html</id>
+    <published>2019-10-05T12:27:24.000Z</published>
+    <updated>2019-10-05T14:08:13.727Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;国庆期间，在知乎看了一个知乎盐选的课程《&lt;a href=&quot;https://www.zhihu.com/remix/albums/1095809630625722368&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;项目管理指南：跟奔驰大牛学项目管理经验&lt;/a&gt;》，其中有一些项目管理的知识点让人感觉接地气同时也不会太枯燥，于是我决定摘抄其中的一些知识做一个分享，如果你也对项目管理感兴趣，可以了解一下。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>金九银十，一晃而逝</title>
+    <link href="http://someword.me/%E9%87%91%E4%B9%9D%E9%93%B6%E5%8D%81%EF%BC%8C%E4%B8%80%E6%99%83%E8%80%8C%E9%80%9D.html"/>
+    <id>http://someword.me/金九银十，一晃而逝.html</id>
+    <published>2019-10-03T13:27:24.000Z</published>
+    <updated>2019-10-04T07:27:29.459Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;昨天重温了一下陈凯歌的《霸王别姬》，二刷一下还是有蛮多感觉的，其中最令我感觉深刻的一句台词就是，小癞子说的：“他们怎么成的角儿啊，这得挨多少打啊~”&lt;/p&gt;
+&lt;p&gt;嗯，我不禁也感慨了一下：他们怎么成的大佬啊，这得踩多少坑，写多少BUG，被怼多少回啊~&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="每月总结" scheme="http://someword.me/categories/%E6%AF%8F%E6%9C%88%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="每月总结" scheme="http://someword.me/tags/%E6%AF%8F%E6%9C%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深圳北大医院点痣记录</title>
+    <link href="http://someword.me/%E6%B7%B1%E5%9C%B3%E5%8C%97%E5%A4%A7%E5%8C%BB%E9%99%A2%E7%82%B9%E7%97%A3%E8%AE%B0%E5%BD%95.html"/>
+    <id>http://someword.me/深圳北大医院点痣记录.html</id>
+    <published>2019-10-02T04:27:24.000Z</published>
+    <updated>2019-10-02T07:31:47.752Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;之前在大学的时候一直想去点痣，但是各种因素拖着就没去了；女盆友最近也长了好几个痣，于是就规划这次国庆去点一下，然后在家死宅几天，既能修复保养又能省钱，真是妙不可言~&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>方法论实操——如何设计WMS多批次收货需求</title>
+    <link href="http://someword.me/%E6%96%B9%E6%B3%95%E8%AE%BA%E5%AE%9E%E6%93%8D%E2%80%94%E2%80%94%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1WMS%E5%A4%9A%E6%89%B9%E6%AC%A1%E6%94%B6%E8%B4%A7%E9%9C%80%E6%B1%82.html"/>
+    <id>http://someword.me/方法论实操——如何设计WMS多批次收货需求.html</id>
+    <published>2019-09-24T13:27:24.000Z</published>
+    <updated>2019-09-24T14:02:53.560Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;上一篇《我的产品方法论——如何设计WMS多批次收货需求》中讲到了一般情况下我设计一个产品需求的部分过程，主要是一些方法论和理论上的东西。而此篇则是下文，也是根据方法论来实操的一个典型案例。&lt;/p&gt;
+&lt;p&gt;多批次收货是目前很多同行或者竞品都支持的功能，我们由于之前的业务模式问题一直没有对此功能进行调整，目前业务量起来了，相关的客户需求也多了，于是决定排上日程对此功能进行设计和开发。每个公司都会有自身的业务背景，所以我所设计的此功能一方面是参考市面上成熟的业务方案（挺难找方案的），一方面也结合了之前旧系统和老业务的特点，具有很浓烈的业务背景味道，我也会更多地凸显产品方面的内容而较少地扯到业务。&lt;/p&gt;
+&lt;p&gt;请大家扶好坐稳，老司机要发车啦~&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="工作规范" scheme="http://someword.me/categories/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
+    
+    
+      <category term="工作规范" scheme="http://someword.me/tags/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的产品方法论——如何设计WMS多批次收货需求</title>
+    <link href="http://someword.me/%E6%88%91%E7%9A%84%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95%E8%AE%BA%E2%80%94%E2%80%94%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1WMS%E5%A4%9A%E6%89%B9%E6%AC%A1%E6%94%B6%E8%B4%A7%E9%9C%80%E6%B1%82.html"/>
+    <id>http://someword.me/我的产品方法论——如何设计WMS多批次收货需求.html</id>
+    <published>2019-09-22T04:27:24.000Z</published>
+    <updated>2019-09-29T01:29:30.336Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;很早之前我就想写两个内容，一个是自己的产品方法论，一个是关于WMS的背后的故事。&lt;/p&gt;
+&lt;p&gt;产品方法论是因为我每次看别人的文章的时候都觉得头头是道，有条不紊，而自己做需求，做一些产品相关的工作的时候总是今天用“华山派的功夫”，明天用“武当的功夫”，后天“可能就完全不会功夫了”……所以我想自己写点东西给自己一些指导，一些约束。&lt;/p&gt;
+&lt;p&gt;WMS的背后的故事是因为我目前主要负责的就是这个模块，我也对这个领域是最熟悉的，当然虽然说最熟悉，但是我依然觉得这一块我做得很一般，还远没有踏入行业的门槛。写这些是为了总结自己的一些产品心得，同样的网络上这方面的资料和信息太匮乏了，如果我的东西能给别人一点帮助，那也是一个莫大的荣幸。&lt;/p&gt;
+&lt;p&gt;结合上述几个理由，我决定说干就干，既写下我的产品方法论，也写下我对WMS这一块的心得感悟。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="工作规范" scheme="http://someword.me/categories/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
+    
+    
+      <category term="工作规范" scheme="http://someword.me/tags/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品日常工作规范之需求研发（第三篇）</title>
+    <link href="http://someword.me/%E4%BA%A7%E5%93%81%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83%E4%B9%8B%E9%9C%80%E6%B1%82%E7%A0%94%E5%8F%91%EF%BC%88%E7%AC%AC%E4%B8%89%E7%AF%87%EF%BC%89.html"/>
+    <id>http://someword.me/产品日常工作规范之需求研发（第三篇）.html</id>
+    <published>2019-09-21T10:27:24.000Z</published>
+    <updated>2019-09-21T13:21:49.222Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文是一个系列文，主要是将我自己目前产品工作中踩过的坑和遇到的困难进行反思和总结，然后将其输出为一个工作规范。同时也因为我现在负责公司产品组管理的工作，制定相关的规范和准则，一来可以约束自己，形成良好的工作方式和流程；二来可以约束团队，方便新人工作和成长更加具有科学性和条理性。初步定的内容和模块大概有三个大模块，九个小细项，希望我能坚持写完。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="工作规范" scheme="http://someword.me/categories/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
+    
+    
+      <category term="工作规范" scheme="http://someword.me/tags/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自由与限制</title>
+    <link href="http://someword.me/%E8%87%AA%E7%94%B1%E4%B8%8E%E9%99%90%E5%88%B6.html"/>
+    <id>http://someword.me/自由与限制.html</id>
+    <published>2019-09-08T06:27:24.000Z</published>
+    <updated>2019-09-08T07:56:01.304Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;自由与限制，在上周发的《请查收这份一如既往的8月总结》中提到了，但是鉴于篇幅的问题我没有展开去讲，过了一周之后我依然觉得其中发散的一些观点和内容让我有很多表达的欲望，于是我决定再写一篇关于此观点的文章，一方面是对之前没拓展的东西进行详细补充，另外一方面是锻炼一下如何如写这种大题材、大框架的主题。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>请查收这份一如既往的8月总结</title>
+    <link href="http://someword.me/%E8%AF%B7%E6%9F%A5%E6%94%B6%E8%BF%99%E4%BB%BD%E4%B8%80%E5%A6%82%E6%97%A2%E5%BE%80%E7%9A%848%E6%9C%88%E6%80%BB%E7%BB%93.html"/>
+    <id>http://someword.me/请查收这份一如既往的8月总结.html</id>
+    <published>2019-09-01T12:27:24.000Z</published>
+    <updated>2019-09-01T09:00:36.357Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;9月份到啦，许个心愿：争取下半年，两开花，两开花~&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="每月复盘" scheme="http://someword.me/categories/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
+    
+    
+      <category term="每月复盘" scheme="http://someword.me/tags/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>4S 方法论总结与复盘</title>
+    <link href="http://someword.me/4S%20%E6%96%B9%E6%B3%95%E8%AE%BA%E6%80%BB%E7%BB%93%E4%B8%8E%E5%A4%8D%E7%9B%98.html"/>
+    <id>http://someword.me/4S 方法论总结与复盘.html</id>
+    <published>2019-08-26T06:27:24.000Z</published>
+    <updated>2019-09-02T11:12:40.762Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前两天我在看《练习的心态：如何培养耐心、专注和自律》一书，此书被诸多人奉为经典，成长必读，所以我跟着风加入了书架，最开始看到现在其实大概多了几个月了。我看书最大的问题应该就是这样碎片化了，很多书我会看一些，然后就放一边再去看另外一本，结果最后再拾起来的时候可能就忘了前文的语境、背景和一些衬托的东西了。但是此书中的一节是关于讲”4S“的，其中有一些方法论和指导方针挺适用于目前的工作遇到的问题的，于是我决定再读此节并写点东西来给自己总结和复盘。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;所谓的”4S”方法，是指四个以”S” 开头的英文字母，它们是：简化(simplify)、细分(small)、缩短(short)和放慢(slow)，你将发现，这些概念相互之间存在着密切的关联，并且经常相互之间来回流动。在你提升自己对练习的心态的控制过程中,重要的是尽可能容易地将思绪停留在过程之中。而这四种方法的每一种都是基本的和直接简明的，可以帮助你将思绪停留在过程之中。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>又是一年金九银十求职季 -- 周六龙岗基地分享会复盘</title>
+    <link href="http://someword.me/%E5%8F%88%E6%98%AF%E4%B8%80%E5%B9%B4%E9%87%91%E4%B9%9D%E9%93%B6%E5%8D%81%E6%B1%82%E8%81%8C%E5%AD%A3%20--%20%E5%91%A8%E5%85%AD%E9%BE%99%E5%B2%97%E5%9F%BA%E5%9C%B0%E5%88%86%E4%BA%AB%E4%BC%9A%E5%A4%8D%E7%9B%98.html"/>
+    <id>http://someword.me/又是一年金九银十求职季 -- 周六龙岗基地分享会复盘.html</id>
+    <published>2019-08-20T14:27:24.000Z</published>
+    <updated>2019-08-20T12:49:51.578Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;周六受邀去参加了一场学校组织的就业指导分享会，原因是农大软件专业每年，在大三升大四的暑假都会安排学生前往北京和深圳的基地进行几个月的就业实训，简单地理解可以说是手把手教学实战写代码，写项目。毕竟软件工程这个专业，就学校安排的课程来说基本上都是一些枯燥的基础课，很少会有实战的机会，如果只学了基础就贸然毕业了，那基本上来说就是失业了。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="产品经理" scheme="http://someword.me/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/"/>
+    
+    
+      <category term="产品分享" scheme="http://someword.me/tags/%E4%BA%A7%E5%93%81%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>充满着规划的7月总结</title>
+    <link href="http://someword.me/%E5%85%85%E6%BB%A1%E7%9D%80%E8%A7%84%E5%88%92%E7%9A%847%E6%9C%88%E6%80%BB%E7%BB%93.html"/>
+    <id>http://someword.me/充满着规划的7月总结.html</id>
+    <published>2019-08-07T14:27:24.000Z</published>
+    <updated>2019-08-07T15:10:18.992Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“人生是一场马拉松，不要玻璃心太强，要适应失败，并且永不放弃。”——吴军。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="每月复盘" scheme="http://someword.me/categories/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
+    
+    
+      <category term="每月复盘" scheme="http://someword.me/tags/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品日常工作规范之需求设计（第二篇）</title>
+    <link href="http://someword.me/%E4%BA%A7%E5%93%81%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83%E4%B9%8B%E9%9C%80%E6%B1%82%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AF%87%EF%BC%89.html"/>
+    <id>http://someword.me/产品日常工作规范之需求设计（第二篇）.html</id>
+    <published>2019-07-09T08:27:24.000Z</published>
+    <updated>2019-09-22T06:46:26.484Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文是一个系列文，主要是将我自己目前产品工作中踩过的坑和遇到的困难进行反思和总结，然后将其输出为一个工作规范。同时也因为我现在负责公司产品组管理的工作，制定相关的规范和准则，一来可以约束自己，形成良好的工作方式和流程；二来可以约束团队，方便新人工作和成长更加具有科学性和条理性。初步定的内容和模块大概有三个大模块，九个小细项，希望我能坚持写完。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="工作规范" scheme="http://someword.me/categories/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
+    
+    
+      <category term="工作规范" scheme="http://someword.me/tags/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品日常工作规范之需求收集（第一篇）</title>
+    <link href="http://someword.me/%E4%BA%A7%E5%93%81%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83%E4%B9%8B%E9%9C%80%E6%B1%82%E6%94%B6%E9%9B%86%EF%BC%88%E7%AC%AC%E4%B8%80%E7%AF%87%EF%BC%89.html"/>
+    <id>http://someword.me/产品日常工作规范之需求收集（第一篇）.html</id>
+    <published>2019-07-07T08:27:24.000Z</published>
+    <updated>2019-07-07T08:13:37.212Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文是一个系列文，主要是将我自己目前产品工作中踩过的坑和遇到的困难进行反思和总结，然后将其输出为一个工作规范。同时也因为我现在负责公司产品组管理的工作，制定相关的规范和准则，一来可以约束自己，形成良好的工作方式和流程；二来可以约束团队，方便新人工作和成长更加具有科学性和条理性。初步定的内容和模块大概有三个大模块，九个小细项，希望我能坚持写完。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="工作规范" scheme="http://someword.me/categories/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
+    
+    
+      <category term="工作规范" scheme="http://someword.me/tags/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录一下这个平平淡淡的6月</title>
+    <link href="http://someword.me/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E8%BF%99%E4%B8%AA%E5%B9%B3%E5%B9%B3%E6%B7%A1%E6%B7%A1%E7%9A%846%E6%9C%88.html"/>
+    <id>http://someword.me/记录一下这个平平淡淡的6月.html</id>
+    <published>2019-06-29T12:27:24.000Z</published>
+    <updated>2019-06-29T09:26:59.581Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;”在我们的人生之中，真正的平和与满足源于意识到人生是一个过程，是一段选择体验神奇路径走下去的旅途。“——《练习的心态：如何培养耐心、专注和自律》&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="每月复盘" scheme="http://someword.me/categories/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
+    
+    
+      <category term="每月复盘" scheme="http://someword.me/tags/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次印象深刻的面试</title>
+    <link href="http://someword.me/%E4%B8%80%E6%AC%A1%E5%8D%B0%E8%B1%A1%E6%B7%B1%E5%88%BB%E7%9A%84%E9%9D%A2%E8%AF%95.html"/>
+    <id>http://someword.me/一次印象深刻的面试.html</id>
+    <published>2019-06-19T08:27:24.000Z</published>
+    <updated>2019-06-19T14:47:34.830Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;前前后后面试了近一个月，面试了大约20人左右，只有今天这个面试令我印象深刻，今天将它记录下来，一方面是记录一个可值得记录的一个事情，另外一方面是为了以后自己求职面试的时候做鞭策。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读《非暴力沟通》所感</title>
+    <link href="http://someword.me/%E8%AF%BB%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E6%89%80%E6%84%9F.html"/>
+    <id>http://someword.me/读非暴力沟通所感.html</id>
+    <published>2019-06-15T08:27:24.000Z</published>
+    <updated>2019-06-15T08:38:59.223Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;很早之前就听说过这本书，也在很多地方看到过别人的推荐，但是由于懒惰、拖沓、逃避等各种因素迟迟没有时间去读完这本书。而让我下定决心去立马行动，读完这本书的原因有两个：一是我想通过这本书去更好地去处理情侣间的关系；二是因为我想通过这本书去提升工作中我所负责的产品团队的整体沟通实力。所以简而言之，一是为私，二是为公；&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈产品助理岗面试这个事儿</title>
+    <link href="http://someword.me/%E8%B0%88%E8%B0%88%E4%BA%A7%E5%93%81%E5%8A%A9%E7%90%86%E5%B2%97%E9%9D%A2%E8%AF%95%E8%BF%99%E4%B8%AA%E4%BA%8B%E5%84%BF.html"/>
+    <id>http://someword.me/谈谈产品助理岗面试这个事儿.html</id>
+    <published>2019-06-08T08:27:24.000Z</published>
+    <updated>2019-06-08T09:29:38.765Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;由于最近公司人员流动加上工作量的调整，所以部门决定增加一个产品助理岗位，于是这两周就花了挺多时间在招人上，大概前前后后面试了15个人左右。面试还是发现了挺多有意思的事情，加上之前也有人询问我关于一些新人入职面试的问题，所以就特地以此为契机来写一下，产品助理岗位面试这个事儿。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="产品入门" scheme="http://someword.me/categories/%E4%BA%A7%E5%93%81%E5%85%A5%E9%97%A8/"/>
+    
+    
+      <category term="产品入门" scheme="http://someword.me/tags/%E4%BA%A7%E5%93%81%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>复盘一下，聊聊这个骚动的5月</title>
+    <link href="http://someword.me/%E5%A4%8D%E7%9B%98%E4%B8%80%E4%B8%8B%EF%BC%8C%E8%81%8A%E8%81%8A%E8%BF%99%E4%B8%AA%E9%AA%9A%E5%8A%A8%E7%9A%845%E6%9C%88.html"/>
+    <id>http://someword.me/复盘一下，聊聊这个骚动的5月.html</id>
+    <published>2019-05-31T12:27:24.000Z</published>
+    <updated>2019-06-05T13:07:12.319Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;上半月是骚动的5月，是内心的骚动。下半月是零碎的5月，是工作的零碎。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="每月复盘" scheme="http://someword.me/categories/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
+    
+    
+      <category term="每月复盘" scheme="http://someword.me/tags/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>精鹰计划培训心得与总结</title>
+    <link href="http://someword.me/%E7%B2%BE%E9%B9%B0%E8%AE%A1%E5%88%92%E5%9F%B9%E8%AE%AD%E6%80%BB%E7%BB%93.html"/>
+    <id>http://someword.me/精鹰计划培训总结.html</id>
+    <published>2019-05-02T06:27:24.000Z</published>
+    <updated>2019-05-02T06:46:00.991Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这是关于一堂价值几万元的培训课程的文字总结，按理说，拾人牙慧之后，应该也能值杯星巴克的钱吧，现在免费分享给大家。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+  </entry>
+  
+</feed>
