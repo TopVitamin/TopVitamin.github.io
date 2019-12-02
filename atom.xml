@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://someword.me/"/>
-  <updated>2019-11-23T03:42:56.235Z</updated>
+  <updated>2019-12-02T13:03:38.222Z</updated>
   <id>http://someword.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>写在健身房跑步机上的11月总结</title>
+    <link href="http://someword.me/%E5%86%99%E5%9C%A8%E5%81%A5%E8%BA%AB%E6%88%BF%E8%B7%91%E6%AD%A5%E6%9C%BA%E4%B8%8A%E7%9A%8411%E6%9C%88%E6%80%BB%E7%BB%93.html"/>
+    <id>http://someword.me/写在健身房跑步机上的11月总结.html</id>
+    <published>2019-12-02T13:30:24.000Z</published>
+    <updated>2019-12-02T13:03:38.222Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这篇文章在一个奇思妙想的创意下完成，语义上可能会有瑕疵，但是贵在写的迅速，毕竟这个是写在健身房的跑步机上。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="每月总结" scheme="http://someword.me/categories/%E6%AF%8F%E6%9C%88%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="每月总结" scheme="http://someword.me/tags/%E6%AF%8F%E6%9C%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>百密一疏的产品上线</title>
@@ -450,29 +473,6 @@
     
       &lt;blockquote&gt;
 &lt;p&gt;前前后后面试了近一个月，面试了大约20人左右，只有今天这个面试令我印象深刻，今天将它记录下来，一方面是记录一个可值得记录的一个事情，另外一方面是为了以后自己求职面试的时候做鞭策。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="维他姜茶" scheme="http://someword.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
-    
-    
-      <category term="维他姜茶" scheme="http://someword.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>读《非暴力沟通》所感</title>
-    <link href="http://someword.me/%E8%AF%BB%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E6%89%80%E6%84%9F.html"/>
-    <id>http://someword.me/读非暴力沟通所感.html</id>
-    <published>2019-06-15T08:27:24.000Z</published>
-    <updated>2019-06-15T08:38:59.223Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;很早之前就听说过这本书，也在很多地方看到过别人的推荐，但是由于懒惰、拖沓、逃避等各种因素迟迟没有时间去读完这本书。而让我下定决心去立马行动，读完这本书的原因有两个：一是我想通过这本书去更好地去处理情侣间的关系；二是因为我想通过这本书去提升工作中我所负责的产品团队的整体沟通实力。所以简而言之，一是为私，二是为公；&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
