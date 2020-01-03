@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://someword.me/"/>
-  <updated>2019-12-21T06:32:12.814Z</updated>
+  <updated>2020-01-03T13:06:52.966Z</updated>
   <id>http://someword.me/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>12月的一些感悟</title>
+    <link href="http://someword.me/12%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%82%9F.html"/>
+    <id>http://someword.me/12月的一些感悟.html</id>
+    <published>2019-12-31T06:30:24.000Z</published>
+    <updated>2020-01-03T13:06:52.966Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;翻了一圈12月的邮件，周报和一些聊天记录等，好像没发生什么特别震撼和印象深刻的东西，那本月的总结就写点感悟好了~&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="月度总结" scheme="http://someword.me/categories/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="月度总结" scheme="http://someword.me/tags/%E6%9C%88%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>《领导者的非物质激励》总结</title>
@@ -459,29 +482,6 @@
     
     
       <category term="工作规范" scheme="http://someword.me/tags/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记录一下这个平平淡淡的6月</title>
-    <link href="http://someword.me/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E8%BF%99%E4%B8%AA%E5%B9%B3%E5%B9%B3%E6%B7%A1%E6%B7%A1%E7%9A%846%E6%9C%88.html"/>
-    <id>http://someword.me/记录一下这个平平淡淡的6月.html</id>
-    <published>2019-06-29T12:27:24.000Z</published>
-    <updated>2019-06-29T09:26:59.581Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;”在我们的人生之中，真正的平和与满足源于意识到人生是一个过程，是一段选择体验神奇路径走下去的旅途。“——《练习的心态：如何培养耐心、专注和自律》&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="每月复盘" scheme="http://someword.me/categories/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
-    
-    
-      <category term="每月复盘" scheme="http://someword.me/tags/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
     
   </entry>
   
