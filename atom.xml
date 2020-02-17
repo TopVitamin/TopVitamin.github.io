@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://someword.me/"/>
-  <updated>2020-01-16T13:01:38.187Z</updated>
+  <updated>2020-02-17T14:00:35.492Z</updated>
   <id>http://someword.me/</id>
   
   <author>
@@ -17,18 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>5位产品经理的一场分享</title>
-    <link href="http://someword.me/5%E4%B8%AA%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E4%B8%80%E5%9C%BA%E5%88%86%E4%BA%AB.html"/>
-    <id>http://someword.me/5个产品经理的一场分享.html</id>
-    <published>2020-01-16T11:27:24.000Z</published>
-    <updated>2020-01-16T13:01:38.187Z</updated>
+    <title>总算是解决了排版的痛——从博客到公众号的辛酸历程</title>
+    <link href="http://someword.me/%E6%80%BB%E7%AE%97%E6%98%AF%E8%A7%A3%E5%86%B3%E4%BA%86%E6%8E%92%E7%89%88%E7%9A%84%E7%97%9B%E2%80%94%E2%80%94%E4%BB%8E%E5%8D%9A%E5%AE%A2%E5%88%B0%E5%85%AC%E4%BC%97%E5%8F%B7%E7%9A%84%E8%BE%9B%E9%85%B8%E5%8E%86%E7%A8%8B.html"/>
+    <id>http://someword.me/总算是解决了排版的痛——从博客到公众号的辛酸历程.html</id>
+    <published>2020-02-17T11:27:24.000Z</published>
+    <updated>2020-02-17T14:00:35.492Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;前脚刚写完12月的月度总结，想着自己立的“自律人设”不能崩，那就趁热打铁也将2019年的年度总结也一起写完吧。这是一篇难得一见的长文，淋漓尽致般地体现了「叨逼叨」的人设。&lt;/p&gt;
+&lt;p&gt;记录一下自己的博客发文和微信公众号发文排版的一些辛酸历程。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="产品思维" scheme="http://someword.me/categories/%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B4/"/>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5位产品经理的一场分享</title>
+    <link href="http://someword.me/5%E4%B8%AA%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E4%B8%80%E5%9C%BA%E5%88%86%E4%BA%AB.html"/>
+    <id>http://someword.me/5个产品经理的一场分享.html</id>
+    <published>2020-01-16T11:27:24.000Z</published>
+    <updated>2020-01-17T00:37:42.512Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
 &lt;p&gt;昨天组织了产品组内部的一个总结与分享，用茶话会的形式来和身边的几位同事沟通了一下，有些感悟让我觉得可以说道说道，所以就记录下来了。&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -462,29 +482,6 @@
     
     
       <category term="产品分享" scheme="http://someword.me/tags/%E4%BA%A7%E5%93%81%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>充满着规划的7月总结</title>
-    <link href="http://someword.me/%E5%85%85%E6%BB%A1%E7%9D%80%E8%A7%84%E5%88%92%E7%9A%847%E6%9C%88%E6%80%BB%E7%BB%93.html"/>
-    <id>http://someword.me/充满着规划的7月总结.html</id>
-    <published>2019-08-07T14:27:24.000Z</published>
-    <updated>2019-08-07T15:10:18.992Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“人生是一场马拉松，不要玻璃心太强，要适应失败，并且永不放弃。”——吴军。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="每月复盘" scheme="http://someword.me/categories/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
-    
-    
-      <category term="每月复盘" scheme="http://someword.me/tags/%E6%AF%8F%E6%9C%88%E5%A4%8D%E7%9B%98/"/>
     
   </entry>
   
