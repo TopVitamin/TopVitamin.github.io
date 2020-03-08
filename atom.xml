@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://someword.me/"/>
-  <updated>2020-03-08T07:23:59.736Z</updated>
+  <updated>2020-03-08T07:32:11.155Z</updated>
   <id>http://someword.me/</id>
   
   <author>
@@ -17,38 +17,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://someword.me/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6%EF%BC%9A%E7%AC%AC202002%E6%9C%9F.html"/>
-    <id>http://someword.me/维他姜茶：第202002期.html</id>
-    <published>2020-03-08T07:13:30.219Z</published>
-    <updated>2020-03-08T07:23:59.736Z</updated>
+    <title>8000字自述 | 我不太坎坷的产品之路</title>
+    <link href="http://someword.me/8000%E5%AD%97%E8%87%AA%E8%BF%B0%EF%BC%9A%E6%88%91%E4%B8%8D%E5%A4%AA%E5%9D%8E%E5%9D%B7%E7%9A%84%E4%BA%A7%E5%93%81%E4%B9%8B%E8%B7%AF.html"/>
+    <id>http://someword.me/8000字自述：我不太坎坷的产品之路.html</id>
+    <published>2020-03-04T11:27:24.000Z</published>
+    <updated>2020-03-08T07:32:11.155Z</updated>
     
     <summary type="html">
     
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;title: 维他姜茶：第202002期&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date: 2020-03-1 20:20:20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tags: 维他姜茶&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;categories: 维他姜茶&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;keywords: [产品经理,产品思维,只言片语]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;p&gt;今天是2020年的3月1日，周末，早上起来脑海闪过好多个点子，但是浮现了几个数字让我有点震惊，也有点感慨，所以我决定以这几个数字开头，写一篇关于我的职业历程的纪录文。&lt;/p&gt;
     
     </summary>
     
     
+      <category term="产品思维" scheme="http://someword.me/categories/%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B4/"/>
+    
+    
+      <category term="产品经理" scheme="http://someword.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/"/>
     
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://someword.me/8000%E5%AD%97%E8%87%AA%E8%BF%B0%EF%BC%9A%E6%88%91%E4%B8%8D%E5%A4%AA%E5%9D%8E%E5%9D%B7%E7%9A%84%E4%BA%A7%E5%93%81%E4%B9%8B%E8%B7%AF.html"/>
-    <id>http://someword.me/8000字自述：我不太坎坷的产品之路.html</id>
-    <published>2020-03-08T07:13:30.212Z</published>
-    <updated>2020-03-08T07:25:37.861Z</updated>
+    <title>维他姜茶：第202002期</title>
+    <link href="http://someword.me/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6%EF%BC%9A%E7%AC%AC202002%E6%9C%9F.html"/>
+    <id>http://someword.me/维他姜茶：第202002期.html</id>
+    <published>2020-03-01T12:20:20.000Z</published>
+    <updated>2020-03-08T07:32:29.638Z</updated>
     
     <summary type="html">
     
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;title: 8000字自述|我不太坎坷的产品之路&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date: 2020-03-4 22:00:00&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tags: 产品经理&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;categories: 产品思维&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;keywords: [产品经理,产品思维,只言片语]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;今天是2020年的3月1日，周末，早上起来脑海闪过好多个点子，但是浮现了几个数字让我有点震惊，也有点感慨，所以我决定以这几个数字开头，写一篇关于我的职业历程的纪录文。&lt;/p&gt;
+      
+      
+        
+        
+          &lt;a
+        
+      
     
     </summary>
     
     
+      <category term="维他姜茶" scheme="http://someword.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+    
+      <category term="维他姜茶" scheme="http://someword.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
     
   </entry>
   
@@ -57,14 +69,11 @@
     <link href="http://someword.me/%E6%88%91%E7%9A%84B%E7%AB%AF%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E6%B5%81.html"/>
     <id>http://someword.me/我的B端产品工作流.html</id>
     <published>2020-02-24T11:27:24.000Z</published>
-    <updated>2020-03-08T07:21:50.116Z</updated>
+    <updated>2020-03-08T07:31:35.887Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;记录一下自己的博客发文和微信公众号发文排版的一些辛酸历程。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
 &lt;p&gt;一篇长文记录一下我的B端产品工作流，如果你还没总结出一套自己的工作流，那么建议你一起进来看看~&lt;/p&gt;
 &lt;/blockquote&gt;
     
