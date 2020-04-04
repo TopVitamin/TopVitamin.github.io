@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://pm.budong.me/"/>
-  <updated>2020-03-08T07:32:11.155Z</updated>
+  <updated>2020-04-04T12:24:22.334Z</updated>
   <id>http://pm.budong.me/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>维他姜茶：第202003期</title>
+    <link href="http://pm.budong.me/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6%EF%BC%9A%E7%AC%AC202003%E6%9C%9F.html"/>
+    <id>http://pm.budong.me/维他姜茶：第202003期.html</id>
+    <published>2020-04-02T12:20:20.000Z</published>
+    <updated>2020-04-04T12:24:22.334Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一份2月的维他姜茶，请查收！&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="维他姜茶" scheme="http://pm.budong.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+    
+      <category term="维他姜茶" scheme="http://pm.budong.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>8000字自述 | 我不太坎坷的产品之路</title>
@@ -42,17 +63,11 @@
     <link href="http://pm.budong.me/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6%EF%BC%9A%E7%AC%AC202002%E6%9C%9F.html"/>
     <id>http://pm.budong.me/维他姜茶：第202002期.html</id>
     <published>2020-03-01T12:20:20.000Z</published>
-    <updated>2020-03-08T07:32:29.638Z</updated>
+    <updated>2020-04-04T12:24:42.569Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a
-        
-      
+      &lt;p&gt;这是一份1月的维他姜茶，请查收！&lt;/p&gt;
     
     </summary>
     
@@ -460,29 +475,6 @@
     
     
       <category term="工作规范" scheme="http://pm.budong.me/tags/%E5%B7%A5%E4%BD%9C%E8%A7%84%E8%8C%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自由与限制</title>
-    <link href="http://pm.budong.me/%E8%87%AA%E7%94%B1%E4%B8%8E%E9%99%90%E5%88%B6.html"/>
-    <id>http://pm.budong.me/自由与限制.html</id>
-    <published>2019-09-08T06:27:24.000Z</published>
-    <updated>2019-09-08T07:56:01.304Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;自由与限制，在上周发的《请查收这份一如既往的8月总结》中提到了，但是鉴于篇幅的问题我没有展开去讲，过了一周之后我依然觉得其中发散的一些观点和内容让我有很多表达的欲望，于是我决定再写一篇关于此观点的文章，一方面是对之前没拓展的东西进行详细补充，另外一方面是锻炼一下如何如写这种大题材、大框架的主题。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="维他姜茶" scheme="http://pm.budong.me/categories/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
-    
-    
-      <category term="维他姜茶" scheme="http://pm.budong.me/tags/%E7%BB%B4%E4%BB%96%E5%A7%9C%E8%8C%B6/"/>
     
   </entry>
   
