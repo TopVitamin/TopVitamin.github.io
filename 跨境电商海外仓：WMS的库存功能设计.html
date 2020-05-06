@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="产品经理,产品思维,只言片语">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="只言片语" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="这是WMS系列文的第3篇，一共有5篇。">
+<meta name="keywords" content="产品经理,产品思维,只言片语">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨境电商海外仓：WMS的库存功能设计">
+<meta property="og:url" content="http://pm.budong.me/跨境电商海外仓：WMS的库存功能设计.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="这是WMS系列文的第3篇，一共有5篇。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/1fa93f34-c142-454e-a8f1-f3841136b55a.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/eb54dd47-926f-4b45-be3d-fbaf82ebf50e.png">
+<meta property="og:updated_time" content="2020-05-06T09:40:44.567Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨境电商海外仓：WMS的库存功能设计">
+<meta name="twitter:description" content="这是WMS系列文的第3篇，一共有5篇。">
+<meta name="twitter:image" content="https://imgkr.cn-bj.ufileos.com/1fa93f34-c142-454e-a8f1-f3841136b55a.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://pm.budong.me/跨境电商海外仓：WMS的库存功能设计.html">
+
+
+
+
+
+  <title>跨境电商海外仓：WMS的库存功能设计 | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+  
+   <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">记录产品工作及思考的点滴</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nav">
+          <a href="/nav/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br>
+            
+            作品
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://pm.budong.me/跨境电商海外仓：WMS的库存功能设计.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">跨境电商海外仓：WMS的库存功能设计</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-05T20:20:20+08:00">
+                2020-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/WMS/" itemprop="url" rel="index">
+                    <span itemprop="name">WMS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是WMS系列文的第3篇，一共有5篇。</p>
+<a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前面两篇我们讲完了仓储系统WMS最常用的两个功能：入库和出库。今天我们来谈谈第三个模块：库存。</p>
+<p>库存是WMS的基石，而且比较容易理解，所以大家会觉得这个东西很简单，没必要太放在心上。但是从我个人的经历来看，其实跨境电商的企业对库存的看重程度远比我们这些系统设计者要重视的多。</p>
+<p>因为对我来说，系统的库存设计的好与不好，无非就是数据准确与否，系统是否具有拓展性，是否能较好地支撑业务的快速发展。归根结底，库存对设计者来说，更粗暴地理解就是「一系列数字」。</p>
+<p>但是对于跨境电商卖家（企业）来说，库存的意义就变得非凡了。库存高，可能意味着货物卖不出去，存在滞销的情况；库存低，可能意味着卖的太火爆了，可能来不及补货了；库存忽高忽低，可能意味着自己对选品，对市场的预估捉摸不准。简单的理解，库存对卖家而言，就是实打实的资金流和市场环境的晴雨表。</p>
+<p>所以，作为产品经理而言，一方面要以平常心来对待系统的每个迭代的需求，另外一方面有需要换位思考，去想想这些需求满足了哪些业务，而这些业务对某些客户来说，是多么的重要。</p>
+<p>那么我就来拆解回顾一下，关于WMS的库存设计，我曾踩过了哪些坑，遇到了哪些难题，又有哪些经验是可以分享出来的。</p>
+<h2 id="关于库内作业"><a href="#关于库内作业" class="headerlink" title="关于库内作业"></a>关于库内作业</h2><p>一般来说，无论是国内电商仓还是跨境电商海外仓，库内作业大概都涉及以下几个操作，而这些操作的内核其实都是一个：<strong><em>对库存进行增删改查。</em></strong></p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/1fa93f34-c142-454e-a8f1-f3841136b55a.png" alt="库内操作"></p>
+<p>关于盘点，我会单独拎出来写一篇内容，所以库存这一篇就不过多提及盘点的内容了。同时关于库内加工，大多数海外仓受限于管理和沟通，以及成本的问题，往往也很少做库内加工这些内容，最多的就是FBA换标和一些简单地更换包装等，复杂一些的操作和加工基本上不会做，这一块我也接触的不多，所以也就不过多展开了。</p>
+<h3 id="1-库存查询——查询可用库存"><a href="#1-库存查询——查询可用库存" class="headerlink" title="1. 库存查询——查询可用库存"></a>1. 库存查询——查询可用库存</h3><p>库存是WMS作业的基石，仓库的入库和出库，最终都会将结果反馈到库存上。</p>
+<p>例如，某天仓库收货上架了某个A客户的一批手机，那么关于这一批手机的库存就应该要及时的更新，变成最新的数据。然后过了几天后，仓库又对这一批手机做了出库操作，所以库存又需要扣减。出库后有可能会有客户退货，那么当客户的退件到了仓库之后，仓库又要及时处理再次上架，这批手机的库存又要增加。就这样往往复复之后，库存就变成了一系列复杂交错的数据流，而我们要做的，就是想办法整理好这些散乱的数据流。</p>
+<p>最常用的库存查询就是用来查询某个货在系统中还有多少库存，例如我们在淘宝购物的时候，商家会标注库存剩余数，如果库存不足了，那么就限制客户下单。这里的库存反映的就是仓库实物的多少，在界面上标注的库存数也是库存查询的一个典型案例。当然，很多时候，不同的系统设计框架会不一样，有些时候页面上展示的库存可能是订单系统OMS自己记录的一套库存，可能和仓库系统WMS中记录的会有偏差。但是如果从这个现象的本质来看，这其实就是一种「库存查询」的典型用法。</p>
+<p>库存查询一般是用来查看<strong>可用库存</strong>，有些时候也会需要查看总库存，锁定库存，在途库存或者冻结库存等。</p>
+<blockquote>
+<p>总库存=可用库存+锁定库存+冻结库存（可选）。</p>
+</blockquote>
+<p>有些仓库会区分锁定库存和冻结库存，具体要看业务的定义是什么；在途库存一般是用来告知客户有一些货物正在路上，但是还没到仓库，所以一般不会记录到<code>总库存</code>中。</p>
+<h3 id="2-库存查询——查询库存的批次"><a href="#2-库存查询——查询库存的批次" class="headerlink" title="2. 库存查询——查询库存的批次"></a>2. 库存查询——查询库存的批次</h3><p>随着跨境电商竞争愈发的白热化，以前那种靠选品就能取胜、爆火的可能性越来越低了，很多卖家开始关注用户体验，其中就包括对仓储服务的要求。所以越来越多的客户希望仓库能对货品做到更加精细化的管理，最好是能精细到批次的管理。</p>
+<blockquote>
+<p>同样是一部256G的iPhone11，4月1号入库的和5月1号入库的应该是不同的批次，如果需要按先进先出来管理，那么这两个时间点入库的iPhone 11不能放在同一个库位上。</p>
+</blockquote>
+<p>所以，当仓库采用了「先进先出FIFO」策略后，就需要开发批次查询的功能，以便于支持仓库人员查询到具体的某个SKU有多少批次，同时这些批次又分别放在哪些库位上。之前出库篇谈到，其实「先进先出FIFO」看似很完美，让客户体验提升了很多。但是对仓库管理来说，其实增加了很多难度，其中最大的一个问题就是：<strong>库位不够</strong>。</p>
+<p>海外仓本来建仓成本就很高，如果仓库不算大，库位又不太多的情况下，对所有客户采用「先进先出FIFO」策略，往往很容易爆仓（库位爆满）。所以，为了满足部分客户这种精细化的要求，往往会采用折中的方式：对某些客户采用先进先出，某些客户做逻辑上的先进先出，也就是之前提到的“假性”先进先出。看似很简单的，很棒的功能，但是实施起来也会受到诸多限制，所以这算是海外仓WMS设计的一个核心点。</p>
+<p><strong><em>设计某个功能不难，难的是如何把控用这个功能的人，以及这个功能带来的一系列成本问题。</em></strong></p>
+<h3 id="3-库存查询——查询库存的库龄"><a href="#3-库存查询——查询库存的库龄" class="headerlink" title="3. 库存查询——查询库存的库龄"></a>3. 库存查询——查询库存的库龄</h3><p>前面说到，客户会对仓库的货品有更精细化的要求，其中关于批次的要求，一方面是为了可以支持「先进先出FIFO」的作业方式，另外一方面就是为了支持仓租的精细化计算。</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/eb54dd47-926f-4b45-be3d-fbaf82ebf50e.png" alt="摘自《跨境电商与国际物流：机遇、模式及运作》"></p>
+<p>从上图可知，对卖家来说，海外仓库的库内处理费主要是包含两块：仓租和订单处理。很多海外仓服务商都会用“30天内免仓租”，“90天内仓租打8折”等方式来吸引客户。</p>
+<p>那么，仓库又如何知道某个货品在仓库待了多少天呢？这就是做库存的库龄的原因。</p>
+<blockquote>
+<p>同样是一部256G的iPhone11，4月1号入库了100PCS，5月1号入库了200PCS。截止到5月3号，批次0401的100PCS在仓库内已经超过了30天，而0501的200PCS还没到30天，所以0401的仓租应该免去30天，然后计算剩余的天应该收多少钱。</p>
+</blockquote>
+<p>统计批次的库龄并不难，关键是需要系统将各个环节打通，例如首先要记录不同SKU入库的批次，然后对不同的批次做定时任务的统计，接着对统计的数据进行归类和整理，最后就可以展示出<strong>某个SKU不同的批次在某一天的时候分别的库龄是多少了。</strong></p>
+<h3 id="4-库存预警"><a href="#4-库存预警" class="headerlink" title="4. 库存预警"></a>4. 库存预警</h3><blockquote>
+<p>库存如同进餐，多了少了都无益。海外仓备货考验的是企业自身对于市场的判断力和销售经验，库存量往往很难把握，无论是滞销还是脱销对卖家本身来说都很不利。很多出口跨境电商之前都是采取现买现卖的模式，库存很少，也就形成了忽略库存管理的习惯。但当企业使用海外仓，或销售规模大起来时，会发现退货、备货、库存不准、库存超龄等问题，造成了大量的资金占用。</p>
+</blockquote>
+<p>因为海外仓备货对卖家来说是一件预测市场的事情，意味着准确性是一个未知数，同时仓库作业时间一久，实物和账面库存难免就会出现不一致的情况，为了避免这种有单却无货可卖的情况出现，一般会为客户设置预警库存。</p>
+<p>当某个SKU的可用库存低于某个值的时候，会触发邮件或者消息提醒，告知客户应该及时补货，否则可能会面临有单无货发不出的难题。这一块的设计一般会放在前端业务层来完成，例如放在OMS或者ERP系统中，这样用户在操作的订单的时候可以及时关注到某些SKU可能不足，需要及时补货。</p>
+<p>还有某些SKU是有保质期管理的，当保质期低于某个值的时候，应该对禁止这些SKU出库，否则发出了过期产品导致客户受损，在欧美可能会面临很高额的罚款。保质期管理对预警的要求更高，可以设置多个预警档位或者通知方式，最大化程度避免将过期产品发出。</p>
+<p>为了给客户提供更加准确的SKU库存信息，仓库也会及时地对库存进行盘点调整，以便于客户知晓最新的库存数据，关于盘点的内容我们下期再讲。</p>
+<h3 id="5-移库"><a href="#5-移库" class="headerlink" title="5. 移库"></a>5. 移库</h3><p>移库在WMS中也是很常见的一个操作，就我实际经历的项目而言，按货品质量来分，移库可以分成两大类：</p>
+<ol>
+<li>同品质移库；</li>
+<li>良次品转换移库；</li>
+</ol>
+<p><strong>同品质移库：</strong> 将A库位的iPhone11移库到B库位上，A和B库位都是存放可销售的良品的库位。将A库位上少量的货物移到B库位上汇总，可以释放出一个库位，减轻仓库的周转压力。同时将货物尽可能的放在一起，也可以提升拣货的效率。但是这里要注意，例如该货主需要遵循「先见先出FIFO」策略，那么就不能把不同批次的货物移到一起，因为批次管理的目的就是为了区分不同的批次。如果仓库允许，批次管理可以采用贴批次码的方式来处理，但是一般这样操作之后增加的成本太高，很少有海外仓会这样做。</p>
+<p><strong>良次品转换移库：</strong> 将C库位的iPhone11移库到D库位上，C库位是存放可销售的良品的库位，而D库位是存在不可销售的次品库位。这种移库虽然也算是移库，但是不能简单地将货物一挪就完事了，应该要先走一个「库内质检」或者是「良次品转换」的操作，先将良品转化为次品，然后再移库到存放次品的库位上。当然，一般情况下良品=&gt;次品居多，少有次品=&gt;良品，但是也不是没有可能。为了兼容这两种情况，在程序设计的时候，要确保都可以支持。</p>
+<p>如果是从货架的属性上来区分的话，可以将移库分为：</p>
+<ol>
+<li>同属性货架移库；</li>
+<li>不同属性货架移库；</li>
+</ol>
+<p>这里说的货架属性是指传统货架，AGV机器人货架这种属性。目前国内很多大电商的仓储系统都会考虑搭建AGV机器人系统，但是也有些仓库还是在使用传统的固定式铁架子的货架。而我实际经历过的业务就存在，既有AGV机器人货架，也有传统货架的，所以这一块的移库就需要涉及到两套管理系统间的交互了，在此不做过多解读。</p>
+<h2 id="难点与踩坑点"><a href="#难点与踩坑点" class="headerlink" title="难点与踩坑点"></a>难点与踩坑点</h2><p>1.库存的流水记录需要特别注意，库存是每一次入库和出库还有盘点的综合结果，流水是每一条操作的记录，所以每条记录应该都有一个操作前库存，操作库存，操作后库存。这样后续也可以很方便的查询到哪条流水有问题，哪条流水对应的订单需要复查等。</p>
+<p>2.库龄报表需要统计准确，库龄报表是每个SKU的每个批次每天的统计结果。很多时候因为一些仓库异常操作，所以会需要人工修复数据等，往往会导致库龄报表丢失纪录或者数据，所以但凡对人工修复了库存相关的数据，一定要注意关注库龄统计的结果是否有受到干扰。</p>
+<p>3.库存数据具有实时性，一方面要及时更新数据，让业务端可以及时同步最新的数据。另一方面要定义清楚一些库存的区别，例如可用库存、在途库存、锁定库存、冻结库存等，要分类合计，尤其注意“可销售库存”的监控。</p>
+<p>4.库存周期是衡量产品销售是否健康的一项重要指标，即单位库存售出所需时间。后期仓库业务量较大的时候，应该花时间和精力关注库存周期是否满足行业标准，将一些滞销的产品及时清理出来，避免死占库存，既影响客户的资金流，又影响仓库的库存周转。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>海外仓WMS的库存要求有些方面比国内电商仓库WMS的库存要求更高一些，例如海外仓面临补货时间长，销售可预测难，仓库精细化操作支持度不够等问题。</p>
+<p>所以针对这些特殊的业务要求，不一定非要遵循所谓的「行业标准」。产品经理也不要过多的纠结某些功能和操作在国内仓库是见不到的，这种操作是否不科学，不合理。而是应该关注业务本身，以及海外仓暴露出的「持久性」痛点，怎么用国内较为先进的仓储系统设计方案移植到海外仓系统中。</p>
+<p>关于库存功能的设计，说来惭愧。因为其实我与卖家客户接触的场景也不是很多，而且海外仓的特殊性导致对仓库端的用户调研和业务观察也不太好做。所以我更多的会从国内电商仓库的一些经验出发，然后推导海外仓库应该怎么作业。</p>
+<p><strong>如果你有机会做海外仓库的WMS，记得多接触接触客户，同时别忘了和海外仓操作人员多接触接触，很多业务就会有画面感，产品设计也就不会出现太多「想当然」的情况。</strong></p>
+<p>当然，即便我这样所了，我仍然相信：<strong><em>年轻人该走的弯路，一步都不会少。</em></strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>随缘打赏，佛系产品</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/WMS/" rel="tag"><i class="fa fa-tag"></i> WMS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/跨境电商海外仓：WMS的出库功能设计.html" rel="next" title="跨境电商海外仓：WMS的出库功能设计">
+                <i class="fa fa-chevron-left"></i> 跨境电商海外仓：WMS的出库功能设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/维他姜茶：第202004期.html" rel="prev" title="维他姜茶：第202004期">
+                维他姜茶：第202004期 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+			avatar: 'wavatar',
+			guest_info: ['nick'],
+            placeholder: '谈谈你的看法？'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="叫我vitamin">
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TopVitamin" target="_blank" title="GitHub" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lai-yun-qiang" target="_blank" title="Zhihu" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于库内作业"><span class="nav-number">2.</span> <span class="nav-text">关于库内作业</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-库存查询——查询可用库存"><span class="nav-number">2.1.</span> <span class="nav-text">1. 库存查询——查询可用库存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-库存查询——查询库存的批次"><span class="nav-number">2.2.</span> <span class="nav-text">2. 库存查询——查询库存的批次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-库存查询——查询库存的库龄"><span class="nav-number">2.3.</span> <span class="nav-text">3. 库存查询——查询库存的库龄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-库存预警"><span class="nav-number">2.4.</span> <span class="nav-text">4. 库存预警</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-移库"><span class="nav-number">2.5.</span> <span class="nav-text">5. 移库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#难点与踩坑点"><span class="nav-number">3.</span> <span class="nav-text">难点与踩坑点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me">Coding Pages</a></span>
+</div>
+
+<div style="margin-right:10px;display:inline-block">
+	<i class="fa fa-user-md"></i>
+	<span>
+	本站访问量: <span id="busuanzi_value_site_pv"></span>次
+	</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":170,"height":340,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+</body>
+</html>

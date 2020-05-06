@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="产品经理,产品思维,只言片语">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="只言片语" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="这是WMS系列文的第2篇，一共有5篇。">
+<meta name="keywords" content="产品经理,产品思维,只言片语">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨境电商海外仓：WMS的出库功能设计">
+<meta property="og:url" content="http://pm.budong.me/跨境电商海外仓：WMS的出库功能设计.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="这是WMS系列文的第2篇，一共有5篇。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/6c0e29f0-5d49-4361-89fa-2604512ee4be.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/faf5743c-f565-43d6-9c5c-e8d51bcef403.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/8699ddd6-52ef-425c-9c06-9d58690ca1a1.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/f8bd88e3-521f-42b5-837f-8a10072372e7.png">
+<meta property="og:updated_time" content="2020-05-06T09:41:06.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨境电商海外仓：WMS的出库功能设计">
+<meta name="twitter:description" content="这是WMS系列文的第2篇，一共有5篇。">
+<meta name="twitter:image" content="https://imgkr.cn-bj.ufileos.com/6c0e29f0-5d49-4361-89fa-2604512ee4be.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://pm.budong.me/跨境电商海外仓：WMS的出库功能设计.html">
+
+
+
+
+
+  <title>跨境电商海外仓：WMS的出库功能设计 | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+  
+   <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">记录产品工作及思考的点滴</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nav">
+          <a href="/nav/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br>
+            
+            作品
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://pm.budong.me/跨境电商海外仓：WMS的出库功能设计.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">跨境电商海外仓：WMS的出库功能设计</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-03T20:20:20+08:00">
+                2020-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/WMS/" itemprop="url" rel="index">
+                    <span itemprop="name">WMS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是WMS系列文的第2篇，一共有5篇。</p>
+<a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇和大家分享了海外仓WMS的入库功能设计的一些细节和容易踩坑的点，今天这篇接着上文，继续来谈谈关于出库功能的设计有哪些需要注意的细节和坑。</p>
+<p>和国内主流的电商WMS出库相比，海外WMS的出库主要的区别还是物流运输方式的区别。例如国内我们常见的运输方式“四通一达”，“顺丰京东”，“德邦跨越”等；而欧美国家主流的快递是“DHL”，“FedEx”，“UPS”，“TNT”，“USPS”和各个国家的邮政“POST”等。</p>
+<p>所以海外仓的出库很大一部分的特殊性来源于物流运输方式的要求，例如国际运输的商业发票，FedEx发带电物品需要OP900，某些国家或者地区有收件黑名单等；</p>
+<h2 id="海外仓的基础业务模式"><a href="#海外仓的基础业务模式" class="headerlink" title="海外仓的基础业务模式"></a>海外仓的基础业务模式</h2><p>之前讲到，海外仓运作流程业内一般分为三段式，头程，库内，尾程。出库环节主要对应的就是为了服务<strong>尾程</strong>这个环节，将货物拣货打包好，然后交付给物流公司，派送到客户手里。</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/6c0e29f0-5d49-4361-89fa-2604512ee4be.png" alt="摘自《跨境电商与国际物流：机遇、模式及运作》"></p>
+<h2 id="出库流程"><a href="#出库流程" class="headerlink" title="出库流程"></a>出库流程</h2><p>关于WMS的出库流程不同仓库有不同的解决方案，目前我们的解决方案是将出库的模块分成了三个大模块：</p>
+<ol>
+<li>B2C小包出库，主要是作业一些小包裹，体积小，数量也少；可以批量处理，也很方便搬运和装卸；</li>
+<li>B2B大宗出库，主要是作业一些大包裹，体积大，或者是体积小，但是数量多；不方便批量处理，也不是很方便搬运，需要借助卡板和叉车等工具来运输；</li>
+<li>FBA订单，主要是针对一些专门发往亚马逊仓库的订单，此类订单一般体积中小，但是数量居多，需要单独处理，然后装箱打板操作，基本上和B2B订单是类似的；</li>
+</ol>
+<p>我也见过很多WMS是没有这种模块区分的，它们一般会将所有的出库订单单独放在一个模块，然后通过设置策略来区分（例如分波策略），哪些订单用哪些操作方式，哪些应该优先处理等，但是本质的思路还是一样的：不同类型的订单用不同的方式来处理。</p>
+<h3 id="B2C小包出库"><a href="#B2C小包出库" class="headerlink" title="B2C小包出库"></a>B2C小包出库</h3><p><img src="https://imgkr.cn-bj.ufileos.com/faf5743c-f565-43d6-9c5c-e8d51bcef403.png" alt="B2C小包出库流程"></p>
+<p>小包出库可以支持批量处理，所以一般会根据策略对订单进行分波，也就是将相似的订单或者相同客户的相同运输方式的订单分在一个波次，这样作业的时候有些东西是通用的，可以提升仓库作业的效率。</p>
+<p>分好波之后就要去拣货，拣货在业内一般有两种方式：</p>
+<ul>
+<li>摘果式拣货，类似于去果园摘果子一样，想要哪个摘哪个，一般是一次性把一个订单需要的货物拣选出来，所以称为摘果式。一人一单，一次一单；</li>
+<li>播种式拣货，播种式拣货是将多个订单的要的货物全部拣选出来，然后通过播种车或者播种篮对货物进行分发，一个萝卜一个坑，一个订单一个篮子，依次分发拣出来的货物，所以称为播种式。多人多单，一次多单，先总后分，二次分拣；</li>
+</ul>
+<p>小包出库常用的就是播种式拣货的方式，播种之后每个订单匹配到了相应的货物，接着就可以去复核了。复核就是单据和实物比对，确保客户要的货物和拣出来的货物是一致的。一般会用系统来处理，扫描订单，然后带出订单的明细，接着依次扫描实物，确保一一核对没问题。</p>
+<p>复核之后就会打印出物流运输的面单文件，然后将文件交付给流水线的打包工人，工人选择对应的容器包装好货物，然后贴上面单文件，打包就算完成了。</p>
+<p>打包完成之后一般是需要称重的，称重一方面是可以录入包裹的重量，方便后续的计费；另外一方面是可以通过重量来预判包裹内的东西是否有问题，系统可以通过计算得出该包裹理论应该多重，如果实际重量和理论差距很大，那么仓库就应该考虑拆包检查一下，是否有发错货物。</p>
+<p>一般来说称重之后就算是作业完成了，可以将货物存放在「待发货区」，等待物流公司上门取件或者自己送到物流站点。但是有些时候考虑「待发货区」的包裹很多，容易产生丢失或者无法监控，所以有的仓库会使用<strong>集货功能</strong>，将同一个渠道的货物通过集货的方式包装在同一个容器中，然后封死容器，除非要交接的时候才打开。</p>
+<p>至此，B2C小包出库的流程基本上讲完了，一些容易难点和踩坑点，在下文出库功能总结的时候一并分析。</p>
+<h3 id="B2B大宗出库"><a href="#B2B大宗出库" class="headerlink" title="B2B大宗出库"></a>B2B大宗出库</h3><p><img src="https://imgkr.cn-bj.ufileos.com/8699ddd6-52ef-425c-9c06-9d58690ca1a1.png" alt="B2B大宗出库流程"></p>
+<p>大宗出库不方便批量处理，所以一般不会采用批次作业，当然具体的操作可以视业务情况而定。因为少了分波的环节，所以拣货的方式用「摘果式」会更加方便和高效。</p>
+<p>摘果式拣货后就不需要二次分拣了，所以可以直接复核即可。复核之后，因为大宗货物的数量比较多，可能会装多箱，多个卡板，所以一般业务会要求打包之后，根据实际打包情况录入装箱明细，这样可以方便后续出库的时候跟踪具体的箱子信息。如果没有多箱或者业务不需要装箱明细，那么直接录入重量即可。</p>
+<p>同样的，如果担心大宗货物放在「待发货区」会不方便管理或者丢失少货，也可以用集货功能进行管理。但是一般来说，大货在复核之后已经打包成工整的箱子或者卡板了，这个时候目标比较大，一般不会出现丢失的问题，所以集货也就不太有必要了。</p>
+<p>FBA的订单操作其实本质上和B2B是一样的，只不过FBA的订单多了一些亚马逊的要求：<strong>需要贴亚马逊的库内码FNSKU，同时需要在外箱明显处贴亚马逊的入库箱唛信息而已。</strong> 除此之外，其他的操作都是一样的，所以就不再赘述了。</p>
+<h3 id="订单取消与拦截"><a href="#订单取消与拦截" class="headerlink" title="订单取消与拦截"></a>订单取消与拦截</h3><p><img src="https://imgkr.cn-bj.ufileos.com/f8bd88e3-521f-42b5-837f-8a10072372e7.png" alt="订单取消与拦截"></p>
+<p>对出库订单而言，库内取消和拦截是一个很重要也很能提升用户体验的功能，此功能对海外仓来说算是一个加分利器。</p>
+<blockquote>
+<p>例如有时候我们在京东购物的时候，会遇到这种情况：自己突然不想要这个货物，或者别的地方更便宜，我需要对这个单取消。但是订单已经在库内作业了，如果不能支持库内取消拦截，那就得要等到收快递的时候拒收，但是如果快递员放在快递柜或者门卫处就走了，那你可能还不能拒收，又要发起一次退货。</p>
+</blockquote>
+<p>对于国内的物流来说，拒收或者退货其实成本也没有很高，不过就是几块钱运费，然后几天就可以返厂。但是对于海外的物流来说，物流成本比国内高很多，而且派送时间也很长，可能一个订单出库再拒收返库要花很长的时间，还要付给物流商双倍运费，特别吃亏。</p>
+<p>所以对于库内的订单取消拦截，尽量能在库内拦截就在库内拦截。一般的拦截节点有这么几个：</p>
+<ul>
+<li>未拣货前拦截；</li>
+<li>拣货后复核前拦截；</li>
+<li>打包后称重前拦截；</li>
+<li>最后交运的时候拦截；</li>
+</ul>
+<p>拦截节点越多，对客户的体验提升越明显，但是对仓库的作业要求就越高，成本也很高。上一篇文章也讲到了，海外仓的管理问题是业务的痛点，所以有时候「理想很丰满，但是现实很骨感」。我们也想提升用户体验，但是「臣妾做不到啊」，因为仓库并不能很好的配合完成，还有一大堆返库计费的问题等着我们。所以我们一般会设置少量的拦截点，尽量能保证满足大多数客户的拦截需求，同时也不会增加仓库太多的工作量和学习成本。</p>
+<p>订单拦截后，需要及时处理返库，然后释放库存。具体的方式根据仓库的不同操作也不同，一般只要能在某个节点提醒仓库此单被拦截了，然后有对应的流程让仓库重新将货物返库上架即可。</p>
+<h3 id="难点与踩坑点"><a href="#难点与踩坑点" class="headerlink" title="难点与踩坑点"></a>难点与踩坑点</h3><p>1.拣货策略的难点，拣货策略算是WMS很核心的一个高级功能，拣货的时候库位的推荐，拣货路径的分配，库存的锁定和释放，满足先进先出的要求等都需要考虑周全，做得好可以大幅提升仓库的作业效率，做的不好，那仓库可能就要往返跑减减肥了。</p>
+<p>2.播种方式的优化，二次分拣也是一个体力活，一个波次分多少单，然后怎么快速二次分拣，这些都是影响仓库出库效率的点，业内有很多专门做播种车或者播种墙方案的供应商，自己设计研发或者采购第三方都可以，最好是可以多对比，然后选择最合适的方案。毕竟对仓库来说，「快狠准」是最大的杀手锏，而系统能否助力仓库达成「快狠准」的要求，也算是一个大大的考验。</p>
+<p>3.各种文件的要求，因为国际运输，不同的物流渠道商有不同的要求，所以有些时候会有很多稀奇古怪的文件要求，需要产品设计一个通用的方式来满足各种各样的随单文件的要求。</p>
+<p>4.物流渠道商的坑也很多，如果我们注意观察会发现，顺丰的快递面单规格和四通一达并不一样，顺丰电子面单：100mmx150mm；菜鸟电子面单（四通一达等）：100mmx180mm。所以国际物流渠道商也会有这种情况，需要逐单测试和调试；除此之外，还有一个很坑的地方，例如FedEx给的运单号是<code>1234567</code>，但是电子面单的条码扫描出来之后是<code>zx12345678eaz</code>这样的，需要系统对运单号截取。有些渠道商的运单号截取很复杂，系统也需要支持这种方式，否则就会造成无法作业的情况。有时候可能还会遇到运单号重复的问题，因为有些渠道商的运单号是会回收利用的，可能几个月之后，这个运单号就又变成了可用的新运单了，这一块也需要特别注意。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>海外仓WMS的出库流程也基本上是和传统电商的WMS收货一致的，主要是仓库管理的文化差异和国际物流渠道的特殊要求等让一些流程变得不太一样。海外仓出库对效率要求很高，很多时候系统功能设计的差异会对操作的效率影响巨大。如果你想要提升仓库作业效率，那么从头至尾每个细节都深入挖掘一下，会发现很多可优化的空间；如果你希望找一个靠谱的海外仓发货，那么咨询一下对方的系统功能和一些业务处理方式，基本上也可以看得出这个海外仓水平的大概高低。</p>
+<p>海外仓出库还会涉及到一些业务相关的要求，例如特殊包装，随单礼物，多仓联动，SN码管理，有效期管理，一票多件等，不同业务对应的产品设计也会不一样，这里就不做过多的展开。</p>
+<p>如果你对海外仓WMS系统的产品设计方面还有什么其他补充或者心得感悟，欢迎留言与我互动，我们下篇再见。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>随缘打赏，佛系产品</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/WMS/" rel="tag"><i class="fa fa-tag"></i> WMS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/跨境电商海外仓：WMS的入库功能设计.html" rel="next" title="跨境电商海外仓：WMS的入库功能设计">
+                <i class="fa fa-chevron-left"></i> 跨境电商海外仓：WMS的入库功能设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/跨境电商海外仓：WMS的库存功能设计.html" rel="prev" title="跨境电商海外仓：WMS的库存功能设计">
+                跨境电商海外仓：WMS的库存功能设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+			avatar: 'wavatar',
+			guest_info: ['nick'],
+            placeholder: '谈谈你的看法？'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="叫我vitamin">
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TopVitamin" target="_blank" title="GitHub" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lai-yun-qiang" target="_blank" title="Zhihu" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#海外仓的基础业务模式"><span class="nav-number">2.</span> <span class="nav-text">海外仓的基础业务模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#出库流程"><span class="nav-number">3.</span> <span class="nav-text">出库流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#B2C小包出库"><span class="nav-number">3.1.</span> <span class="nav-text">B2C小包出库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B2B大宗出库"><span class="nav-number">3.2.</span> <span class="nav-text">B2B大宗出库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#订单取消与拦截"><span class="nav-number">3.3.</span> <span class="nav-text">订单取消与拦截</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#难点与踩坑点"><span class="nav-number">3.4.</span> <span class="nav-text">难点与踩坑点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me">Coding Pages</a></span>
+</div>
+
+<div style="margin-right:10px;display:inline-block">
+	<i class="fa fa-user-md"></i>
+	<span>
+	本站访问量: <span id="busuanzi_value_site_pv"></span>次
+	</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":170,"height":340,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+</body>
+</html>
