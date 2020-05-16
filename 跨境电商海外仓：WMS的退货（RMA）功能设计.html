@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="产品经理,产品思维,只言片语">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="只言片语" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="这是WMS系列文的第5篇，也是最后一篇。">
+<meta name="keywords" content="产品经理,产品思维,只言片语">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨境电商海外仓：WMS的退货（RMA）功能设计">
+<meta property="og:url" content="http://pm.budong.me/跨境电商海外仓：WMS的退货（RMA）功能设计.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="这是WMS系列文的第5篇，也是最后一篇。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/8e73494f-8243-4b90-9d42-45cf5a34e9a9.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/a387e10a-1e0c-485a-8288-d19c524c6e67.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/37a67728-de33-49f3-ae99-470ea39e008c.png">
+<meta property="og:updated_time" content="2020-05-16T02:28:06.253Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨境电商海外仓：WMS的退货（RMA）功能设计">
+<meta name="twitter:description" content="这是WMS系列文的第5篇，也是最后一篇。">
+<meta name="twitter:image" content="https://imgkr.cn-bj.ufileos.com/8e73494f-8243-4b90-9d42-45cf5a34e9a9.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://pm.budong.me/跨境电商海外仓：WMS的退货（RMA）功能设计.html">
+
+
+
+
+
+  <title>跨境电商海外仓：WMS的退货（RMA）功能设计 | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+  
+   <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">记录产品工作及思考的点滴</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nav">
+          <a href="/nav/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br>
+            
+            作品
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://pm.budong.me/跨境电商海外仓：WMS的退货（RMA）功能设计.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">跨境电商海外仓：WMS的退货（RMA）功能设计</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T20:20:20+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/WMS/" itemprop="url" rel="index">
+                    <span itemprop="name">WMS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是WMS系列文的第5篇，也是最后一篇。</p>
+<a id="more"></a>
+
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>海外仓WMS的退货算是比较复杂的模块，复杂度可以堪比入库+出库这两个模块之和。各行各业涉及的内部退货业务就有很大区别，再加上海外仓管理和本土化服务的局限，导致不同的海外仓WMS的退货业务做得参差不齐。</p>
+<p>例如很多仓库主打就是FBA的退件处理，而有些仓库则是以客户退货中转为主。本文从一个普通的主打3C类产品的仓库视角，然后参考行业内通用型的做法来切入，谈谈海外仓客户退货和物流退货的一些见解和看法。</p>
+<h2 id="关于RMA退货"><a href="#关于RMA退货" class="headerlink" title="关于RMA退货"></a>关于RMA退货</h2><p>下面的内容摘自网上，是关于RMA退货比较准确、得体的一个解释。之前我第一次接触「RMA」的时候也很奇怪，为啥要用这样的一个英文缩写来定义退货呢。后来慢慢地接触的多了，发现做跨境电商这一块的同行，大家似乎都默许了这样一个名词，反而是如果你没听说过RMA，似乎感觉还有点「Out」了。</p>
+<blockquote>
+<p>RMA的定义<code>RMA= Return Merchandise Authorization</code>，翻译成中文就是返回商品授权。<br>返回商品授权，指的是客户授权于某一单位或个人处理他返回来的商品从而引发的自客户申请售后资格到这个申请被处理完毕引发的全部动作以及其他衍生部分……听上去好复杂，一言以蔽之，RMA是售后的一个环节。<br><strong>这里还是要重复强调一次，RMA不等于售后。</strong> 因为售后的概念太大了。广义的售后，指的是销售完成后的销售者为留住并发展客户持续购买所付出的服务集合。这包括……而狭义上的售后，主要指的是为满足客户售后需求引发的物流和信息流管理，这也是RMA的主要内涵。所以，RMA的范畴起点在客户向B2C提出RMA申请成功，终点在客户RMA需求得到满足，也就是RMA完成退货/换货/维修。</p>
+</blockquote>
+<p>以上大概就是关于RMA退货的一些基础定义，如果还没懂具体的意思也不要紧。有些名词本来就很难找到最原始的出处和本意，但是随着越来越多的人广泛地使用，只要被大众接纳和认可了就可以。所以本文提到的<code>RMA</code>其实也就是我们常说的<code>退货</code>，并不包含换货和维修。</p>
+<h2 id="海外仓退货的环境"><a href="#海外仓退货的环境" class="headerlink" title="海外仓退货的环境"></a>海外仓退货的环境</h2><p><img src="https://imgkr.cn-bj.ufileos.com/8e73494f-8243-4b90-9d42-45cf5a34e9a9.png" alt="图片摘自雨果网"></p>
+<p>这篇文章是16年的一票文章，其中海外仓退货面临的窘境其实到现在也有很多没有得到解决。目前很多海外仓的退货处理还是只能满足简单的“接收，登记然后存储”，其中对于一些对售后要求比较高的品牌卖家来说，这样的「粗糙」功能肯定的不能满足的，但是又苦于自己搭建一套适配的售后体系成本太高。所以只能退而求其次，先用海外仓作为售后的一级中转点，然后在固定的周期间将这些退货批量转移到香港或者国内地区的售后网点进行集中处理。</p>
+<p>从上面的信息我们大体可以知道，海外仓的退件主要能满足的功能有以下几点：</p>
+<ol>
+<li>接收退件信息，然后接收货物；</li>
+<li>登记退件的实物信息，及时反馈给卖家；</li>
+<li>存储退件，对退件分类存储，方便后续调度；</li>
+<li>批量处理退件，转运回国，或者海外销毁，或者再次销售；</li>
+</ol>
+<p>其中关于全面质检，维修，再次深度加工等，很多海外仓库都做不到这一块，而且客户需要支付的报价也很高昂，所以海外仓WMS会做这一块业务比较少。如果有，也是很多专注于退货的海外仓，可以通过规范化运营从而降低成本，满足客户需求，但是局限就是客户的需求不能差距太多，所以对客户有「业务相似性」的要求。</p>
+<h2 id="客户退件流程"><a href="#客户退件流程" class="headerlink" title="客户退件流程"></a>客户退件流程</h2><p><img src="https://imgkr.cn-bj.ufileos.com/a387e10a-1e0c-485a-8288-d19c524c6e67.png" alt="海外仓退件-客户退件"></p>
+<p>客户退件是指客户在海外购物平台购物之后，对货物不满意，然后根据卖家的指示，将货物退寄至海外仓库，然后海外仓库再处理这些退件的一系列操作集合。</p>
+<p>简单地理解就是类似于我们在天猫旗舰店或者京东购物后，对货物不满意然后自己申请退货，接着将货物退回到商家指定的仓库地址，仓库处理之后，店家就会给我们退款或者换货。</p>
+<p>而海外仓处理这一块的退件难点大概有3点。</p>
+<h3 id="1-退件预报不可控"><a href="#1-退件预报不可控" class="headerlink" title="1. 退件预报不可控"></a>1. 退件预报不可控</h3><p>按常理，国内电商，一般的退件买家都会先和客服沟通，然后在平台申请退货之后，再将货物寄送到指定的仓库地址去。</p>
+<p>但是由于海外的文化习惯问题，还有退换货政策问题，很多买家对退货的处理就很随便，可能直接就按照订单的发货地址就寄出去，然后事后过了一段时间再跟卖家说我申请了退件。而仓库可能莫名的就会收到一堆没有预报的无头包裹的信息，如果系统中没有这些退件的信息，那么这些订单处理可就很麻烦了。所以一般在OMS端就会约束客户，如果客户有发起退件，一定要及时通过ERP或者其他方式创建好退件预报单，然后推送到OMS，最后再到达WMS。没有提前预报，则很容易造成仓库的资源浪费，或者货物的丢失，所以退件一般也会有一个认领的过程，这个在下面会再次提到。</p>
+<h3 id="2-退件货物千奇百怪"><a href="#2-退件货物千奇百怪" class="headerlink" title="2.退件货物千奇百怪"></a>2.退件货物千奇百怪</h3><p>客户退货麻烦之处在于退回来的东西可能什么都有，有的人是真真切切的要退货，而有的人可能会想着诈骗卖家一波。</p>
+<blockquote>
+<p>买一个iPhone，然后退一个损坏的或者是模型等，然后卖家如果拒绝退货或者没有提供有效证据，就会遭到恶意举报，严重的可能会被平台封杀或者罚款。所以踩过坑的卖家，一般会要求客户退件要录入照片，以便后续发生扯皮问题。</p>
+</blockquote>
+<p>除了退货的真假之后，货物识别也是一个难题。一个不大的仓库，可能有几十个客户，几千个品类。如果所有的客户退件都交由仓库处理，而且客户退回的货物可能包装损坏，条码损坏，或者序列号被调换等，这些对仓库处理退件都会造成很大的困扰。</p>
+<h3 id="3-退件的处理方式不好判定"><a href="#3-退件的处理方式不好判定" class="headerlink" title="3.退件的处理方式不好判定"></a>3.退件的处理方式不好判定</h3><p>趟过了前面的几个坎，现在终于是识别了货物是哪家的，然后信息也比对通过了。可能是退件要怎么处理呢？</p>
+<p>直接重新上架吗？商品有些被拆开过，有些包装有痕迹，有些还可能内部有损坏，如果直接上架，那么就会被人吐槽「二手东」，那其实对客户来说，是会有损品牌的。</p>
+<p>直接放一边不允许发货吗？如果全部退件都放在一边，在退件率极高的欧美地区，不需要多久，卖家的资金和库存就会吃紧。毕竟退件也是有很高昂的成本，如果不流通，始终是一个消耗和损失。</p>
+<p>关于退件的处理方式，一般是会在OMS给客户一些选择，然后仓库根据客户的选择而操作。虽然这样看似解决了问题，但是其实退件这一块的体验始终是个短板。</p>
+<p>每一类客户对退件的要求都不一样，有些客户关注品牌或者资金量足够，那么就会严格区分这种逆向客户退回来的货物，然后定期的将其周转到香港或者国内进行二次处理；而一些客户没有这么关注品牌或者资金量不足，那么可能就会要求仓库简单的做一个外观的识别，然后区分良品与不良品即可；最后还有一些比较极端的客户，不管退件怎么样，都上架到可销售区，至于下一个收到这个货物的客户会不会投诉或者再次退货，那就不管了。</p>
+<p>综合而言，很多海外仓不愿意做这种客户退货，因为全是麻烦事，除非是不断地加钱；但是如果退件处理的成本太高了，对于很多卖低货值的卖家来说就很不划算，本来售价就很低，利润也不高，结果退件处理还这么贵，那就干脆不允许退货了或者一股脑将退货放在专门的区域。</p>
+<p>关于客户退件，其实系统的设计有很多细节和重点，但是基本上核心就是在：<strong>怎么识别退件，怎么流转退件单的状态等，只需要仔细梳理一下就可以解决。</strong> </p>
+<p>真正复杂难解决的则是，业务怎么定义，系统对退件支持的边界，以及退件中一系列异常场景应该怎么处理。把这一块定义好，弄清楚了，退件功能就不会差到哪里去。</p>
+<h2 id="物流退件流程"><a href="#物流退件流程" class="headerlink" title="物流退件流程"></a>物流退件流程</h2><p><img src="https://imgkr.cn-bj.ufileos.com/37a67728-de33-49f3-ae99-470ea39e008c.png" alt="海外仓退件-物流退件"></p>
+<p>物流退件也可以称为服务商退件或者渠道商退件，指客户拒收或者渠道派送失败后，重新退回到原始发货方手里。</p>
+<p>这种类型的退件处理起来会比较简单，简单点在于不需要纠结客户退件中的那些商品识别，处理方式等。因为一般的物流退件，其中实物是没有被拆开过的，发出去是怎么样，退回来也是怎么样，所以这些商品都可以直接重新上架到可销售区。</p>
+<p>关于海外仓的物流退件，也有这么几个难点或者坑，是需要特别注意的。</p>
+<h3 id="1-运单号截取的问题"><a href="#1-运单号截取的问题" class="headerlink" title="1.运单号截取的问题"></a>1.运单号截取的问题</h3><p>在第二篇讲出库的时候，我提到一些国际渠道会有很骚的操作，运单号截取和重复就在其中。举个栗子，FedEx提供的运单号是<code>1234567</code>，但是电子面单的条码扫描出来之后是<code>zx12345678eaz</code>这样的。仓库收到退件包裹之后，肯定会扫描运单条码，但是出来的结果就是<code>zx12345678eaz</code>，系统肯定匹配不到这样订单，所以就会当成是一个无头包裹，要进行认领流程。</p>
+<p>解决方案就是在所有需要扫描运单号条码然后查询出对应订单的地方，都要提前做好运单号的截取功能开发，如果用全数据匹配不到，则试着用截取之后的数据去匹配。</p>
+<h3 id="2-物流退件更新跟踪号的问题"><a href="#2-物流退件更新跟踪号的问题" class="headerlink" title="2.物流退件更新跟踪号的问题"></a>2.物流退件更新跟踪号的问题</h3><p>很多时候仓库发出去的时候是用的FedEx Express的渠道，但是被客户拒收或者是派送失败之后，却不一定会再用FedEx Expresss退回来，可能会用FedEx Ground退回，也有可能用别的渠道商，例如USPS退回来。</p>
+<p>上面讲到了退件的时候扫描运单条形码需要截取，那这里就是截取之后也找不到数据了，因为这个被渠道商换了跟踪号。所以仓库想要快速的，规范化的处理退件，那么就需要前端监控并识别到此包裹派送失败，而且能获取到退回来使用的跟踪号。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>海外仓WMS的退件模块是一个可大可小的模块，复杂度随业务大小而变换，但是总体而言这一块算是行业内的短板，很多难点等着大家去攻克。</p>
+<p>本文只是粗略地对海外仓退件的业务模式做了些介绍，同时加了一些自己业务实战的心得感悟。关于客户退件这一块的处理，其实还有很多细节和内容可以深入挖掘，但是我自己接触的业务又太过于独特和狭窄，所以如果直接在此文中掺杂进来会显得冗长而琐碎。如果后续有机会可以继续发掘这一块的业务，那我到时候再来写一篇相关内容。</p>
+<p>至此，关于WMS的5篇系列文基本上已经讲完了。本人才疏识浅，文笔笨拙，有很多内容和细节没有把握到位，所以对于一些有经验的朋友，看完这系列文也没什么很深触动。但是未接触过海外仓或者WMS的朋友，看完此系列文可以对海外仓WMS有一个粗略的了解，也算是一些小小的帮助。</p>
+<p>如果大家对此系列文有啥见解和想法的，欢迎与我讨论。我初步计划会在6月之后，写点关于国际物流渠道这一块内容，也是个系列文，算是对自己的一些总结和回顾，共同期待一下吧。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>随缘打赏，佛系产品</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/WMS/" rel="tag"><i class="fa fa-tag"></i> WMS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/产品经理常用的工具和网站集合.html" rel="next" title="产品经理常用的工具和网站集合">
+                <i class="fa fa-chevron-left"></i> 产品经理常用的工具和网站集合
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+			avatar: 'wavatar',
+			guest_info: ['nick'],
+            placeholder: '谈谈你的看法？'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="叫我vitamin">
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">84</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TopVitamin" target="_blank" title="GitHub" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lai-yun-qiang" target="_blank" title="Zhihu" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于RMA退货"><span class="nav-number">2.</span> <span class="nav-text">关于RMA退货</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#海外仓退货的环境"><span class="nav-number">3.</span> <span class="nav-text">海外仓退货的环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户退件流程"><span class="nav-number">4.</span> <span class="nav-text">客户退件流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-退件预报不可控"><span class="nav-number">4.1.</span> <span class="nav-text">1. 退件预报不可控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-退件货物千奇百怪"><span class="nav-number">4.2.</span> <span class="nav-text">2.退件货物千奇百怪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-退件的处理方式不好判定"><span class="nav-number">4.3.</span> <span class="nav-text">3.退件的处理方式不好判定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物流退件流程"><span class="nav-number">5.</span> <span class="nav-text">物流退件流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-运单号截取的问题"><span class="nav-number">5.1.</span> <span class="nav-text">1.运单号截取的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-物流退件更新跟踪号的问题"><span class="nav-number">5.2.</span> <span class="nav-text">2.物流退件更新跟踪号的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me">Coding Pages</a></span>
+</div>
+
+<div style="margin-right:10px;display:inline-block">
+	<i class="fa fa-user-md"></i>
+	<span>
+	本站访问量: <span id="busuanzi_value_site_pv"></span>次
+	</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":170,"height":340,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+</body>
+</html>

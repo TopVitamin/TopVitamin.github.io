@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://pm.budong.me/"/>
-  <updated>2020-05-06T09:44:19.939Z</updated>
+  <updated>2020-05-16T02:28:06.253Z</updated>
   <id>http://pm.budong.me/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨境电商海外仓：WMS的退货（RMA）功能设计</title>
+    <link href="http://pm.budong.me/%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%E6%B5%B7%E5%A4%96%E4%BB%93%EF%BC%9AWMS%E7%9A%84%E9%80%80%E8%B4%A7%EF%BC%88RMA%EF%BC%89%E5%8A%9F%E8%83%BD%E8%AE%BE%E8%AE%A1.html"/>
+    <id>http://pm.budong.me/跨境电商海外仓：WMS的退货（RMA）功能设计.html</id>
+    <published>2020-05-10T12:20:20.000Z</published>
+    <updated>2020-05-16T02:28:06.253Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是WMS系列文的第5篇，也是最后一篇。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="WMS" scheme="http://pm.budong.me/categories/WMS/"/>
+    
+    
+      <category term="WMS" scheme="http://pm.budong.me/tags/WMS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品经理常用的工具和网站集合</title>
+    <link href="http://pm.budong.me/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E7%BD%91%E7%AB%99%E9%9B%86%E5%90%88.html"/>
+    <id>http://pm.budong.me/产品经理常用的工具和网站集合.html</id>
+    <published>2020-05-10T12:20:20.000Z</published>
+    <updated>2020-05-16T02:30:15.765Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;当时在微信群看到这个分享，点开一看发现有很多内容都是很棒的推荐，于是打算自己来维护一份，删除一些不常用的再添加一些新的，作为自己产品几年来的积累。&lt;/p&gt;
+&lt;p&gt;当然还是要对原作者表示感谢，如果想查看原作者的原地址，可以访问下方的链接。您看到的内容已经是我修改过的版本了，请知悉。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="产品经理" scheme="http://pm.budong.me/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/"/>
+    
+    
+      <category term="产品经理工具" scheme="http://pm.budong.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>维他姜茶：第202004期</title>
@@ -412,53 +455,6 @@
     
     
       <category term="每月总结" scheme="http://pm.budong.me/tags/%E6%AF%8F%E6%9C%88%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>敏捷方法Scrum那些事儿</title>
-    <link href="http://pm.budong.me/%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95Scrum%E9%82%A3%E4%BA%9B%E4%BA%8B.html"/>
-    <id>http://pm.budong.me/敏捷方法Scrum那些事.html</id>
-    <published>2019-11-02T12:27:24.000Z</published>
-    <updated>2019-11-04T03:57:48.625Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;本文中的主要内容是摘抄自网上，出处来源于各处，所以也不知道怎么标记了……&lt;/p&gt;
-&lt;p&gt;开头的几张图是我阅读《硝烟中的Scrum和XP》的时候做的阅读笔记，放在一起，加深一些印象。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="敏捷" scheme="http://pm.budong.me/categories/%E6%95%8F%E6%8D%B7/"/>
-    
-    
-      <category term="敏捷" scheme="http://pm.budong.me/tags/%E6%95%8F%E6%8D%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>产品面试题</title>
-    <link href="http://pm.budong.me/%E4%BA%A7%E5%93%81%E9%9D%A2%E8%AF%95%E9%A2%98.html"/>
-    <id>http://pm.budong.me/产品面试题.html</id>
-    <published>2019-10-19T12:27:24.000Z</published>
-    <updated>2019-10-19T06:42:14.732Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这份产品面试题是我根据自己这半年来团队招人面试特意准备的，大概用了半年多了，然后近期对里面的一些内容进行了调整和删减，于是就打算发出来。希望对找工作的小伙伴有所帮助，当然顺带给自己打个广告：团队缺人，找工作的，速来勾搭。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="产品面试" scheme="http://pm.budong.me/categories/%E4%BA%A7%E5%93%81%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="产品面试" scheme="http://pm.budong.me/tags/%E4%BA%A7%E5%93%81%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
