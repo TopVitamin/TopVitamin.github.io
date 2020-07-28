@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="产品经理,产品思维,只言片语">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="只言片语" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="踩过坑，才知道思路对，是多重要！">
+<meta name="keywords" content="产品经理,产品思维,只言片语">
+<meta property="og:type" content="article">
+<meta property="og:title" content="那些我踩过的坑与碰过的壁|复盘WMS的移库功能设">
+<meta property="og:url" content="http://pm.budong.me/那些踩过的坑与碰过的壁，复盘WMS的移库功能设计.html">
+<meta property="og:site_name" content="只言片语">
+<meta property="og:description" content="踩过坑，才知道思路对，是多重要！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/63dfa901-5a1d-40ab-814a-9b82a6d41e6e.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/26dd2f57-f7f6-41c0-a29a-3b1225c4f73f.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/f38a03c9-ff25-41b8-94cb-8d856d18fcfa.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/9a75095d-47ab-4691-b659-2911a326ed48.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/2deb5f0d-69e8-484b-8cda-32b778c81da3.png">
+<meta property="og:image" content="https://imgkr.cn-bj.ufileos.com/0e804c6d-0a24-4fce-be35-09e5a7994321.png">
+<meta property="og:updated_time" content="2020-07-28T07:36:45.258Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="那些我踩过的坑与碰过的壁|复盘WMS的移库功能设">
+<meta name="twitter:description" content="踩过坑，才知道思路对，是多重要！">
+<meta name="twitter:image" content="https://imgkr.cn-bj.ufileos.com/63dfa901-5a1d-40ab-814a-9b82a6d41e6e.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://pm.budong.me/那些踩过的坑与碰过的壁，复盘WMS的移库功能设计.html">
+
+
+
+
+
+  <title>那些我踩过的坑与碰过的壁|复盘WMS的移库功能设 | 只言片语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+  
+   <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">只言片语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">记录产品工作及思考的点滴</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nav">
+          <a href="/nav/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br>
+            
+            作品
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://pm.budong.me/那些踩过的坑与碰过的壁，复盘WMS的移库功能设计.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叫我vitamin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="只言片语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">那些我踩过的坑与碰过的壁|复盘WMS的移库功能设</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-24T20:20:20+08:00">
+                2020-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/WMS/" itemprop="url" rel="index">
+                    <span itemprop="name">WMS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>踩过坑，才知道思路对，是多重要！</p>
+<a id="more"></a>
+
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>WMS的移库功能在不同的仓库或者不同的系统定义不一样，有些地方把移库当成两个仓库间货物的转移，有些地方把移库当成不同的库区间的货物转移，例如从拆零区到整箱区，或者从高货值区转移到低货值区等。</p>
+<p>但是本文所提到的移库其实就是指货位（库位）间转移，将货物从库位A移库到仓位B，然后库位A的货品扣减数量，仓位B的货品增加数量。</p>
+<p>看似很简单的功能，但是结合到实际业务中，也让我踩了挺多坑。所以我特地花了一些时间整理出此篇文章，复盘一下我在设计该功能的时候遇到了哪些问题，收获了哪些感悟。</p>
+<p>那么，我们开始吧。</p>
+<h2 id="简易版的移库"><a href="#简易版的移库" class="headerlink" title="简易版的移库"></a>简易版的移库</h2><p>很多海外仓没有做效期管理，也没有做批次管理，所以基本上对货物的管控粒度都是在SKU层面。如果是SKU层面的移库，只需要将源库位的SKU扣减数量，然后转移到目标库位上，SKU对应的的增加数量即可。</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/63dfa901-5a1d-40ab-814a-9b82a6d41e6e.png" alt="简易版移库"></p>
+<p>简易版的移库主要是因为管理粒度在SKU，所以在移库的时候，只需要判断目标库位的货主和料区是否和源库位一致，只要一致就可以移库，没有其他额外的判断逻辑。</p>
+<p><strong>货主为什么要一致？</strong> 这个各个仓库的管理要求不一样，我们不允许一个库位放两个货主的货物是因为两个货主的货物可能会一样（你卖iPhone，我也可以卖iPhone），为了避免这种货物识别可能带来的风险，所以我们是只允许一个库位放一个货主的货物的。</p>
+<p><strong>料区是什么？为什么要一致？</strong> 这个也和仓库的管理要求有关系，有些仓库对货物的品质管控只要求区分良品，残次品或者其他粒度。而我们对品质的管控要求细一些，除了要求好坏之分的话，还会有更细的粒度。例如退货回来的货物区分售后良品，售后不良品；所以一个库位只能放一个料区的货物，将良品放在一起，残次品放在另外的库位，那么移库的时候，一个良品库位的货物也就只能移库到其他良品的库位上了。</p>
+<h2 id="业务升级，引入批次概念"><a href="#业务升级，引入批次概念" class="headerlink" title="业务升级，引入批次概念"></a>业务升级，引入批次概念</h2><p>批次是仓库对货品的管理粒度还要再细一层，要精确到批次号（批号）上。批号这个概念在医药WMS中很常见，大家身边如果有药品盒子可以查看一下，一般来说药品上都会印有生产批号，如下图所示：</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/26dd2f57-f7f6-41c0-a29a-3b1225c4f73f.png" alt="药品的生产批号"></p>
+<p>一般来说产品上有批号信息的商品其实还算方便管理，毕竟有个显眼的标识让你去查看。但是如果有些商品没有批号展示，但是又需要进行批次管理，那么难度就显然高了一些。</p>
+<p>业内通用的做法有两种：</p>
+<ul>
+<li>第一种：在商品入库的时候，逐个商品贴批次码，这样每次到货的商品都要拆包贴码，成本比较高；</li>
+<li>第二种：入库的时候不贴码，而是根据入库时间或者上架时间，系统自动对某个SKU进行批号的标记，然后记录这个批次关联的库位是哪个；</li>
+</ul>
+<p><strong>而往往大多数仓库采用的，就是第二种。</strong></p>
+<p>今天仓库收到了100箱维他柠檬茶，SKU为<code>vita100</code>，这100箱维他柠檬茶都是一年后过期。然后在系统在生成上架单的时候，会对这些产品自动标记一个批次号，例如就叫做<code>BN20200725001</code>。</p>
+<p>过了两天仓库又收到了50箱维他柠檬茶，SKU还是<code>vita100</code>，但是这50箱维他柠檬茶是半年后就过期。在系统在生成上架单的时候，还是会对这些产品自动标记一个批次号，例如就叫做<code>BN20200727001</code>。</p>
+<p>所以在系统中，就会知道一共有150箱维他柠檬茶，一共有两个批次，批次号<code>BN20200725001</code>的是100箱，批次号<code>BN20200727001</code>的是50箱。</p>
+<p>如果仓库不要求对批次进行管控，那么这150箱的维他柠檬茶就是可以放在同一个库位的，到时出库的时候也就可以随机拣货出库了。</p>
+<p>这个也就是为什么一些电商网站会说<strong>新老包装随机发货</strong>的原因，因为在仓库管理的时候新老包装都是同一个SKU，没有做批次管理，所以新老包装就放在一起了，拣货的时候就随机拿了。</p>
+<p>如果仓库要求对批次进行管控，那么系统的功能设计上就要复杂一些了，因为批次管控意味着不能混批次（一个库位上不能放不同批次的同款商品）。上面提到，一般仓库不会采用重新贴码的方式来管理批次，所以都是用的第二种，也就是跟踪批次号对应的仓位的方式来管理。</p>
+<p>那么之前的批次号为<code>BN20200725001</code>的100箱维他柠檬茶就应该放在一个库位，而<code>BN20200727001</code>的50箱应该放在另外一个库位，两者不能重叠。所以上架的时候应该要对批次号做限制，某个仓位有该产品的批次了，那么其他批次就不能放上去了。</p>
+<p>此时如果我们加大业务量，一天同时入库10个货主，100款SKU，大概有400多个批次，而且这些产品中，有些需要效期管理，有些需求批次管理，有些只需要SKU管理，这个时候如果没有一套完善的批次管理机制就容易出问题了。</p>
+<h2 id="业务继续升级，效期，批次和普货同时管理"><a href="#业务继续升级，效期，批次和普货同时管理" class="headerlink" title="业务继续升级，效期，批次和普货同时管理"></a>业务继续升级，效期，批次和普货同时管理</h2><p>效期管理，就是针对商品的有效期（保质期）进行管理，仓库不能把一些过期了或者临近过期的产品发出去，否则会造成比较严重的损失。</p>
+<p>批次管理，就是针对商品的出厂批次或者入库先后的批次做管理，一般会用来做先进先出，提升产品的周转率，同时也能尽量把老款卖出去，也方便来算库龄和仓租。</p>
+<p>普货管理，就是普通的产品，不需要做批次管理，也不需要做效期管理，可以直接在SKU的粒度上进行管理，无论是先到的还是后到的，都可以直接叠放在同一个库位上。</p>
+<p>针对这三类的产品，其实是有共性可以作为突破口的，那就是批次号。无论你是什么类型的产品，我都给你加上一个批次，这个批次可以理解为<code>SKU的策略</code>。因为批次号需要与库位进行关联，即某个SKU的某个批次号的货物放在了某个库位上。所以我们需要对库位也做一个策略的管理，就是<code>商品是否混放</code>与<code>批次是否混放</code>。</p>
+<p><strong>将SKU的策略和库位的策略结合在一起，来切割我们不同的产品的管理要求和粒度。</strong></p>
+<p>对于<code>SKU的策略</code>来说，可以分为需要批次管理和不需要批次管理，需要批次管理的是批次产品和效期产品，而不需要批次管理的则是普货。效期产品虽然重点关注的是失效日期，但是本质上来说还是属于批次的管理，不同的失效日期的可以理解成不同的批次号。</p>
+<p>对于<code>库位的策略</code>来说，就是分为<strong>商品混放且批次混放</strong>，<strong>商品混放且批次不混放</strong>，<strong>商品不混放且批次混放</strong>，<strong>商品不混放且批次不混放</strong>，一共四种情况。一般来说海外仓用的最多的就是商品不混放且批次混放，就是一个SKU都放在一个库位上；而对于一些生鲜产品或者效期产品来说，用的比较多的就是商品混放且批次不混放。</p>
+<p>所以一个SKU的上架，大概来说可能会有8种判断条件，如果把效期产品的单独算作一种策略，那么就会有12种判断条件。</p>
+<h2 id="说回移库"><a href="#说回移库" class="headerlink" title="说回移库"></a>说回移库</h2><h3 id="踩坑一：说移库只想到了移库"><a href="#踩坑一：说移库只想到了移库" class="headerlink" title="踩坑一：说移库只想到了移库"></a>踩坑一：说移库只想到了移库</h3><p>本文的主题是讲移库，但是我在梳理流程的时候发现我之前踩了一个很大的坑，那就是我在设计移库的功能的时候，只想到了移库，我重点在关注移库的一些操作和策略上。</p>
+<p>但是回顾一下，其实移库的本质依然是上架，只是包装了一层外衣。难点其实依然是在上架的时候对SKU和库位策略的判断，如果只盯着移库去设计，很容易走进死胡同，发现怎么设计都会有欠缺，都是只见树木不见森林。</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/f38a03c9-ff25-41b8-94cb-8d856d18fcfa.png" alt="策略不全"></p>
+<h3 id="踩坑二：上架的方式与逻辑判断的方式"><a href="#踩坑二：上架的方式与逻辑判断的方式" class="headerlink" title="踩坑二：上架的方式与逻辑判断的方式"></a>踩坑二：上架的方式与逻辑判断的方式</h3><p>除了一开始踩进了移库这一个牛角尖的坑之外，还有一个很重要的坑，那就是关于上架的方式和逻辑判断的方式也碰壁了。</p>
+<p>按常规来讲，移库应该是会涉及到同时移库多个产品的，这也意味着上架的时候会上架多个产品，现实的上架确实也会如此。</p>
+<p>然后我在考虑SKU策略和仓位策略的时候就犯难了，例如一个库位的策略是商品不混放且批次混放，那么我在上架的时候得要先考虑我待上架的产品首先有没有混放（意思是自身有没有混）。如果没有混，那么放上去的时候又要考虑已有的产品和要放上去的产品是否混放。如果这个也没有混，最后再判断批次是否混放，直到都满足才可以上架。</p>
+<p>这样一来，如果一次性上架很多个SKU，那么商品不混放的库位压根就上不了。如果在移库的时候，仓库发现这个库位上去了，那个也上不了，很容易就崩溃，效率也不高。</p>
+<p>然后我就在开始思考，是不是要先考虑移库的时候源库位和目标库位的库位属性是否一致，是否要区分普通货物移库和批次货物移库。顺着这个思路，我就踩了第三个坑。</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/9a75095d-47ab-4691-b659-2911a326ed48.png" alt="只考虑普货移库"></p>
+<h3 id="踩坑三：思考的方向变成了源库位和SKU"><a href="#踩坑三：思考的方向变成了源库位和SKU" class="headerlink" title="踩坑三：思考的方向变成了源库位和SKU"></a>踩坑三：思考的方向变成了源库位和SKU</h3><p>因为考虑到不同的产品和仓位策略上架的逻辑判断太多，我本能的觉得这样肯定不对，所以我决定把思路放在源库位和SKU上试试。</p>
+<p>移库前先比对两者的库位策略是否一致，不一致就不允许移库了，如果一致才可以移库。但是这样还是会有一个问题，那就是本来库位的策略大家都是不允许商品混放，但是因为新的SKU移库过来了，那么就打破了本来的库位策略，所以判断条件还是有那么多。</p>
+<p>于是我继续思考是不是还要先考虑SKU的组合的问题，例如移库只能一次移库一个，这样的话判断的时候就可以很容易的将待移库的SKU和目标库位的SKU进行对比，看看是否有没有破坏目标库位的策略。这样的话，判断条件确实是简单了一些，说明这思路是对的。</p>
+<p>但是如果普通上架或者容器上架的时候，面临同时有多个SKU的时候怎么办？这个办法还是很麻烦，而且感觉不对劲，于是我将我的思考结果和疑惑点记录下来，跟我们的开发大佬沟通了一下，这才解开了我的疑惑。</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/2deb5f0d-69e8-484b-8cda-32b778c81da3.png" alt="思考方向弄错了"></p>
+<h2 id="解惑时刻"><a href="#解惑时刻" class="headerlink" title="解惑时刻"></a>解惑时刻</h2><p>当我把记录的疑惑跟开发大佬沟通的时候，他指出了一个很重要的点，也是我一直思考碰壁的地方：<strong>移库的本质其实也是上架的策略，而上架的策略其实就是上架一个SKU判断一次策略！</strong></p>
+<p>这句话直接给了我解题的思路，瞬间打通了之前闭塞的环节，而且他还告诉我在前两天的时候他其实都已经理出来了逻辑而且核心代码都写好了，只不过这个是上架的策略，而我当时没有关注还心扑在移库上（直接碾压，尴尬）。</p>
+<p>然后我们一起就着他画出来是思维导图进行了一波推演，发现这个方案确实是正确的，而且是通用型的，很多我没有想通的点，其实就是因为我踩了坑。</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/0e804c6d-0a24-4fce-be35-09e5a7994321.png" alt="上架的逻辑判断"></p>
+<p>对着上方的逻辑图再走一遍流程会发现，不论是移库还是上架其实本质都是上架策略的判断，这是可以通用的。</p>
+<p>首先判断货主和料区是否一致，这个前面提到过，属于常规性必做的判断。</p>
+<p>其次判断商品混放策略，上面讲到了每次上架都判断一次这个逻辑，所以并不需要考虑本身待上架的产品内部是否混放的问题。商品混放策略直接拿待上架的这个SKU和已经在库位上的SKU判断即可，如果可以通过则进行下一个批次策略的判断。</p>
+<p>在判断批次策略的时候先判断SKU的自身的策略，是否批次管理还是普货，如果是批次管理，那么就只能放在不允许混放批次的库位，然后再判断待上架的批次和已上架的批次是否相同；如果是普货，则任意都可以放。</p>
+<p>上面的逻辑分析图基本上就可以覆盖所有的与上架策略有关的场景，理清楚了核心的业务逻辑，剩下的就是一些锦上添花的辅助工作了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本来一开始的工作任务是对移库功能进行优化和调整，但是随着业务的演变，一些规则和要求的加入之后，移库变得不是那么简单就能搞定的了。本以为是一次简单的业务逻辑调整，但是碰壁之后才发现原来是我自己对一些本质的东西没有抓住。</p>
+<p>通过这次小小的复盘，让我get到了这么些感悟，分享给大家：</p>
+<ol>
+<li>抓住问题的核心很重要，也很难。很多表面因素看起来似乎是问题的症结，但是随着深入的探索和思考往往会发现，游于表面的分析和摸索其实很费时间，而且很容易走偏；</li>
+<li>方向不对，努力就会白费。移库的设计方向应该是从库位出发，而不是货品。我因为从库位出发碰壁了太多，所以调转了方向，结果发现越跑越远；</li>
+<li>产品设计过程中，思维碰撞和交流特别重要，尤其是遇到困难和疑惑的时候，及时记录并及时沟通，探讨解决是一个高效的方式，如果沉溺于自我世界之中，很容易低效又返工；</li>
+<li>对业务的理解往往产品的思维和开发的思维不一样，但是产品如果过多的夹在技术思维和业务思维很容易两者都容易受限，不如先抛开技术思维而只专注于业务层去设计，随后再和开发讨论技术思维是否能支撑业务方面的设计。这一点对我这样的技术转产品的人来说很致命，技术转产品，有利有弊，而这一块往往就是短板，需要特别注意去规避。</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #1B9637;font-size: 16px;">--本文到此结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+	  
+	</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>随缘打赏，佛系产品</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatreward.jpg" alt="叫我vitamin WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipayreward.jpg" alt="叫我vitamin Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/WMS/" rel="tag"><i class="fa fa-tag"></i> WMS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/内训师培训感悟.html" rel="next" title="内训培训课程收获与总结">
+                <i class="fa fa-chevron-left"></i> 内训培训课程收获与总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: false, 
+            verify: false,
+            app_id: '2dyfqUTaqnN4xkgLeLiD1PzR-gzGzoHsz',
+            app_key: '9Pftw16BURo9Uh1ycldrNnkc',
+			avatar: 'wavatar',
+			guest_info: ['nick'],
+            placeholder: '谈谈你的看法？'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="叫我vitamin">
+          <p class="site-author-name" itemprop="name">叫我vitamin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TopVitamin" target="_blank" title="GitHub" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lai-yun-qiang" target="_blank" title="Zhihu" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简易版的移库"><span class="nav-number">2.</span> <span class="nav-text">简易版的移库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务升级，引入批次概念"><span class="nav-number">3.</span> <span class="nav-text">业务升级，引入批次概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务继续升级，效期，批次和普货同时管理"><span class="nav-number">4.</span> <span class="nav-text">业务继续升级，效期，批次和普货同时管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说回移库"><span class="nav-number">5.</span> <span class="nav-text">说回移库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#踩坑一：说移库只想到了移库"><span class="nav-number">5.1.</span> <span class="nav-text">踩坑一：说移库只想到了移库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#踩坑二：上架的方式与逻辑判断的方式"><span class="nav-number">5.2.</span> <span class="nav-text">踩坑二：上架的方式与逻辑判断的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#踩坑三：思考的方向变成了源库位和SKU"><span class="nav-number">5.3.</span> <span class="nav-text">踩坑三：思考的方向变成了源库位和SKU</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解惑时刻"><span class="nav-number">6.</span> <span class="nav-text">解惑时刻</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叫我vitamin</span>
+    <div class="powered-by">  
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me">Coding Pages</a></span>
+</div>
+
+<div style="margin-right:10px;display:inline-block">
+	<i class="fa fa-user-md"></i>
+	<span>
+	本站访问量: <span id="busuanzi_value_site_pv"></span>次
+	</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":true,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":170,"height":340,"hOffset":40,"vOffset":-60},"mobile":{"show":false},"log":false});</script>
+</body>
+</html>
